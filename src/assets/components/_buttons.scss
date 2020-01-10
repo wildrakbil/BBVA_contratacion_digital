@@ -1,0 +1,273 @@
+////////////////////
+// Button Defaults
+/////////////////
+
+$global-btn-font: $sans-serif-medium !default;
+$global-btn-padding: 16px;
+$global-btn-short-padding: 12px;
+$global-btn-width: 100%;
+$focus-ouline: $white solid 1px !important; // ie fix
+
+////////////////////
+// Button Mixins //
+//////////////////
+
+@mixin btn-width-breakpoints {
+
+  @include breakpoint(mobile) {
+      max-width: 100%;
+  }
+
+  @include breakpoint(tablet) {
+    max-width: calc((64px * 4) + 64px);
+  }
+
+  @include breakpoint(small) {
+    max-width: calc((48px * 4) + 64px);
+  }
+
+  @include breakpoint(large) {
+    max-width: calc((66px * 4) + 64px);
+  }
+
+  @include breakpoint(extra) {
+    max-width: calc((82px * 4) + 96px);
+  }
+
+}
+
+@mixin global-btn-prop {
+  font-family: $global-btn-font;
+  width: $global-btn-width;
+  max-width: $global-btn-width;
+  padding: $global-btn-padding;
+  @include font-size(1.5);
+  border-radius: 1px;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: normal;
+  line-height: 24px;
+  margin: 8px 0;
+  text-align: center;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: inherit;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+
+  // hover animations
+  background-size: 210% 100%;
+  background-position: 100% center;
+  background-repeat: no-repeat;
+  transition: background-position 0.5s $standard-curve;
+}
+
+@mixin btn-focus-state {
+  &:focus {
+    outline: $focus-ouline;
+  }
+}
+
+@mixin button-background-gradient-image($start, $end) {
+  background-color: $end;
+  background-image: -moz-linear-gradient(350deg, $start 0%, $start 50%, $end 50%, $end 100%);
+  /* ff3.6+ */
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(0%, $end), color-stop(50%, $end), color-stop(51%, $start), color-stop(100%, $start));
+  /* safari4+,chrome */
+  background-image: -webkit-linear-gradient(350deg, $start 0%, $start 50%, $end 50%, $end 100%);
+  /* safari5.1+,chrome10+ */
+  background-image: -o-linear-gradient(350deg, $start 0%, $start 50%, $end 50%, $end 100%);
+  /* opera 11.10+ */
+  background-image: -ms-linear-gradient(350deg, $start 0%, $start 50%, $end 50%, $end 100%);
+  /* ie10+ */
+  background-image: linear-gradient(100deg, $start 0%, $start 50%, $end 50%, $end 100%);
+  /* w3c */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$end', endColorstr='$start', GradientType=0);
+  /* ie6-9 */
+}
+
+///////////////////////
+// IE 10 Button Focus
+/////////////////////
+
+@mixin IE10-focus-prop {
+  content: "";
+  display: none;
+  background: transparent;
+  border: 0.5px solid $white;
+  position: absolute;
+  left:2%;
+  right: 2%;
+}
+
+.button {
+  @include global-btn-prop;
+  @include btn-width-breakpoints;
+  @include btn-focus-state;
+
+  &:hover,
+  &:active,
+  &.active {
+    // background-color: $blue-medium-ov;
+    border-bottom: none !important;
+    color: $white;
+    background-position: 0 center;
+  }
+  &:focus {
+    outline: $focus-ouline;
+    outline-offset: -6px;
+    background-position: 0 center;
+  }
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  .icon {
+    display: inline-block;
+    padding: 0.1em 0.4em 0 0;
+  }
+
+  .button + .button,
+  .button + .icon-link,
+  .button + a,
+  .icon-link + a {
+    display: table;
+    margin: 0 auto;
+    margin-top: 8px;
+  }
+
+  ////////////////////////////////////
+  //    PRIMARY BUTTON COLORS      //
+  //////////////////////////////////
+
+  &--navy {
+     @include button-background-gradient-image($blue-core-ov, $navy);
+     @include btn-focus-state;
+  }
+
+  &--primary,
+  &--blue {
+    @include button-background-gradient-image($blue-medium-ov, $blue-medium-wcag);
+  }
+
+  &--secondary,
+  &--blue-core {
+    @include button-background-gradient-image($blue-core-ov, $blue-core);
+  }
+
+  &--secondary-alt {
+    background-color: $blue-core;
+    &:hover,
+    &:active {
+      background-color: $blue-medium-wcag;
+    }
+    @include btn-focus-state;
+  }
+
+  //////////////////////////////////////
+  //    SECONDARY BUTTON COLORS      //
+  ////////////////////////////////////
+
+  &--aqua {
+    @include button-background-gradient-image($aqua-dark, $aqua-wcag);
+  }
+
+  //////////////////////////////////////
+  //    TERIARY BUTTON COLORS        //
+  ////////////////////////////////////
+
+  &--red {
+    @include button-background-gradient-image($red-dark, $red);
+  }
+
+  &--orange {
+    @include button-background-gradient-image($btn-orange-dark, $orange);
+  }
+
+  &--green {
+    @include button-background-gradient-image($green-dark, $green);
+  }
+
+  //////////////////////////////////////
+  //    SPECIAL BUTTON COLORS        //
+  ////////////////////////////////////
+
+  &--yellow {
+    @include button-background-gradient-image($yellow-dark, $yellow);
+  }
+
+  &--salmon {
+    @include button-background-gradient-image($red-dark, $btn-salmon);
+  }
+
+  &--disabled {
+    background-color: $grey200;
+    color: $grey400;
+    cursor: default;
+    &:hover,
+    &:active {
+      background-color: $grey200;
+      color: $grey400;
+    }
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  /////////////////////////////
+  //    BUTTON  SIZES      //
+  //////////////////////////
+
+  &--short {
+    padding: $global-btn-short-padding ;
+  }
+
+
+  /////////////
+  // IE10
+  ///////////
+
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+       /* IE10+ CSS styles go here */
+    position:relative;
+    outline: none;
+    &:after {
+      @include IE10-focus-prop;
+      width: 96%;
+      height:45px;
+      top: 10%;
+      bottom: 9%;
+    }
+
+    &:focus {
+      &:after {
+        display: block;
+      }
+    }
+
+    &--short {
+      &:after {
+        @include IE10-focus-prop;
+        width: 96%;
+        height:38px;
+        top: 12%;
+        bottom: 12%;
+      }
+
+      &:focus {
+        &:after {
+          display: block;
+        }
+      }
+    }
+
+    &--disabled {
+      &:after {
+        content: none;
+      }
+    }
+  }
+}

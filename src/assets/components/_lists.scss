@@ -1,0 +1,235 @@
+//////////////////////
+// list Defaults   //
+////////////////////
+
+$light-background-default-text-color: $grey500 !default;
+$dark-background-default-text-color: $white !default;
+$lists-default-font-family: $sans-serif !default;
+$highlight-lists-default-font-family: $sans-serif-light !default;
+$highlight-lists-default-counter: counter(customlistcounter) " " !default;
+
+// Icon Colors
+$light-background-default-icon-color: $blue-core !default;
+$dark-background-default-icon-color: $blue-white-medium !default;
+$dark-background-white-icon-color: $white !important;
+$light-background-aqua-icon-color: $aqua !default;
+$light-background-grey-icon-color: $grey400 !default;
+
+//////////////////////
+// list Mixins     //
+////////////////////
+
+@mixin icon-bullet{
+  @include bbva-font-icon;
+  font-size: 7px;
+  width: 5px;
+  position: absolute;
+  top: 8px;
+  content: $ui-bullet1;
+}
+
+@mixin icon-checkmark{
+  @include bbva-font-icon;
+  font-size: 12px;
+  width: 12px;
+  position: absolute;
+  top: 6px;
+  content: $ui-checkmark;
+}
+
+@mixin icon-list-properties {
+  font-size: 12px;
+  position: absolute;
+}
+
+@mixin highlight-list-desktop {
+  color: $light-background-default-text-color;
+  counter-increment: customlistcounter;
+  padding-left: 36px;
+  padding-bottom: 24px;
+  position: relative;
+  display: flex;
+}
+
+.list {
+  ul {
+    ///////////////
+    // List     //
+    /////////////
+
+    position: relative;
+    margin: 0;
+    padding: 32px 0px;
+
+    li {
+      color: $light-background-default-text-color;
+      padding-left: 24px;
+      padding-bottom: 8px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      @extend .body-copy;
+
+      &:before {
+        @include bbva-font-icon;
+        @include icon-bullet;
+        left: 0;
+        color: $light-background-default-icon-color;
+      }
+    }
+
+    @include breakpoint(small){
+      padding: 40px 0px;
+
+      li {
+        padding-bottom: 16px;
+      }
+    }
+
+    ////////////////////////////
+    // List w/ Dark Background
+    /////////////////////////
+
+
+    &.list--darkBg {
+      li {
+        color: $dark-background-default-text-color;
+      }
+    }
+
+    //////////////////////////
+    //// List w/ Icons
+    /////////////////////////
+
+    &.list__icons {
+      position: relative;
+      margin: 0;
+
+      li {
+        padding-left: 28px;
+
+        &:before {
+          @include icon-checkmark;
+        }
+      }
+    }
+
+  }
+
+
+  ///////////////////
+  // Color Modifiers
+  /////////////////
+
+  &--medium-blue {
+    ul li {
+      &:before {
+        color: $dark-background-default-icon-color;
+      }
+    }
+  }
+
+  &--grey {
+    ul li {
+      &:before {
+        color: $light-background-grey-icon-color;
+      }
+    }
+  }
+
+  &--white {
+    ul li {
+      &:before {
+        color: $dark-background-white-icon-color;
+      }
+    }
+  }
+
+  &--aqua {
+    ul li {
+      &:before {
+        color: $light-background-aqua-icon-color;
+      }
+    }
+  }
+
+  ////////////////////
+  //// Ordered Lists
+  //////////////////
+
+  ol {
+
+    ///////////////////////////
+    //// Default Ordered Lists
+    /////////////////////////
+
+    &.list__ordered {
+      color: $light-background-default-text-color;
+      margin-bottom: 0;
+      padding: 32px 0;
+      list-style-type: none;
+      @include breakpoint(small){
+        padding: 40px 0;
+      }
+      li {
+        counter-increment: customlistcounter;
+        padding-left: 24px;
+        padding-bottom: 8px;
+        position: relative;
+        @include breakpoint(small){
+          padding-bottom: 16px;
+        }
+        @extend .body-copy;
+        &:before {
+          content: counter(customlistcounter) "." ;
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: $zindex-common;
+          @extend .body-copy;
+        }
+      }
+
+      ///////////////////////
+      //// Highlighted Lists
+      //////////////////////
+
+      &.list__ordered--highlight{
+        list-style-type: none;
+        padding: 62px 0;
+        @include breakpoint(small){
+          padding: 80px 0;
+        }
+        li {
+          @extend .h5-header;
+          @include breakpoint(small){
+            padding-bottom: 32px;
+          }
+          position: relative;
+          padding-bottom: 24px;
+          padding-left: 48px;
+          padding-top: 4px;
+          h5 {
+            margin: 0;
+          }
+          &:before {
+            content: $highlight-lists-default-counter;
+            position: absolute;
+            left: 10px;
+            top: 4px;
+            z-index: $zindex-common;
+            @extend .h5-header;
+          }
+          &:after {
+            content: "";
+          	border-top: 32px solid $grey100;
+          	border-right: 32px solid transparent;
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+        }
+      }
+    }
+  }
+}

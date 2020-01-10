@@ -1,0 +1,91 @@
+
+/////////////////
+// Font faces //
+///////////////
+@font-face {
+  font-family: 'BentonSansBBVA Bold';
+  src: url('#{$bbva-font-path}BentonSansBBVA-Bold.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-Bold.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-Bold.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  700;
+}
+
+@font-face {
+  font-family: 'BentonSansBBVA Book';
+  src: url('#{$bbva-font-path}BentonSansBBVA-Book.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-Book.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-Book.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'BentonSansBBVA Book Italic';
+  src: url('#{$bbva-font-path}BentonSansBBVA-BookItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-BookItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-BookItalic.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-BookItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-BookItalic.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'BentonSansBBVA Light';
+  src: url('#{$bbva-font-path}BentonSansBBVA-Light.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-Light.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-Light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-Light.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  200;
+}
+
+@font-face {
+  font-family: 'BentonSansBBVA Medium';
+  src: url('#{$bbva-font-path}BentonSansBBVA-Medium.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-Medium.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-Medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-Medium.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'BentonSansBBVA Medium Italic';
+  src: url('#{$bbva-font-path}BentonSansBBVA-MediumItalic.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSansBBVA-MediumItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSansBBVA-MediumItalic.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSansBBVA-MediumItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSansBBVA-MediumItalic.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Benton Sans Regular';
+  src: url('#{$bbva-font-path}BentonSans-Regular.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSans-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSans-Regular.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSans-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSans-Regular.svg') format('svg'); /* Legacy iOS */
+  font-style:   normal;
+  font-weight:  400;
+}
+
+@font-face {
+  font-family: 'Benton Sans Thin';
+  src: url('#{$bbva-font-path}BentonSans-Thin.eot'); /* IE9 Compat Modes */
+  src: url('#{$bbva-font-path}BentonSans-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('#{$bbva-font-path}BentonSans-Thin.woff') format('woff'), /* Modern Browsers */
+       url('#{$bbva-font-path}BentonSans-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('#{$bbva-font-path}BentonSans-Thin.svg') format('svg'); /* Legacy iOS */ 
+  font-style:   normal;
+  font-weight:  200;
+}

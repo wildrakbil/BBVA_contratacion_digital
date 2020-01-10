@@ -1,0 +1,344 @@
+// Tables font color
+$th-font-color-default: $grey600 !default;
+$td-font-color-default: $grey500 !default;
+// Comparison Table :before td>th font family for mobile
+$th-font-family-default: $sans-serif-bold;
+.tables {
+  .complex-table {
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+    th {
+      @extend .body-copy-bold;
+      color: $th-font-color-default;
+      &:first-child {
+        padding-top: 24px;
+        padding-right: 32px;
+        padding-bottom: 24px;
+        padding-left: 32px;
+        text-align: left;
+      }
+      a {
+        color: $th-font-color-default;
+        margin: 0;
+      }
+    }
+    tr {
+      border: 1px solid $th-font-color-default;
+    }
+    th:nth-child(even) {
+      display: flex;
+      padding-top: 24px;
+      padding-right: 32px;
+      padding-left: 32px;
+    }
+    th:first-child {
+      border-right: 1px solid $th-font-color-default;
+      width: 140px;
+    }
+    td {
+      display: flex;
+      flex-direction: column;
+      @extend .body-copy;
+      color: $td-font-color-default;
+      padding-top: 24px;
+      padding-right: 32px;
+      padding-left: 32px;
+      flex-wrap: wrap;
+      &:not(:nth-child(2)) {
+        margin-top: -24px;
+      }
+      &:nth-child(even) {
+        padding-bottom: 24px;
+      }
+      &:last-child {
+        padding-bottom: 24px;
+      }
+    } // Complex Table media STARTS
+    @include breakpoint-down (tablet) {
+      // Get table to act like rows 
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+        padding: 0;
+      }
+      tr {
+        text-align: left;
+        &:not(:last-child) {
+          border-bottom: none;
+        }
+      }
+      th {
+        a {
+          padding-left: 0;
+        }
+        text-align: left;
+      }
+      th:nth-child(even) {
+        padding-top: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        &:nth-child(n+4) {
+          margin-top: 0;
+        }
+      }
+      th:first-child {
+        border-right: none;
+        padding-top: 16px;
+        padding-bottom: 24px;
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%
+      }
+      td {
+        padding: 16px;
+        &:not(:nth-child(2)) {
+          margin-top: -24px;
+        }
+        &:nth-child(even) {
+          margin-bottom: 0;
+          margin-top: -24px;
+        }
+        &:last-child {
+          padding-bottom: 16px;
+        }
+      }
+    }
+  }
+  .comparison-table {
+    //removing the margins
+    a {
+      margin-right: 0px;
+      margin-left: 0px;
+    } // Table borders
+    table {
+      border: 1px solid $th-font-color-default;
+      border-collapse: collapse;
+      width: 100%;
+    }
+    th {
+      border-bottom: 1px solid $th-font-color-default;
+      @extend .body-copy-bold;
+      color: $th-font-color-default;
+      a {
+        color: $th-font-color-default;
+        white-space: nowrap;
+      }
+    }
+    th,
+    td {
+      border-right: 1px solid $th-font-color-default;
+      padding-top: 24px;
+      padding-bottom: 16px;
+      padding-left: 32px;
+      padding-right: 32px;
+      text-align: left;
+    }
+    td {
+      @extend .body-copy;
+      color: $td-font-color-default
+    }
+    tr:nth-child(n+2) {
+      td {
+        padding-top: 0;
+      }
+    }
+    tr:last-child {
+      td {
+        padding-bottom: 24px;
+      }
+    } // Simple Table Element css
+    &__simple {
+      table {
+        border: 0;
+      }
+      th,
+      td {
+        border-right: none;
+      }
+      th {
+        padding-top: 0;
+      }
+      td {
+        border-bottom: 1px solid $td-font-color-default;
+      }
+      tr:nth-child(n+2) {
+        td {
+          padding-top: 24px;
+        }
+      }
+      tr:last-child {
+        td {
+          border-bottom: 0;
+        }
+      } // Simple Table Media query STARTS
+      @include breakpoint-down (tablet) {
+        // no border on tablet
+        table {
+          border: 1px solid $th-font-color-default;
+        } //remove the last line 
+        tr {
+          td:last-child {
+            border-bottom: 1px solid $td-font-color-default;
+          }
+        }
+      }
+    } // Link Table Element css
+    &__links {
+      table {
+        border: 0;
+        height: 401px;
+      }
+      thead {
+        tr {
+          th {
+            padding-top: 0;
+            padding-left: 0;
+          }
+        }
+      }
+      tr {
+        td:first-child {
+          white-space: nowrap;
+          padding-left: 0;
+          padding-bottom: 24px;
+          padding-top: 24px;
+          display: flex;
+        }
+        td:nth-child(2) {
+          padding-left: 0;
+          padding-bottom: 24px;
+          padding-top: 24px;
+        }
+        td:nth-child(3) {
+          display: flex;
+        }
+      }
+      td,
+      th {
+        border-right: 0;
+      } // Link Table Media query STARTS
+      @include breakpoint-down (tablet) {
+        tr {
+          td:first-child {
+            display: block;
+            padding-left: 16px;
+            padding-top: 16px;
+            padding-bottom: 16px;
+          }
+          td:nth-child(2) {
+            padding-bottom: 16px;
+          }
+          td:nth-child(n+2) {
+            width: 100%;
+            padding-top: 0;
+            padding-left: 16px;
+          }
+        }
+        tr {
+          padding-bottom: 24px;
+          &:nth-child(n+2) {
+            margin-top: -24px;
+          }
+          td {
+            &:last-child {
+              div {
+                padding-bottom: 8px;
+              }
+            }
+          }
+        }
+        td {
+          &::before {
+            padding-bottom: 8px;
+          }
+        }
+      } // class to hide dynamically with js when there are more than 4 rows
+      .hide-rows {
+        tr:nth-of-type(1n+5) {
+          display: none;
+        }
+      } // class to hide dynamically with js when there are more than 4 rows
+      .show-rows {
+        tr:nth-of-type(1n+5) {
+          max-height: auto;
+        }
+      }
+    } // Comparison media query STARTS
+    @include breakpoint-down (tablet) {
+      table {
+        border-bottom: 0;
+      } // Hide column labels 
+      thead tr {
+        position: absolute;
+        top: -9999em;
+        left: -9999em;
+      } // Get table cells to act like rows 
+      tr,
+      td {
+        display: block;
+      }
+      td {
+        border: 0;
+        padding: 16px;
+        &:last-child {
+          border-bottom: 1px solid $th-font-color-default;
+        }
+        &:nth-child(n+2) {
+          padding-top: 0;
+        }
+      }
+      tr:nth-child(n+2) {
+        td {
+          padding-top: 16px;
+          padding-bottom: 0;
+          &:last-child {
+            padding-bottom: 16px;
+          }
+        }
+      } // Add data labels 
+      td:before {
+        content: attr(data-label);
+        display: block;
+        font-family: $th-font-family-default;
+        color: $th-font-color-default;
+      }
+    }
+    .show-more-wrapper {
+      display: flex;
+      position: relative;
+      padding-bottom: 40px;
+      padding-top: 40px;
+      justify-content: center;
+      align-items: center;
+      a {
+        padding: 0;
+        border: none;
+        &.ui-unfold {
+          &::before {
+            vertical-align: middle;
+          }
+        }
+        &.ui-fold {
+          &::before {
+            vertical-align: middle;
+          }
+        }
+      }
+      @include breakpoint-down (tablet) {
+        padding-bottom: 16px;
+        padding-top: 32px;
+      }
+    }
+    .links-table {
+      height: auto;
+      width: 100%;
+    }
+  }
+}

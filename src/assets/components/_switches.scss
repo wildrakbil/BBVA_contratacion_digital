@@ -1,0 +1,434 @@
+
+////////////////////////
+// Switch Default State
+//////////////////////
+
+// Switches Background Color Defaults
+$switch-defalut-background-color-on: $blue-medium-wcag !default;
+$switch-defalut-background-color-on-hovering: $blue-core-ov !default;
+$switch-defalut-background-color-off: $grey500 !default;
+$switch-defalut-background-color-off-hovering: $grey600 !default;
+
+// Switches Default Icons
+$switch-defalut-icon-background-on: $green-medium !default;
+$switch-defalut-icon-background-off: $grey500 !default;
+
+// Switches Default Focus State
+$switch-default-focus-state: $blue-core !default;
+
+@mixin switch-properties {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  margin: 8px;
+  width: 40px;
+  height: 24px;
+}
+
+@mixin slider-properties {
+  border-radius: 34px;
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  @include transition(transform);
+  overflow: hidden;
+}
+
+@mixin circle-properties {
+  border-radius: 50%;
+  position: absolute;
+  content: "";
+  height: 22px;
+  width: 22px;
+  left: 1px;
+  top: 1px;
+  @include transition(transform);
+}
+
+@mixin switch-icon-properties {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+}
+
+@mixin input-properties {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  opacity: 0;
+  z-index: 9999;
+}
+
+@mixin dark-slider-properties {
+  background-color:$white;
+  @include slider-properties;
+  &:before {
+    background-color: $switch-defalut-background-color-off;
+    @include circle-properties;
+  }
+  &:hover {
+    &:before {
+      background: $switch-defalut-background-color-off-hovering;
+    }
+  }
+}
+
+@mixin light-slider-properties {
+  background-color:$switch-defalut-background-color-off;
+  @include slider-properties;
+  &:before {
+    background-color: $white;
+    @include circle-properties;
+  }
+  &:hover {
+    background: $switch-defalut-background-color-off-hovering;
+  }
+}
+
+@mixin switch-desc-properties {
+  font-family: $sans-serif;
+  font-size: 12px;
+  display: block;
+  text-align: center;
+}
+
+////////////////////////
+// Switch Default State
+//////////////////////
+
+.switch {
+  width: 56px;
+  &__container {
+
+    @include switch-properties;
+
+    & + .switch-desc {
+      color: $switch-defalut-background-color-off;
+      @include switch-desc-properties;
+    }
+
+    input {
+      @include input-properties;
+      &:checked + .slider--round {
+        background-color: $switch-defalut-background-color-on;
+        &:before {
+          transform: translateX(16px);
+        }
+      }
+      // Checked Hover State
+      &:checked {
+        &:hover + .slider--round {
+          background-color: $switch-defalut-background-color-on-hovering;
+        }
+      }
+      // Checked Disabled Hover State
+      &:checked {
+        &:disabled {
+          &:hover + .slider--round {
+            background-color: $switch-defalut-background-color-on;
+          }
+        }
+      }
+      // Disabled State
+      &:disabled + .slider--round {
+        opacity: 0.3;
+      }
+      // Unchecked Hover State
+      &:hover + .slider--round {
+        background-color: $switch-defalut-background-color-off-hovering;
+      }
+      // Unchecked Disabled Hover State
+      &:disabled {
+        &:hover + .slider--round {
+          background-color: $switch-defalut-background-color-off;
+        }
+      }
+      // Focus State
+      &:focus + .slider--round {
+        &:before{
+          box-shadow: 0px 0px 1.5px 1.5px $switch-default-focus-state;
+        }
+      }
+    }
+
+    .slider--round {
+      @include light-slider-properties;
+    }
+
+    /////////////////////////
+    // Dark Background State
+    ///////////////////////
+
+    &--darkBg {
+      @include switch-properties;
+      & + .switch-desc {
+        color: $white;
+        @include switch-desc-properties;
+      }
+      input {
+        @include input-properties;
+        // Checked State
+        &:checked + .slider--round {
+          background-color: $white;
+          &:before {
+            background-color: $switch-defalut-background-color-on;
+            transform: translateX(16px);
+          }
+        }
+        // Checked Hovered State
+        &:checked {
+          &:hover + .slider--round {
+            background: $white;
+            &:before {
+              background: $blue-core;
+            }
+          }
+        }
+        // Checked Disabled Hovered State
+        &:checked {
+          &:disabled {
+            &:hover + .slider--round {
+              background-color: $white;
+              &:before {
+                background: $switch-defalut-background-color-on;
+              }
+            }
+          }
+        }
+        // Disabled Hovered State
+        &:disabled {
+          &:hover + .slider--round {
+            background-color: $white;
+            &:before {
+              background: $switch-defalut-background-color-off;
+            }
+          }
+        }
+        // Focus State
+        &:focus + .slider--round {
+          &:before {
+            box-shadow: 0px 0px 1.5px 1.5px $switch-default-focus-state;
+          }
+        }
+        // Hover State
+        &:hover + .slider--round {
+          background: $white;
+          &:before {
+            background: $switch-defalut-background-color-off-hovering;
+          }
+        }
+      }
+
+      .slider--round {
+       @include dark-slider-properties;
+      }
+
+    }
+
+    ////////////////
+    // Icon Switch
+    //////////////
+
+    &--icon {
+      @include switch-properties;
+      & + .switch-desc {
+        color: $switch-defalut-background-color-off;
+        @include switch-desc-properties;
+      }
+      input {
+        @include input-properties;
+        // Checked State
+        &:checked + .slider--round {
+          background-color: $switch-defalut-icon-background-on;
+          span {
+            &.ui-close {
+              opacity: 0;
+              @include transition(opacity);
+            }
+            &.ui-checkmark {
+              opacity: 1;
+              @include transition(opacity);
+            }
+          }
+          &:before {
+            transform: translateX(16px);
+          }
+        }
+        // Checked Hovered State
+        &:checked {
+          &:hover + .slider--round {
+            background-color: $switch-defalut-icon-background-on;
+            span {
+              &.ui-checkmark {
+                color: $switch-defalut-background-color-off;
+              }
+            }
+          }
+        }
+        // Checked Disabled Hovered State
+        &:checked {
+          &:disabled {
+            &:hover + .slider--round {
+              background-color: $switch-defalut-icon-background-on;
+              span {
+                &.ui-checkmark {
+                  color: $switch-defalut-icon-background-on;
+                }
+              }
+            }
+          }
+        }
+        // Hover State
+        &:hover + .slider--round {
+          background-color:$switch-defalut-background-color-off;
+          span {
+            &.ui-close {
+              color:$switch-defalut-icon-background-on;
+            }
+          }
+        }
+        // Disabled Hovered State
+        &:disabled {
+          &:hover + .slider--round {
+            span {
+              &.ui-close {
+                color: $switch-defalut-background-color-off;
+              }
+            }
+          }
+        }
+        // Focus State
+        &:focus + .slider--round {
+          &:before{
+            box-shadow: 0px 0px 1.5px 1.5px $switch-default-focus-state;
+          }
+        }
+      }
+
+      .slider--round {
+        background-color:$switch-defalut-background-color-off;
+        @include slider-properties;
+        &:before {
+          @include circle-properties;
+          background-color: $white;
+        }
+        span {
+          &.ui-close {
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            @include transition(opacity);
+            color: $switch-defalut-background-color-off;
+          }
+          @include targetie() {
+            &.ui-close {
+              top: 5px;
+            }
+          }
+          &.ui-checkmark {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            opacity: 0;
+            @include transition(opacity);
+            color: $switch-defalut-icon-background-on;
+          }
+          @include targetie() {
+            &.ui-checkmark {
+              top: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    ///////////////////////////////
+    // Hover State (Demo Purposes)
+    /////////////////////////////
+
+    &.hovering {
+      input {
+        &:checked + .slider--round {
+          background-color: $switch-defalut-background-color-on-hovering;
+        }
+      }
+      .slider--round {
+        background-color:$switch-defalut-background-color-off-hovering;
+      }
+    }
+
+    &--darkBg {
+      &.hovering {
+        input {
+          &:checked + .slider--round {
+            background-color: $white;
+            &:before {
+              background-color: $blue-core;
+            }
+          }
+          &:checked + .slider--round {
+            &:hover {
+              &:before {
+                background: $blue-core;
+              }
+            }
+          }
+        }
+
+        .slider--round {
+          background-color:$white;
+          &:before {
+            background-color: $switch-defalut-background-color-off-hovering;
+          }
+        }
+      }
+    }
+
+    &--icon {
+      &.hovering {
+        input {
+          &:checked + .slider--round{
+            background-color: $switch-defalut-icon-background-on;
+            span {
+              &.ui-checkmark {
+                color: $switch-defalut-background-color-off;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    ///////////////////////////////
+    // Focus State (Demo Purposes)
+    /////////////////////////////
+
+    &.focusing {
+      .slider--round {
+        &:before {
+          box-shadow: 0px 0px 1.5px 1.5px $blue-core;
+        }
+      }
+    }
+
+    &--darkBg {
+      &.focusing {
+        input {
+          &:focus + .slider--round {
+            &:before {
+              box-shadow: 0px 0px 1.5px 1.5px $switch-default-focus-state;
+            }
+          }
+        }
+        .slider--round {
+          &:before {
+            box-shadow: 0px 0px 1.5px 1.5px $switch-defalut-background-color-on;
+          }
+        }
+      }
+    }
+  }
+}

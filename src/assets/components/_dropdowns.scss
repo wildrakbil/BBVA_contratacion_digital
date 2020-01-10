@@ -1,0 +1,500 @@
+  /////////////////////
+ //    Dropdowns    //
+/////////////////////
+
+  /////////////////////
+ //    Variable     //
+/////////////////////
+
+// colors
+// - border colors
+$dropdown-open-border-color-white: $grey600 !default;
+$dropdown-option-border-color-white: $grey300 !default;
+
+$dropdown-open-border-color-blue: $white !default;
+$dropdown-option-border-color-blue: $white30 !default;
+
+// - text colors
+$dropdown-option-color-white: $grey500 !default;
+$dropdown-option-color-blue: $grey300 !default;
+
+// - icon colors
+$dropdown-icon-color-white: $blue-medium-ov !default;
+$dropdown-icon-check-color-white: $blue-core !default;
+
+$dropdown-icon-color-blue: $white !default;
+$dropdown-icon-check-color-blue: $white !default;
+
+// - states
+// -- hover
+$dropdown-option-hover-color-white: $grey600 !default;
+$dropdown-option-hover-color-blue: $white !default;
+
+// -- readonly
+$dropdown-readonly-icon-color-white: $grey500 !default;
+$dropdown-readonly-icon-color-blue: $grey300 !default;
+
+// dimensions
+// - icons
+$dropdown-icon-size: 24px !default;
+$dropdown-icon-text-size: 2.4 !default;
+
+
+// menu focus animation slide down
+@-webkit-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-moz-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-o-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-ms-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@keyframes focusAnimation {
+  0% { height: 0px; }
+}
+
+
+  //////////////////////////////////////////////
+ //    dropdowns extended from input class   //
+/////////////////////////////// //////////////
+
+.dropdown {
+  @extend .input;
+
+  // base dropdown styles
+  cursor: pointer;
+  position: relative;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  -ms-user-select: none;
+
+  //////////////////////////////////
+ //    Element Dropdown Label    //
+//////////////////////////////////
+
+  .input__label {
+    pointer-events: none;
+  }
+
+  //////////////////////////////////
+ //    Element Dropdown Value    //
+//////////////////////////////////
+
+  &__value {
+    @include hidden;
+    display: none;
+
+    &:not([value=""]) ~ .input__label {
+      @extend .disclaimer-copy;
+      top: $default-form-item-margin;
+      pointer-events: none;
+    }
+  }
+
+  ///////////////////////////////////////
+ //    Element Dropdown Text Value    //
+///////////////////////////////////////
+
+  &__text {
+    height: $input-height;
+    padding-top: $default-form-item-margin * 3;
+    padding-left: $default-form-item-margin * 2;
+    padding-right: $default-form-item-margin * 6;
+  }
+
+  /////////////////////////////////
+ //    Element Dropdown Menu    //
+/////////////////////////////////
+
+  &__menu {
+    position: absolute;
+    height: 0px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    padding-right: $default-form-item-margin * 2;
+    padding-left: $default-form-item-margin * 2;
+    top: $input-height;
+    z-index: 1;
+
+    // background color white CSS
+    background-color: $input-bg-color-white;
+
+    // menu animation slide up
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+
+    // states
+    // - focus
+    &:focus {
+      outline: 0px;
+    }
+
+    // element item in menu
+    .item {
+      @extend .body-copy;
+      word-break: keep-all;
+      padding-top: $default-form-item-margin * 2;
+      padding-bottom: $default-form-item-margin * 2;
+      border-bottom: $input-border-val;
+
+      // background color white CSS
+      color: $dropdown-option-color-white;
+      border-bottom-color: $dropdown-option-border-color-white;
+
+      &:last-child  {
+        border-bottom: 0px;
+      }
+
+      // dropdown menu items states and interactions
+      &:focus,
+      &:hover,
+      &:active,
+      &.selected {
+        outline: 0px;
+
+        // background color white CSS
+        color: $dropdown-option-hover-color-white;
+      }
+
+      // - selected modifier
+      &.selected:before {
+        @include bbva-font-icon;
+        content: $ui-checkmark;
+        @include font-size($dropdown-icon-text-size);
+        right: $default-form-item-margin * 2;
+        position: absolute;
+        width: $dropdown-icon-size;
+        height: $dropdown-icon-size;
+
+        // background color white CSS
+        color: $dropdown-icon-check-color-white;
+      }
+    }
+  }
+
+  ///////////////////////////////////////
+ //    Element Dropdown Arrow Icon    //
+///////////////////////////////////////
+
+  &__icon {
+    position: absolute;
+    top: $default-form-item-margin * 2;
+    right: $default-form-item-margin * 2;
+    width: $dropdown-icon-size;
+    height: $dropdown-icon-size;
+
+    // arrow animation rotate
+    transform: rotateZ(0deg);
+    -webkit-transition: transform 0.3s linear;
+    -moz-transition: transform 0.3s linear;
+    -o-transition: transform 0.3s linear;
+    -ms-transition: transform 0.3s linear;
+    transition: transform 0.3s linear;
+
+    &:before {
+      @include bbva-font-icon;
+      content: $ui-unfold;
+      @include font-size($dropdown-icon-text-size);
+
+      // background color white CSS
+      color: $dropdown-icon-color-white;
+    }
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+  //////////////////////////
+ //    Focus Modifier    //
+//////////////////////////
+
+  &--focus {
+    &.white {
+      @include focus-input-border($input-focus-border-white);
+    }
+    &.blue {
+      @include focus-input-border($input-focus-border);
+    }
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+
+    -webkit-animation: focusAnimation 0.3s linear;
+    -moz-animation: focusAnimation 0.3s linear;
+    -o-animation: focusAnimation 0.3s linear;
+    -ms-animation: focusAnimation 0.3s linear;
+    animation: focusAnimation 0.3s linear;
+  }
+
+  ///////////////////////////////
+ //    Open Focus Modifier    //
+///////////////////////////////
+
+  &--open,
+  &--open:focus,
+  &--open:focus:hover {
+    box-shadow: 0 0 0 0 $input-focus-border;
+
+    .dropdown__menu {
+      height: $input-height * 2;
+
+      // menu animation slide down
+      -webkit-transition: all 0.3s linear;
+      -moz-transition: all 0.3s linear;
+      -o-transition: all 0.3s linear;
+      -ms-transition: all 0.3s linear;
+      transition: all 0.3s linear;
+    }
+
+    .dropdown__icon {
+      transform: rotateZ(180deg);
+    }
+
+    .dropdown__text {
+      border-bottom: $input-border-val;
+
+      // background color white CSS
+      border-color: $dropdown-open-border-color-white;
+    }
+  }
+
+  //////////////////////////////////////////
+ //    Readonly Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--readonly .dropdown__icon:before {
+    color: $dropdown-readonly-icon-color-white;
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Height    //
+  //                        //
+ ////////////////////////////
+
+  &.input--height-48 {
+
+    // state and modifiers
+    // - selected value and active label
+    .dropdown__value:not([value=""]) ~ .input__label,
+    .input__label.input__label--active {
+      top: $default-form-item-margin / 2;
+    }
+
+    // element dropdown icon
+    .dropdown__icon {
+      @include label-top($input-height-48);
+    }
+
+    // element dropdown menu
+    .dropdown__menu {
+      top: $input-height-48;
+
+      // element dropdown menu item
+      .item {
+        padding-top: $default-form-item-margin + 4;
+        padding-bottom: $default-form-item-margin + 4;
+      }
+    }
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  /////////////////////////////////
+ //    Background White Grey    //
+/////////////////////////////////
+
+  &.input--bg-white-grey {
+
+    .dropdown__menu {
+      background-color: $input-bg-color-white-grey;
+    }
+  }
+
+  //////////////////////////////////
+ //    Background Blue Medium    //
+//////////////////////////////////
+
+  &.input--bg-blue-medium {
+
+    // states and modifiers
+    // - open focus modifier
+    &.dropdown--open {
+      .dropdown__text {
+        border-color: $dropdown-open-border-color-blue;
+      }
+    }
+
+    // - readonly attribute and modifier
+    &.input--bg-blue-medium.input--readonly .dropdown__icon:before {
+      color: $dropdown-readonly-icon-color-blue;
+    }
+
+    // element dropdown icon
+    .dropdown__icon:before {
+      color: $dropdown-icon-color-blue;
+    }
+
+    // element dropdown menu
+    .dropdown__menu {
+      background-color: $input-bg-color-blue-medium;
+
+      // element dropdown menu item
+      .item {
+        border-bottom-color: $dropdown-option-border-color-blue;
+        color: $dropdown-option-color-blue;
+
+        // states and modifiers
+        // - focus, hover, active, selected
+        &:focus,
+        &:hover,
+        &:active,
+        &.selected {
+          color: $dropdown-option-hover-color-blue;
+        }
+
+        // - selected modifier
+        &.selected:before {
+          color: $dropdown-icon-check-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Core    //
+////////////////////////////////
+
+  &.input--bg-blue-core {
+
+    // states and modifiers
+    // - open focus modifier
+    &.dropdown--open {
+      .dropdown__text {
+        border-color: $dropdown-open-border-color-blue;
+      }
+    }
+
+    // - readonly attribute and modifier
+    &.input--bg-blue-core.input--readonly .dropdown__icon:before {
+      color: $dropdown-readonly-icon-color-blue;
+    }
+
+    // element dropdown icon
+    .dropdown__icon:before {
+      color: $dropdown-icon-color-blue;
+    }
+
+    // element dropdown menu
+    .dropdown__menu {
+      background-color: $input-bg-color-blue-core;
+
+      // element dropdown menu item
+      .item {
+        border-bottom-color: $dropdown-option-border-color-blue;
+        color: $dropdown-option-color-blue;
+
+        // states and modifiers
+        // - focus, hover, active, selected
+        &:focus,
+        &:hover,
+        &:active,
+        &.focus,
+        &.selected {
+          color: $dropdown-option-hover-color-blue;
+        }
+
+        // - selected modifier
+        &.selected:before {
+          color: $dropdown-icon-check-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Dark    //
+////////////////////////////////
+
+  &.input--bg-blue-dark {
+
+    // states and modifiers
+    // - open focus modifier
+    &.dropdown--open {
+      .dropdown__text {
+        border-color: $dropdown-open-border-color-blue;
+      }
+    }
+
+    // - readonly attribute and modifier
+    &.input--bg-blue-dark.input--readonly .dropdown__icon:before {
+      color: $dropdown-readonly-icon-color-blue;
+    }
+
+    // element dropdown icon
+    .dropdown__icon:before {
+      color: $dropdown-icon-color-blue;
+    }
+
+    // element dropdown menu
+    .dropdown__menu {
+      background-color: $input-bg-color-blue-dark;
+
+      // element dropdown menu item
+      .item {
+        border-bottom-color: $dropdown-option-border-color-blue;
+        color: $dropdown-option-color-blue;
+
+        // states and modifiers
+        // - focus, hover, active, selected
+        &:focus,
+        &:hover,
+        &:active,
+        &.focus,
+        &.selected {
+          color: $dropdown-option-hover-color-blue;
+        }
+
+        // - selected modifier
+        &.selected:before {
+          color: $dropdown-icon-check-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  &.input--error {
+
+    // states and modifiers
+    // - open focus modifier
+    &.dropdown--open {
+      .dropdown__text {
+        border-color: $input-error-border-color;
+      }
+    }
+
+    // element dropdown icon
+    .dropdown__icon:before {
+      color: $input-error-label-color;
+    }
+  }
+}

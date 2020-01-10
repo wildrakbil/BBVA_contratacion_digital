@@ -1,0 +1,147 @@
+svg, svg * {
+    pointer-events:all;
+    position: relative;
+}
+
+// Brand
+.brand-logo {
+  width: 72px;
+  height: auto;
+  &__circle,
+  &__lines {
+    transform-origin: 50% 50%;
+  }
+  &__circle {
+    animation: rotateCircle 2s ease-in-out;
+  }
+  &__text {
+    opacity: 0;
+    animation: fadeInLogo 2s ease-in-out 2s forwards;
+  }
+  &__lines {
+    animation: spinLines 2s ease-in-out;
+
+  }
+}
+
+@keyframes rotateCircle {
+  from {
+    transform: rotate3d(0, 0, 0, 1deg);
+  }
+  to {
+    transform: rotate3d(0, 1, 0, 360deg);
+  }
+}
+
+@keyframes spinLines {
+  from {
+    transform: rotate(1deg) scale(0);
+    stroke: #004481;
+  }
+  to {
+    transform: rotate(360deg) scale(1);
+    stroke: #ffffff;
+  }
+}
+
+@keyframes fadeInLogo {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// end brand animation
+// Design Ambassadors
+.designAmb-logo {
+  animation: moveUp 1s ease-out infinite;
+
+  &__left-wing {
+  }
+  &__right-wing {
+  }
+  &__flames {
+    animation: fireOrangeFill 1s ease-in-out forwards infinite;
+  }
+  &__medium-flame {
+    animation: fireOrangeFill 1s ease-in-out forwards infinite;
+  }
+  &__small-flame {
+    animation: fireOrangeFill 1s ease-in-out forwards infinite;
+  }
+  &__body {
+
+  }
+    
+}
+
+@keyframes moveUp {
+  from {
+    transform: translate(-0.5px, -0.5px);
+  }
+  50% {
+    transform: translate(0.5px, 0.5px);
+  }
+  to {
+    transform: translate(-0.5px, -0.5px);
+  }
+}
+
+@keyframes fireOrangeScale {
+  from {
+    transform: scaleY(0);
+  }
+  1% {
+      transform: scaleY(0.5);
+  }
+  25% {
+
+    transform: scaleY(1.1);
+  }
+  50% {
+
+    transform: scaleY(1.3);
+  }
+  to {
+ 
+    transform: scaleY(1);
+  }
+}
+
+@keyframes fireOrangeFill {
+  from {
+    fill: rgb(255, 38, 0);
+  }
+  25% {
+    fill: rgb(255, 155, 0);
+  }
+  50% {
+    fill: rgb(255, 60, 0);
+  }
+  to {
+    fill: #FADE8E;
+  }
+}
+
+// Design
+
+.design-logo {
+
+    &__lines {
+        animation: bounceOutLines 1s ease-in-out forwards;
+    }
+
+}
+
+@keyframes bounceOutLines {
+  from {
+    transform: scale(0);
+    transform-origin: 50% 50%;
+  }
+  to {
+    transform: scale(1);
+    transform-origin: 50% 50%;
+  }
+}

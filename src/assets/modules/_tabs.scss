@@ -1,0 +1,33 @@
+.tabs {
+    // display: flex;
+    background: $white;
+
+    &__list{
+        // @include column((mobile: 4, tablet: 8, small: 12, large: 12, extra: 12));
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__list-item {
+    //    @include column((mobile: 4, tablet: 2, small: 2, large: 2, extra: 2));
+       display: flex;
+       padding: 0;
+       justify-content: center;
+       margin-top: 40px;
+
+        &:not(&--active) > .links {
+           color: $grey500;
+        }
+    }
+
+    .dividers__line--whiteBg {
+        margin-top: 24px;
+        margin-bottom: 40px;
+    }
+
+    .dropdown__text {
+        padding-top: 16px;
+    }
+}

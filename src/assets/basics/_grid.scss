@@ -1,0 +1,169 @@
+@import "_susygrid-config.scss";
+$mobile-config: $susy-mobile !default;
+$tablet-config: $susy-tablet !default;
+$small-config: $susy-small !default;
+$large-config: $susy-large !default;
+$extra-config: $susy-extra !default;
+$susy-settings: $mobile-config;
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.container-fluid {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.felipe {
+  color: navy;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  @include breakpoint(tablet) {
+    max-width: 768px;
+  }
+  @include breakpoint(small) {
+    max-width: 960px;
+  }
+  @include breakpoint(large) {
+    max-width: 1176px;
+  }
+  @include breakpoint(extra) {
+    max-width: 1368px;
+  }
+  &--grid {
+    background: susy-svg-grid($mobile-config) no-repeat scroll;
+    @include breakpoint(tablet) {
+      background: susy-svg-grid($tablet-config) no-repeat scroll;
+    }
+    @include breakpoint(small) {
+      background: susy-svg-grid($small-config) no-repeat scroll;
+    }
+    @include breakpoint(large) {
+      background: susy-svg-grid($large-config) no-repeat scroll;
+    }
+    @include breakpoint(extra) {
+      background: susy-svg-grid($extra-config) no-repeat scroll;
+    }
+  }
+}
+
+@mixin span-grid($width, $config: $mobile-config, $isMobile: false) {
+  max-width: span($width, $config);
+  flex: 0 0 span($width, $config);
+  padding: 0 (gutter($config)/2);
+}
+
+@mixin span-grid-push($width, $config: $mobile-config, $isMobile: false) {
+  margin-left: span($width, $config);
+}
+
+[class^="col-"],
+[class*="col-"] {
+  box-sizing: border-box;
+  position: relative;
+  min-height: 1px;
+  width: 100%;
+  &.no-gutters {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+.no-gutters {
+  &>[class*="col-"] {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+  }
+}
+
+$four-col: length(map-get(susy-settings($mobile-config), 'columns'));
+@for $i from 1 through $four-col {
+  .col-#{$i} {
+    @include span-grid($i, $mobile-config);
+  }
+  .col-#{$i}-wider {
+    @include span-grid($i wider, $mobile-config);
+  }
+  .col-push-#{$i} {
+    @include span-grid-push($i, $mobile-config);
+  }
+  .col-push-#{$i}-wider {
+    @include span-grid-push($i wider, $mobile-config);
+  }
+}
+
+$eight-col: length(map-get(susy-settings($tablet-config), 'columns'));
+@include breakpoint(tablet) {
+  @for $i from 1 through $eight-col {
+    .col-tb-#{$i} {
+      @include span-grid($i, $tablet-config);
+    }
+    .col-tb-#{$i}-wider {
+      @include span-grid($i wider, $tablet-config);
+    }
+    .col-tb-push-#{$i} {
+      @include span-grid-push($i, $tablet-config);
+    }
+    .col-tb-push-#{$i}-wider {
+      @include span-grid-push($i wider, $tablet-config);
+    }
+  }
+}
+
+$twelve-col: length(map-get(susy-settings($small-config), 'columns'));
+@for $i from 1 through $twelve-col {
+  @include breakpoint(small) {
+    .col-sm-#{$i} {
+      @include span-grid($i, $small-config);
+    }
+    .col-sm-#{$i}-wider {
+      @include span-grid($i wider, $small-config);
+    }
+    .col-sm-push-#{$i} {
+      @include span-grid-push($i, $small-config);
+    }
+    .col-sm-push-#{$i}-wider {
+      @include span-grid-push($i wider, $small-config);
+    }
+  }
+}
+
+@for $i from 1 through $twelve-col {
+  @include breakpoint(large) {
+    .col-lg-#{$i} {
+      @include span-grid($i, $large-config);
+    }
+    .col-lg-#{$i}-wider {
+      @include span-grid($i wider, $large-config);
+    }
+    .col-lg-push-#{$i} {
+      @include span-grid-push($i, $large-config);
+    }
+    .col-lg-push-#{$i}-wider {
+      @include span-grid-push($i wider, $large-config);
+    }
+  }
+}
+
+@for $i from 1 through $twelve-col {
+  @include breakpoint(extra) {
+    .col-xl-#{$i} {
+      @include span-grid($i, $extra-config);
+    }
+    .col-xl-#{$i}-wider {
+      @include span-grid($i wider, $extra-config);
+    }
+    .col-xl-push-#{$i} {
+      @include span-grid-push($i, $extra-config);
+    }
+    .col-xl-push-#{$i}-wider {
+      @include span-grid-push($i wider, $extra-config);
+    }
+  }
+}

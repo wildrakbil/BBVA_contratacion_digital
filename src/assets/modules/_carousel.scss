@@ -1,0 +1,225 @@
+
+.carousel {
+  background: $blue-core-ov;
+  padding:32px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  @include breakpoint(small){
+    padding:56px 0 0 0;
+  }
+
+  &--basic , .slide{
+    position: relative;
+    width: 100%;
+    background: #043263;
+    padding:0;
+    margin: 0;
+    overflow: hidden;
+    ul {
+      margin:0;
+      padding: 0;
+      li {
+        &.slide {
+          height: inherit;
+          background-size: cover;
+          position: relative;
+          h4 {
+            display:inline-block;
+            //float:right;
+            font-size: 1.25em;
+            margin:0;
+            padding: .25em;
+            //text-align: right;
+            //background-color: rgba(255,255,255,.8);
+            //float:right;
+            border-radius: 0 0 0 .5em;
+          }
+          p {
+            &.demo {
+              text-align: center;
+              position: absolute;
+              left: 0;
+              right: 0;
+              bottom: 0;
+              top: 50%;
+            }
+            &.slide-description {
+              opacity: 0;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              right: 0;
+              margin:0;
+              clear:both;
+              padding: 5px;
+              background-color: rgba(255,255,255,.8);
+            }
+          }
+          a {
+            display:block;
+            text-align: right;
+          }
+        }
+      }
+    }
+    &.active {
+      //height: 360px;
+      position:relative;
+      .slide {
+        border: none;
+        display: none;
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:200;
+        display: block !important;
+        visibility: hidden;
+        @include transition(left);
+        &.current {
+          visibility: visible;
+          left: 0;
+          display:block;
+          z-index: 500;
+        }
+        &.next {
+          left: 100%;
+          &.in-transition {
+            visibility:visible;
+          }
+        }
+        &.prev {
+          left: -100%;
+          &.in-transition {
+            visibility:visible;
+          }
+        }
+      }
+    }
+    &.with-slidenav {
+      background-color: #043263;
+      margin: 0 auto;
+      ul li {
+        .liveregion {
+          opacity: 0 !important;
+        }
+      }
+    }
+  }
+
+  ul {
+    &.controls {
+      //transform: translateY(140px);
+      display: none;
+      top: 45%;
+      width: 95%;
+      margin: 0 auto;
+      position: absolute;
+      li {
+        position: inherit;
+        padding: 0;
+        .btn-prev,
+        .btn-next {
+          z-index: 700;
+          top: 0;
+          border:0;
+          background: none;
+          line-height: 1;
+          height: 45px;
+          width: 50px;
+          transition: padding .4s ease-out;
+          @include bbva-font-icon;
+        }
+
+        .btn-next:hover,
+        .btn-prev:hover {
+          padding-left: 15px;
+          padding-right:15px;
+          cursor: pointer;
+        }
+
+        .btn-prev:focus,
+        .btn-next:focus{
+          outline: 1px solid $white;
+        }
+
+
+        .btn-prev {
+          left:-6px;
+          border-radius: 0 .25em .25em 0;
+          color: $white;
+          @extend .ui-back;
+          font-size: 32px;
+        }
+
+        .btn-next {
+          right:-6px;
+          border-radius: .25em 0 0 .25em;
+          color: $white;
+          @extend .ui-next;
+          font-size: 32px;
+        }
+        &:first-child {
+          left: -8px;
+        }
+        &:first-child + li {
+          right: -8px;
+        }
+      }
+      @include breakpoint(small){
+        display: block;
+      }
+    }
+
+    &.slidenav {
+      margin: 32px 0;
+      z-index: $zindex-common-overlay;
+      display: flex;
+
+      li {
+        height: 8px;
+        display:inline-block;
+        padding: 0 .5em;
+        button {
+          border: 1px solid $white;
+          border-radius: 11px;
+          background-color: #036;
+          display: block;
+          line-height: 1em;
+          height: 8px;
+          width: 8px;
+          padding: 0;
+          color: $white;
+          &.current {
+            border-radius: .5em;
+            background-color: $white;
+            &:hover {
+              cursor: pointer;
+            }
+          }
+          &:hover {
+            cursor: pointer;
+          }
+          &:focus {
+            outline: 1px solid $white;
+            outline-offset: 4px;
+          }
+        }
+        button[data-action="stop"] {
+          &:before {
+            @include bbva-font-icon;
+            content: "\e03d";
+          }
+        }
+        button[data-action="start"] {
+          &:before {
+            @include bbva-font-icon;
+            content: "\e04b";
+          }
+        }
+      }
+    }
+  }
+
+}

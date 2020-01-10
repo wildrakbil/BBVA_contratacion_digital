@@ -1,0 +1,220 @@
+@import "susy";
+@import "susy/sass/plugins/_svg-grid";
+
+/////////////////////////////
+//     FLUID CONFIG       //
+///////////////////////////
+
+$susy-mobile: ( 'columns': susy-repeat(4), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(246, 50%, 50%, 0.25));
+$susy-tablet: ( 'columns': susy-repeat(8), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(0, 50%, 50%, 0.25));
+$susy-small: ( 'columns': susy-repeat(12), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(39, 50%, 50%, 0.25));
+$susy-large: ( 'columns': susy-repeat(12), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(71, 50%, 50%, 0.25));
+$susy-extra: ( 'columns': susy-repeat(12), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(22, 50%, 50%, 0.25));
+
+
+/////////////////////////////
+//     FIXED CONFIG       //
+///////////////////////////
+
+$susy-mobile-fixed: ( 'columns': susy-repeat(4, 48px), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(180, 50%, 50%, 0.25));
+$susy-tablet-fixed: ( 'columns': susy-repeat(8, 64px), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(180, 50%, 50%, 0.25));
+$susy-small-fixed: ( 'columns': susy-repeat(12, 48px), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(180, 50%, 50%, 0.25));
+$susy-large-fixed: ( 'columns': susy-repeat(12, 66px), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(180, 50%, 50%, 0.25));
+$susy-extra-fixed: ( 'columns': susy-repeat(12, 82px), 'gutters': 32px, 'spread': 'wide', 'container-spread': 'wide', 'svg-grid-colors': hsla(180, 50%, 50%, 0.25));
+
+////////////////////////////
+//     BREAKPOINTS       //
+//////////////////////////
+
+// @mixin breakpoint($point) {
+//   @if $point==mobile {
+//     @media (max-width: 320px) {
+//       @content;
+//     }
+//   }
+//   @else if $point==tablet {
+//     @media (min-width: 321px) {
+//       @content;
+//     }
+//   }
+//   @else if $point==small {
+//     @media (min-width: 768px) {
+//       @content;
+//     }
+//   }
+//   @else if $point==large {
+//     @media (min-width: 960px) {
+//       @content;
+//     }
+//   }
+//   @else if $point==extra {
+//     @media (min-width: 1176px) {
+//       @content;
+//     }
+//   }
+// }
+
+@mixin breakpoint($point) {
+  @if $point==mobile {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+  @else if $point==tablet {
+    @media (min-width: 768px) {
+      @content;
+    }
+  }
+  @else if $point==small {
+    @media (min-width: 960px) {
+      @content;
+    }
+  }
+  @else if $point==large {
+    @media (min-width: 1176px) {
+      @content;
+    }
+  }
+  @else if $point==extra {
+    @media (min-width: 1368px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-down($point) {
+  @if $point==mobile {
+    @media (min-width: 320px) {
+      @content;
+    }
+  }
+  @else if $point==tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+  @else if $point==small {
+    @media (max-width: 960px) {
+      @content;
+    }
+  }
+  @else if $point==large {
+    @media (max-width: 1176px) {
+      @content;
+    }
+  }
+  @else if $point==extra {
+    @media (min-width: 1368px) {
+      @content;
+    }
+  }
+}
+
+@mixin breakpoint-only($point) {
+  @if $point==mobile {
+    @media (max-width: 320px) {
+      @content;
+    }
+  }
+  @else if $point==tablet {
+    @media (min-width: 321px) and (max-width: 767px) {
+      @content;
+    }
+  }
+  @else if $point==small {
+    @media (min-width: 768px) and (max-width: 959px) {
+      @content;
+    }
+  }
+  @else if $point==large {
+    @media (min-width: 960px) and (max-width: 1175px) {
+      @content;
+    }
+  }
+  @else if $point==extra {
+    @media (min-width: 1176px) {
+      @content;
+    }
+  }
+}
+
+////////////////////////////////
+//     COLUMNS & SPANS       //
+//////////////////////////////
+
+// @mixin span($span, $config: $susy-mobile, $isMobile: false) {
+//   box-sizing: border-box;
+//   position: relative;
+//   min-height: 1px;
+//   // display: flex;
+//   // flex-wrap: wrap;
+//   flex: 0 0 auto;
+//   @if $isMobile {
+//     width: 100%;
+//     flex-basis: span($span, $config);
+//   }
+//   @else {
+//     width: 100%;
+//     flex-basis: span($span, $config);
+//   }
+//   // float: left;
+// }
+
+// @mixin spans($width) {
+//   @include breakpoint(mobile) {
+//     @include span($width, $susy-mobile, true)
+//   }
+//   @include breakpoint(tablet) {
+//     @include span($width, $susy-tablet)
+//   }
+//   @include breakpoint(small) {
+//     @include span($width, $susy-small)
+//   }
+//   @include breakpoint(large) {
+//     @include span($width, $susy-large)
+//   }
+//   @include breakpoint(extra) {
+//     @include span($width, $susy-extra)
+//   }
+// }
+
+// @mixin column($widthList, $config: $susy) {
+//   @each $breakpoint,
+//   $width in $widthList {
+//     @if $breakpoint==mobile {
+//       @include breakpoint(mobile) {
+//         @include span($width, $susy-mobile, 'Yes');
+//       }
+//     }
+//     @else if $breakpoint==tablet {
+//       @include breakpoint(tablet) {
+//         @include span($width, $susy-tablet);
+//       }
+//     }
+//     @else if $breakpoint==small {
+//       @include breakpoint(small) {
+//         @include span($width, $susy-small);
+//       }
+//     }
+//     @else if $breakpoint==large {
+//       @include breakpoint(large) {
+//         @include span($width, $susy-large);
+//       }
+//     }
+//     @else if $breakpoint==extra {
+//       @include breakpoint(extra) {
+//         @include span($width, $susy-extra);
+//       }
+//     }
+//   }
+// }
+
+// @mixin container($width: all, $config: $susy, $debug: false) {
+//   $config: susy-settings($config);
+//   $container-spread: map-get($config, 'container-spread');
+//   $width: span($width $container-spread of $container-spread, $config);
+//   max-width: $width or 100%;
+//   @if $debug {
+//     background: susy-svg-grid($grid: $config) no-repeat scroll;
+//   }
+// }

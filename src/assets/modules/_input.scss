@@ -1,0 +1,722 @@
+  ////////////////////////////////
+ //    Standard Input Class    //
+////////////////////////////////
+
+  ////////////////////
+ //    Variables   //
+////////////////////
+
+// colors
+// - background colors
+$input-bg-color-white: $white !default;
+$input-bg-color-white-grey: $grey100 !default;
+$input-bg-color-blue-core: $blue-core !default;
+$input-bg-color-blue-medium: $blue-medium-wcag !default;
+$input-bg-color-blue-dark: $blue-dark !default;
+
+// - border bottom colors
+$input-border-color-white: $grey500 !default;
+$input-border-color-blue: $white !default;
+
+// - text colors
+$input-label-color-white: $grey500 !default;
+$input-hint-color-white: $grey500 !default;
+$input-text-color-white: $grey600 !default;
+$input-help-message-white: $grey500 !default;
+
+$input-label-color-blue: $white !default;
+$input-hint-color-blue: $grey300 !default;
+$input-text-color-blue: $white !default;
+$input-help-message-blue: $white !default;
+
+// - states colors
+// -- typing and focus
+$input-acitve-border-color-white: $grey600 !default;
+$input-acitve-border-color-blue: $grey200 !default;
+$input-focus-border: $blue-medium-ov;
+$input-focus-border-white: $white;
+
+// -- disabled
+$input-disabled-opacity: 0.3 !default; // 30% text and border opacity when disabled
+
+// -- hover
+$input-hover-border-color-white: $grey400 !default;
+$input-hover-border-color-blue: $grey300 !default;
+
+// -- error
+// --- background color
+$input-error-bg-color: $coral-white !default;
+
+// --- border bottom color
+$input-error-border-color: $red-error !default;
+
+// --- text colors
+$input-error-label-color: $red-error !default;
+$input-error-text-color: $grey600 !default;
+$input-error-message-white: $grey600 !default;
+$input-error-message-blue: $white !default;
+$input-error-icon-color-white: $red-error!default;
+$input-error-icon-color-blue: $coral-light !default;
+
+// -- readonly
+$input-readonly-border-color: $grey400 !default;
+$input-readonly-label-color-white: $grey500 !default;
+$input-readonly-text-color-white: $grey500 !default;
+$input-readonly-label-color-blue: $grey300 !default;
+$input-readonly-text-color-blue: $grey300 !default;
+
+// dimensions
+$input-border-radius-val: 1px !default;
+$input-border-val: 1px solid !default;
+$input-width: 100% !default;
+$input-height: 56px !default;
+
+// - height 48
+$input-height-48: 48px !default;
+$input-height-40: 40px !default;
+
+// icon specs
+$input-error-icon-line-height: 16px !default; 
+$input-error-icon-text-size: 1.6 !default;
+
+// IE11 specs
+$ie-placeholder-top: 24px !default;
+
+  //////////////////////
+ //   Input Mixins   //
+//////////////////////
+
+@mixin label-top($height) {
+    top: ($height * 0.50) - 12;
+}
+
+@mixin hover-input-border($color) {
+  box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, inset -1px 1px 0px $color;
+  -moz-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, inset -1px 1px 0px $color;
+  -webkit-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, inset -1px 1px 0px $color;
+  -o-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, inset -1px 1px 0px $color; 
+}
+
+@mixin focus-input-border($color) {
+  box-shadow: 0 0 5px 1px $color;
+  -moz-box-shadow: 0 0 5px 1px $color;
+  -webkit-box-shadow: 0 0 5px 1px $color;
+  -o-box-shadow: 0 0 5px 1px $color; 
+}
+
+     ///////////////////////////
+    //                       //
+   //    Input Base Class   //
+  //                       //
+ ///////////////////////////
+
+.input {
+
+  // base input styles
+  @extend .body-copy;
+  width: $input-width;
+  height: $input-height;
+  border: 0px;
+  border-radius: $input-border-radius-val;
+  border-bottom: $input-border-val;
+  padding-top: $default-form-item-margin * 2;
+  padding-left: $default-form-item-margin * 2;
+  padding-right: $default-form-item-margin * 6;
+
+  // background color white CSS
+  color: $input-text-color-white;
+  background-color: $input-bg-color-white;
+  border-bottom-color: $input-border-color-white;
+
+   ///////////////////////////
+  //    Element Wrapper    //
+ ///////////////////////////
+
+  &__wrapper {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  ///////////////////////////
+ //    Placeholder CSS    //
+///////////////////////////
+
+  &::placeholder {
+    opacity: 0;
+  }
+
+  // - IE 10+
+  &:-ms-input-placeholder {
+    opacity: 0;
+  }
+
+  // - Chrome/Opera/Safari
+  &::-webkit-input-placeholder {
+    opacity: 0;
+  }
+
+  // - Firefox 19+
+  &::-moz-placeholder {
+    opacity: 0;
+  }
+
+  // - Firefox 18-
+  &:-moz-placeholder {
+    opacity: 0;
+  }
+
+  /////////////////////////
+ //    Element Label    //
+/////////////////////////
+
+  &__label {
+    @extend .body-copy;
+    @include label-top($input-height);
+    position: absolute;
+    left: $default-form-item-margin * 2;
+    margin: auto;
+    overflow: hidden;
+    cursor: text;
+
+    // background color white CSS
+    color: $input-label-color-white;
+
+    // - label animation
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+
+  /////////////////////////////////
+ //    Modifier Active Label    //
+/////////////////////////////////
+
+    &--active {
+      @extend .disclaimer-copy;
+      top: $default-form-item-margin;
+      pointer-events: none;
+    }
+  }
+
+  /////////////////////////////////
+ //    Element Error Message    //
+/////////////////////////////////
+
+  &__error-msg {
+    @extend .disclaimer-copy;
+    padding-left: $default-form-item-margin * 5;
+    padding-top: $default-form-item-margin;
+    display: none;
+
+    // background color white CSS
+    color: $input-error-message-white;
+
+    &:before {
+      @include font-size($input-error-icon-text-size);
+      line-height: $input-error-icon-line-height;
+      left: $default-form-item-margin * 2;
+      vertical-align: text-bottom;
+      position: absolute;
+
+      // background color white CSS
+      color: $input-error-icon-color-white;
+    }
+  }
+
+  ////////////////////////////////
+ //    Element Help Message    //
+////////////////////////////////
+
+  &__help-msg {
+    @extend .disclaimer-copy;
+    padding-top: $default-form-item-margin;
+    flex: 1 1 100%;
+    
+    // background color white CSS
+    color: $input-help-message-white;
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+  //////////////////////////////////////////
+ //    Required Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &--required + &__label:after,
+  &:required + &__label:after,
+  &--required &__label:after,
+  &:required &__label:after {
+    content:" *";
+  }
+
+  ///////////////////////
+ //    Focus State    //
+///////////////////////
+
+  &:focus,
+  &:focus:hover {
+    @include focus-input-border($input-focus-border);
+    outline: 0px;
+    
+    // background color white CSS
+    border-bottom-color: $input-acitve-border-color-white;
+  }
+
+  // -- focus placeholder
+  &:focus::placeholder {
+    opacity: 1;
+
+    // background color white CSS
+    color: $input-hint-color-white;
+  }
+
+  // --- IE 10+
+  &:focus:-ms-input-placeholder {
+    opacity: 1;
+
+    // background color white CSS
+    color: $input-hint-color-white;
+  }
+
+  // --- Chrome/Opera/Safari
+  &:focus::-webkit-input-placeholder {
+    opacity: 1;
+
+    // background color white CSS
+    color: $input-hint-color-white;
+  }
+
+  // --- Firefox 19+
+  &:focus::-moz-placeholder {
+    opacity: 1;
+
+    // background color white CSS
+    color: $input-hint-color-white;
+  }
+
+  // --- Firefox 18-
+  &:focus:-moz-placeholder {
+    opacity: 1;
+
+    // background color white CSS
+    color: $input-hint-color-white;
+  }
+
+  ///////////////////////
+ //    Hover State    //
+///////////////////////
+
+  &:hover {
+    outline: 0px;
+
+    // background color white CSS
+    @include hover-input-border($input-hover-border-color-white);
+  }
+
+  //////////////////////////////////////////
+ //    Disabled Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &--disabled,
+  &:disabled,
+  &--disabled *,
+  &:disabled *, 
+  &--disabled ~ *,
+  &:disabled ~ * {
+    opacity: $input-disabled-opacity;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  //////////////////////////////////////////
+ //    Readonly Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--readonly {
+    border-bottom-color: $input-readonly-border-color;
+    color: $input-readonly-text-color-white;
+
+    // --- readonly placeholder
+    &:focus::placeholder {
+      opacity: 0;
+    }
+
+    // ---- IE 10+
+    &:focus:-ms-input-placeholder {
+      opacity: 0;
+    }
+
+    // ---- Chrome/Opera/Safari
+    &:focus::-webkit-input-placeholder {
+      opacity: 0;
+    }
+
+    // ---- Firefox 19+
+    &:focus::-moz-placeholder {
+      opacity: 0;
+    }
+
+    // ---- Firefox 18-
+    &:focus:-moz-placeholder {
+      opacity: 0;
+    }
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Height    //
+  //                        //
+ ////////////////////////////
+
+  &--height-48 {
+    height: $input-height-48;
+    padding-top: $default-form-item-margin * 3;
+
+    & .input__label,
+    & ~ .input__label {
+      @include label-top($input-height-48);
+    }
+  } 
+
+  &--height-40 {
+    height: $input-height-40;
+    padding-top: $default-form-item-margin * 2;
+
+    & .input__label,
+    & ~ .input__label {
+      @include label-top($input-height-40);
+    }
+  } 
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  /////////////////////////////////
+ //    Background White Grey    //
+/////////////////////////////////
+
+  &--bg-white-grey {
+
+    // background color white grey CSS
+    background-color: $input-bg-color-white-grey;
+  }
+
+  //////////////////////////////////
+ //    Background Blue Medium    //
+//////////////////////////////////
+
+  &--bg-blue-medium {
+
+    // background color blue medium CSS
+    background-color: $input-bg-color-blue-medium;
+    border-bottom-color: $input-border-color-blue;
+    color: $input-text-color-blue;
+
+    // label
+    & .input__label,
+    & ~ .input__label {
+      color: $input-label-color-blue
+    }
+
+    // - states
+    // -- focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+      outline: 0px;
+      border-bottom-color: $input-acitve-border-color-blue;
+    }
+
+    // --- focus placeholder background color blue medium
+    &:focus::placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- IE 10+
+    &:focus:-ms-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Chrome/Opera/Safari
+    &:focus::-webkit-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 19+
+    &:focus::-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 18-
+    &:focus:-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // -- hover
+    &:hover {
+      @include hover-input-border($input-hover-border-color-blue);
+    }
+
+    // -- readonly
+    &.input--readonly,
+    &.input--readonly &__label,
+    &.input--readonly + &__label {
+      color: $input-readonly-text-color-blue;
+    }
+
+    // error message
+    & ~ .input__error-msg {
+      color: $input-error-message-blue;
+
+      &:before {
+        color: $input-error-icon-color-blue;
+      }
+    }
+
+    // help message
+    & ~ .input__help-msg {
+      color: $input-help-message-blue;
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Core    //
+////////////////////////////////
+
+  &--bg-blue-core {
+
+    // background color blue core CSS
+    background-color: $input-bg-color-blue-core;
+    border-bottom-color: $input-border-color-blue;
+    color: $input-text-color-blue;
+
+    // label
+    & .input__label,
+    & ~ .input__label {
+      color: $input-label-color-blue
+    }
+
+    // - states
+    // -- focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+      outline: 0px;
+      border-bottom-color: $input-acitve-border-color-blue;
+    }
+
+    // --- focus placeholder background color blue medium
+    &:focus::placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- IE 10+
+    &:focus:-ms-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Chrome/Opera/Safari
+    &:focus::-webkit-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 19+
+    &:focus::-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 18-
+    &:focus:-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // -- hover
+    &:hover {
+      @include hover-input-border($input-hover-border-color-blue);
+    }
+
+    // -- readonly
+    &.input--readonly,
+    &.input--readonly &__label,
+    &.input--readonly + &__label {
+      color: $input-readonly-text-color-blue;
+    }
+
+    // error message
+    & ~ .input__error-msg {
+      color: $input-error-message-blue;
+
+      &:before {
+        color: $input-error-icon-color-blue;
+      }
+    }
+
+    // help message
+    & ~ .input__help-msg {
+      color: $input-help-message-blue;
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Dark    //
+////////////////////////////////
+
+  &--bg-blue-dark {
+
+    // background color blue core CSS
+    background-color: $input-bg-color-blue-dark;
+    border-bottom-color: $input-border-color-blue;
+    color: $input-text-color-blue;
+
+    // label
+    & .input__label,
+    & ~ .input__label {
+      color: $input-label-color-blue
+    }
+
+    // - states
+    // -- focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+      outline: 0px;
+      border-bottom-color: $input-acitve-border-color-blue;
+    }
+
+    // --- focus placeholder background color blue medium
+    &:focus::placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- IE 10+
+    &:focus:-ms-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Chrome/Opera/Safari
+    &:focus::-webkit-input-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 19+
+    &:focus::-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // ---- Firefox 18-
+    &:focus:-moz-placeholder {
+      color: $input-hint-color-blue;
+    }
+
+    // -- hover
+    &:hover {
+      @include hover-input-border($input-hover-border-color-blue);
+    }
+
+    // -- readonly
+    &.input--readonly,
+    &.input--readonly &__label,
+    &.input--readonly + &__label {
+      color: $input-readonly-text-color-blue;
+    }
+
+    // error message
+    & ~ .input__error-msg {
+      color: $input-error-message-blue;
+
+      &:before {
+        color: $input-error-icon-color-blue;
+      }
+    }
+
+    // help message
+    & ~ .input__help-msg {
+      color: $input-help-message-blue;
+    }
+  }
+
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  // - error input
+  &--error {
+    color: $input-error-text-color;
+    background-color: $input-error-bg-color;
+    border-bottom-color: $input-error-border-color;
+
+    // -- error label
+    & .input__label,
+    & ~ .input__label {
+      color: $input-error-label-color;
+    }
+
+    // -- error error message
+    & .input__error-msg,
+    & ~ .input__error-msg {
+      display: block;
+    }
+
+    // states
+    // - focus
+    // --- focus placeholder
+    &:focus::placeholder {
+      color: $input-hint-color-white;
+    }
+
+    // ---- IE 10+
+    &:focus:-ms-input-placeholder {
+      color: $input-hint-color-white;
+    }
+
+    // ---- Chrome/Opera/Safari
+    &:focus::-webkit-input-placeholder {
+      color: $input-hint-color-white;
+    }
+
+    // ---- Firefox 19+
+    &:focus::-moz-placeholder {
+      color: $input-hint-color-white;
+    }
+
+    // ---- Firefox 18-
+    &:focus:-moz-placeholder {
+      color: $input-hint-color-white;
+    }
+  }
+  ////////////////////
+ //    IE fixes    //
+//////////////////// 
+
+  // - IE placeholder
+  &__ie-placeholder {
+    @extend .body-copy;
+    color: $input-hint-color-white;
+    position: absolute;
+    top: $ie-placeholder-top;
+    left: $default-form-item-margin * 2;
+    display: none;
+    opacity: 0;
+
+    &--active {
+      display: block;
+      opacity: 1;
+    }
+
+    &--bg-blue {
+      color: $input-hint-color-blue;
+    }
+  }
+
+  // -- Fixed input clear button for 90DD4NM IE
+  &::-ms-clear {
+    display: none;
+  }
+}

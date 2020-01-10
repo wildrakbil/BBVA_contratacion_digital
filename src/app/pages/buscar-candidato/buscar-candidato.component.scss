@@ -1,0 +1,39 @@
+
+.container h1 {
+    font-weight: bold;
+     font-size: 3.8rem;
+
+}
+
+
+.tables .comparison-table__simple th {
+  
+	color: #121212;
+	font-weight: bold;
+	height: 45px;
+	text-align: center;
+  vertical-align: middle;
+    padding-top: 17px;
+}
+.tables .comparison-table__simple td{
+	 color: #666666;
+	 height: 45px;
+	 text-align: center;
+    vertical-align: middle;
+}
+.tables .comparison-table__simple th, td {
+  border-bottom: 1px solid #f4f4f4;
+
+}
+.tables .comparison-table__simple table {
+	border-bottom: none;
+}
+.tables .comparison-table__simple table {
+  border-collapse: collapse;
+  border: 1px solid #f4f4f4;
+   width: 100%;
+}
+
+.tables .comparison-table__simple thead{
+	background-color: #f4f4f4;
+}

@@ -1,0 +1,76 @@
+//Defaults
+$dividers-simple-whiteBg: $grey300 !default;
+$dividers-simple-lightBg: $grey400 !default;
+$dividers-simple-alternateBg: $white !default;  
+$dividers-product: $grey200 !default;
+$dividers-table: $grey600 !default;
+    
+.dividers {
+    
+    @mixin line-prop {
+        display: block;
+        height: 1px;
+        border: 0;
+        margin: 1em 0;
+        padding: 0;
+    }
+    
+    @include targetie() {
+        .line__product--shadow {
+            filter: blur(2px);
+            opacity: .5;
+        }
+    }
+    
+    &__container {
+        
+        &--darkBg {
+            background: $navy;
+            display: block;
+            padding: 10px 0;
+            margin-top: 16px;
+        }
+    }
+    
+    &__line {
+        &--whiteBg {
+            @include line-prop;
+            border-top: 1px solid $dividers-simple-whiteBg;
+        }
+        &--lightBg {
+            @include line-prop;
+            border-top: 1px solid $dividers-simple-lightBg;
+        }
+        &--alternateBg {
+            @include line-prop;
+            border-top: 1px solid $dividers-simple-alternateBg;
+            opacity: 0.3;
+        }
+        &--product {
+            @include line-prop;
+            border-top: 1px solid $dividers-product;
+            &__shadow {
+                width: 100px;
+                margin: 0px auto;
+                border-left: 300px solid transparent;
+                border-right: 300px solid transparent;
+                border-top: 7px solid rgba(144, 144, 144, .2);
+                filter: blur(2px);
+            }
+        }
+    }
+    
+    &__table {
+        &--horizontal {
+            @include line-prop;
+            border-top: 1px solid $dividers-table;
+        }
+        
+        &--vertical {
+            @include line-prop;
+            border-left: 1px solid $dividers-table;
+            height: 100px;
+        }
+        
+    }
+}

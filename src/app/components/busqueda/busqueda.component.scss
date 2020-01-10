@@ -1,0 +1,90 @@
+@import "../../../assets/basics/variables";
+.search {
+    ///////////////////////////////////////
+    //    Element search Container     //
+    ///////////////////////////////////////
+    &__container {
+        width: 100%;
+    } ///////////////////////////////////////
+    //    Element search Arrow Icon    //
+    ///////////////////////////////////////
+    &__icon {
+        position: absolute; //top: 33px;
+        right: 16px;
+        width: 24px;
+        height: 24px; // arrow animation rotate
+        transform: rotateZ(0deg);
+        -webkit-transition: transform 0.3s linear;
+        -moz-transition: transform 0.3s linear;
+        -o-transition: transform 0.3s linear;
+        -ms-transition: transform 0.3s linear;
+        transition: transform 0.3s linear;
+        &:before {
+            font-family: "bbva-icons" !important;
+            content: attr(data-icon);
+            font-style: normal !important;
+            font-weight: normal !important;
+            font-variant: normal !important;
+            text-transform: none !important;
+            speak: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            content: $ui-search;
+            font-size: 24px;
+            font-size: 2rem;
+            color: #FFF;
+        }
+    }
+}
+.ui-my-profile {
+    &:before {
+        position: absolute;
+        margin-left: 8px;
+        z-index: 10;
+    }
+}
+.ui-id-card {
+    &:before {
+        position: absolute;
+        margin-left: 8px;
+        z-index: 10;
+    }
+}
+.textfield:hover {
+    -webkit-box-shadow: none;
+}
+.textfield:focus {
+    -webkit-box-shadow: none;
+}
+.linea {
+    border-left: 1px solid #eaeef3;
+    width: 8px;
+    height: 57%;
+}
+a:hover, a.hovering, .links:hover, .links.hovering {
+    color: #fff;
+}
+.search__input {
+    padding-left: 0px;
+    border-bottom: 1px solid;
+    border-bottom-color: white;
+    margin-left: 20px;
+    padding-bottom: 0px;
+    height: 22px;
+    padding-top: 0px;
+}
+span.ui-close.white.bucador {
+    position: absolute;
+    right: 0;
+    top: 26px;
+}
+.navigation__options {
+    display: flex;
+    margin-left: 192px;
+    padding-top: 30px;
+    max-width: 680px;
+    max-height: 72px;
+}
+a:focus:not(.button):after, .links:focus:not(.button):after {
+    border: none;
+}

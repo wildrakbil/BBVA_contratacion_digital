@@ -1,0 +1,248 @@
+// Notification background Colors
+
+$default-notification-background-color-default: $grey100 !default;
+$extra-info-notification-background-color-default: $blue-white-light !default;
+$standard-notification-background-color-default: $sand-white !default;
+$success-notification-background-color-default: $green-white !default;
+$error-notification-background-color-default: $coral-white !default;
+
+// Notification font size, font family and font color
+
+$notification-font-color-default: $grey600 !default;
+$default-notification-icon-color: $grey400 !default;
+$extra-info-notification-icon-color-default: $blue-light !default;
+$standard-notification-icon-color-default: $sand !default;
+$success-notification-icon-color-default: $green !default;
+$error-notification-icon-color-default: $coral !default;
+$icon-mobile-font-size: 24px !default;
+
+//Media for notification icon class position
+@mixin notification-icon-pos {
+  top: 3px;
+  padding-right: 24px;
+  position: relative;
+}
+
+//notification content paddings
+@mixin not-content {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+  div h5 {
+    margin-top: 0;
+    margin-bottom: 12px;
+  }
+}
+
+.notifications {
+  //media for notifications content position within the screen
+  @include breakpoint-down(mobile) {
+    aside {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  } // Informational notifications that are fixed to the page
+  &__info {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    z-index: 1;
+    top: -100%;
+    // Slide In Animation
+    &.show-notification {
+      top: 0%;
+      animation-name: notSlideIn;
+      @include animation();
+    }
+    &.hide-notification {      
+      top: -100%;
+      animation-name: notSlideOut;
+      @include animation();
+    }
+    
+    &--default {
+      background-color: $default-notification-background-color-default;
+      .ui-info:before {
+        @include notification-icon-pos();
+        color: $default-notification-icon-color;
+        font-size: $icon-mobile-font-size;
+      }
+    }
+    &--extra {
+      display: flex;
+      background-color: $extra-info-notification-background-color-default;
+      .ui-info:before {
+        @include notification-icon-pos();
+        color: $extra-info-notification-icon-color-default;
+        font-size: $icon-mobile-font-size;
+      }
+    }
+    &--standard {
+      display: flex;
+      background-color: $standard-notification-background-color-default;
+      .ui-alarm:before {
+        @include notification-icon-pos();
+        color: $standard-notification-icon-color-default;
+        font-size: $icon-mobile-font-size;
+      }
+    }
+    &--success {
+      display: flex;
+      background-color: $success-notification-background-color-default;
+      .ui-right:before {
+        @include notification-icon-pos();
+        color: $success-notification-icon-color-default;
+        font-size: $icon-mobile-font-size;
+      }
+    }
+    &--error {
+      display: flex;
+      background-color: $error-notification-background-color-default;
+      .ui-wrong:before {
+        @include notification-icon-pos();
+        color: $error-notification-icon-color-default;
+        font-size: $icon-mobile-font-size;
+      }
+    }
+    &--inline{
+      position: relative;
+    }
+  }
+  
+  // notification content
+  &__content-wrapper {
+    p {
+      @extend .body-copy;
+    }
+    display: flex;
+    @include not-content();
+    .notifications__heading {
+      flex-grow: 2;
+      position: relative;
+    }
+    p:nth-child(2) {
+      padding-left: 64px;
+      @include breakpoint-down(small) {
+        padding-left: 48px;
+      }
+    }
+    .simple-links {
+      padding-left: 48px;
+      @include breakpoint-down(tablet) {
+        padding-left: 0;
+      }
+    } //media for notification paragraph
+    @include breakpoint(large) {
+      p:nth-child(2) {
+        padding-left: 48px;
+      }
+    } // Media for content layout 
+    @include breakpoint-down(tablet) {
+      flex-direction: column;
+      padding-right: 16px;
+      padding-left: 16px;
+      .notifications__heading {
+        h5:nth-child(1) {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 16px;
+          padding-left: 0;
+          &::before {
+            padding-bottom: 16px;
+          }
+        }
+        p:nth-child(2) {
+          padding-left: 0;
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+  &__btn {
+    display: block;
+    @include breakpoint(small) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &__close-wrapper {
+    position: absolute;
+    right: 0;
+    top: -1%;
+    a {
+      &.ui-close:before {
+        font-size: $icon-mobile-font-size;;
+      }
+    }
+    @include breakpoint-down(tablet) {
+      right: 0;
+      top: -1%;
+    }
+  }
+}
+
+
+// Overlay display animation keyframes
+@keyframes notificationIn {
+  0% {
+    opacity: 0;
+    top: 100%;
+  }
+  2% {
+    top: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes notificationOut {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  2% {
+    opacity: 1;
+    top: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  75% {
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}
+
+// Content Box animation keyframes
+@keyframes notSlideIn {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+  
+  100% {
+    top: 0%;
+    opacity: 1;
+  }
+}
+
+@keyframes notSlideOut {
+  0% {
+    top: 0%;
+    opacity: 1;
+  }
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}

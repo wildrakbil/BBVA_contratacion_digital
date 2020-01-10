@@ -1,0 +1,12 @@
+.marquee {
+  padding: 112px 0;
+  background-size: cover;
+  &__content {
+    padding: 40px;
+    background: $blue-medium-wcag;
+    color: $white;
+    p {
+      margin-bottom: 32px;
+    }
+  }
+}

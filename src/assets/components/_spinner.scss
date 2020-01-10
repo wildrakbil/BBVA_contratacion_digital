@@ -1,0 +1,349 @@
+// base rules
+$spinner-padding: 8px !default;
+$spinner-animation-duration: 8s !default;
+
+// desktop heights
+$spinner-height: 40px !default;
+$spinner-wrapper-width: ($spinner-height * 3 + $spinner-padding * 2) !default;
+$spinner-wrapper-height: $spinner-wrapper-width !default;
+$spinner-large-box-height: 88px !default;
+
+// mobile defaults
+$spinner-height-mobile: 32px !default;
+$spinner-large-box-height-mobile: 72px !default;
+$spinner-wrapper-width-mobile: ( $spinner-height-mobile * 3 + $spinner-padding * 2) !default;
+$spinner-wrapper-height-mobile: $spinner-wrapper-width-mobile !default;
+
+// z-index depths
+$spinner-top-zindex: 100 !default;
+$spinner-middle-zindex: 90 !default;
+$spinner-bottom-zindex: 80 !default;
+
+// base class
+.spinner {
+  &__wrapper {
+    display: block;
+    position: relative;
+    width: $spinner-wrapper-width-mobile;
+    height: $spinner-wrapper-height-mobile;
+    @include breakpoint(small) {
+      width: $spinner-wrapper-width;
+      height: $spinner-wrapper-height;
+    }
+  }
+  &__top,
+  &__center,
+  &__bottom,
+  &__hidden {
+    display: block;
+    height: $spinner-height-mobile;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    will-change: transform;
+    backface-visibility: hidden;
+    animation-duration: $spinner-animation-duration;
+    animation-iteration-count: infinite;
+    transition: all 600ms cubic-bezier(0.755, 0.05, 0.855, 0.06);
+    content: '';
+    @include breakpoint(small) {
+      height: $spinner-height;
+    }
+  }
+  &__top {
+    background: $aqua;
+    transform: translateY(0);
+    animation-name: topBoxAnimation-mobile;
+    z-index: $spinner-top-zindex;
+    @include breakpoint(small) {
+      animation-name: topBoxAnimation;
+    }
+  }
+  &__center {
+    background: $blue-medium-wcag;
+    transform: translateY(($spinner-padding + $spinner-height-mobile) * 1);
+    animation-name: centerBoxAnimation-mobile;
+    z-index: $spinner-middle-zindex;
+    @include breakpoint(small) {
+      animation-name: centerBoxAnimation;
+      transform: translateY(($spinner-padding + $spinner-height) * 1);
+    }
+  }
+  &__bottom {
+    background: $blue-core;
+    transform: translateY(($spinner-padding + $spinner-height-mobile) * 2);
+    animation-name: bottomAnimation-mobile;
+    z-index: $spinner-bottom-zindex;
+    @include breakpoint(small) {
+      animation-name: bottomAnimation;
+      transform: translateY(($spinner-padding + $spinner-height) * 2);
+    }
+  }
+}
+
+// mixins for positions
+@mixin topSmall {
+  transform: translateY(0);
+  height: $spinner-height;
+  z-index: $spinner-top-zindex;
+}
+
+@mixin topSmall-mobile {
+  transform: translateY(0);
+  height: $spinner-height-mobile;
+  z-index: $spinner-top-zindex;
+}
+
+@mixin centerLarge {
+  transform: translateY(($spinner-padding + $spinner-height) * 1);
+  height: $spinner-large-box-height;
+  z-index: $spinner-top-zindex;
+}
+
+@mixin centerLarge-mobile {
+  transform: translateY(($spinner-padding + $spinner-height-mobile) * 1);
+  height: $spinner-large-box-height-mobile;
+  z-index: $spinner-top-zindex;
+}
+
+@mixin bottomSmall {
+  transform: translateY(($spinner-padding + $spinner-height) * 2);
+  height: $spinner-height;
+}
+
+@mixin bottomSmall-mobile {
+  transform: translateY(($spinner-padding + $spinner-height-mobile) * 2);
+  height: $spinner-height-mobile;
+}
+
+@mixin centerHidden {
+  transform: translateY(($spinner-padding + $spinner-height) * 1);
+  height: $spinner-height;
+}
+
+@mixin centerHidden-mobile {
+  transform: translateY(($spinner-padding + $spinner-height-mobile) * 1);
+  height: $spinner-height-mobile;
+}
+
+@mixin centerSmall {
+  transform: translateY(($spinner-padding + $spinner-height) * 1);
+  height: $spinner-height;
+}
+
+@mixin centerSmall-mobile {
+  transform: translateY(($spinner-padding + $spinner-height-mobile) * 1);
+  height: $spinner-height-mobile;
+}
+
+@mixin topLarge {
+  transform: translateY( (($spinner-padding + $spinner-height) * 1) - ($spinner-height + $spinner-padding));
+  height: $spinner-large-box-height;
+  z-index: $spinner-top-zindex;
+}
+
+@mixin topLarge-mobile {
+  transform: translateY( (($spinner-padding + $spinner-height-mobile) * 1) - ($spinner-height-mobile + $spinner-padding));
+  height: $spinner-large-box-height-mobile;
+  z-index: $spinner-top-zindex;
+}
+
+// animations timeline
+@keyframes topBoxAnimation {
+  10% {
+    @include topSmall();
+  }
+  20% {
+    @include centerLarge();
+  }
+  30% {
+    @include topSmall();
+  }
+  40% {
+    @include bottomSmall();
+  }
+  50% {
+    @include topSmall();
+  }
+  60% {
+    @include centerHidden();
+  }
+  70% {
+    @include topSmall();
+  }
+  80% {
+    @include centerLarge();
+  }
+  90% {
+    @include topSmall();
+  }
+  100% {
+    @include topSmall();
+  }
+}
+
+@keyframes topBoxAnimation-mobile {
+  10% {
+    @include topSmall-mobile();
+  }
+  20% {
+    @include centerLarge-mobile();
+  }
+  30% {
+    @include topSmall-mobile();
+  }
+  40% {
+    @include bottomSmall-mobile();
+  }
+  50% {
+    @include topSmall-mobile();
+  }
+  60% {
+    @include centerHidden-mobile();
+  }
+  70% {
+    @include topSmall-mobile();
+  }
+  80% {
+    @include centerLarge-mobile();
+  }
+  90% {
+    @include topSmall-mobile();
+  }
+  100% {
+    @include topSmall-mobile();
+  }
+}
+
+@keyframes centerBoxAnimation {
+  10% {
+    @include centerSmall();
+  }
+  20% {
+    @include centerHidden();
+  }
+  30% {
+    @include centerSmall();
+  }
+  40% {
+    @include centerHidden();
+  }
+  50% {
+    @include centerSmall();
+  }
+  60% {
+    @include centerLarge();
+  }
+  70% {
+    @include centerSmall();
+  }
+  80% {
+    @include centerHidden();
+  }
+  90% {
+    @include centerSmall();
+  }
+  100% {
+    @include centerSmall();
+  }
+}
+
+@keyframes centerBoxAnimation-mobile {
+  10% {
+    @include centerSmall-mobile();
+  }
+  20% {
+    @include centerHidden-mobile();
+  }
+  30% {
+    @include centerSmall-mobile();
+  }
+  40% {
+    @include centerHidden-mobile();
+  }
+  50% {
+    @include centerSmall-mobile();
+  }
+  60% {
+    @include centerLarge-mobile();
+  }
+  70% {
+    @include centerSmall-mobile();
+  }
+  80% {
+    @include centerHidden-mobile();
+  }
+  90% {
+    @include centerSmall-mobile();
+  }
+  100% {
+    @include centerSmall-mobile();
+  }
+}
+
+@keyframes bottomAnimation {
+  10% {
+    @include bottomSmall();
+  }
+  20% {
+    @include topSmall();
+  }
+  30% {
+    @include bottomSmall();
+  }
+  40% {
+    @include topLarge();
+  }
+  50% {
+    @include bottomSmall();
+  }
+  60% {
+    @include topSmall();
+  }
+  70% {
+    @include bottomSmall();
+  }
+  80% {
+    @include topSmall();
+  }
+  90% {
+    @include bottomSmall();
+  }
+  100% {
+    @include bottomSmall();
+  }
+}
+
+@keyframes bottomAnimation-mobile {
+  10% {
+    @include bottomSmall-mobile();
+  }
+  20% {
+    @include topSmall-mobile();
+  }
+  30% {
+    @include bottomSmall-mobile();
+  }
+  40% {
+    @include topLarge-mobile();
+  }
+  50% {
+    @include bottomSmall-mobile();
+  }
+  60% {
+    @include topSmall-mobile();
+  }
+  70% {
+    @include bottomSmall-mobile();
+  }
+  80% {
+    @include topSmall-mobile();
+  }
+  90% {
+    @include bottomSmall-mobile();
+  }
+  100% {
+    @include bottomSmall-mobile();
+  }
+}

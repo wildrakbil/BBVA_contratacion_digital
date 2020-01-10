@@ -1,0 +1,150 @@
+/////////////////////////
+// Breadcrumbs Defaults
+//////////////////////
+
+$breadcrumb-default-color: $blue-medium-wcag !default;
+$breadcrumb-default-display: inline-block !default;
+$breadcrumb-default-font-family: $sans-serif-medium !default;
+$breadcrumb-default-selected-font-family: $sans-serif !default;
+$breadcrumb-default-icon: $ui-next !default;
+
+////////////////
+// Breadcrumbs
+/////////////
+
+.breadcrumb{
+  &__wrapper {
+    background: $grey100;
+    padding: 24px 0;
+    width: 100%;
+    @include breakpoint(small){
+      display: flex;
+    }
+    .social-icons_wrapper {
+      @include breakpoint(small){
+        display: flex;
+      }
+    }
+  }
+  &__links {
+    @include breakpoint(small){
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    ul {
+      margin: 0;
+      li {
+        display: $breadcrumb-default-display;
+        padding: 0;
+        margin-right: 56px;
+        margin-bottom: 8px;
+
+        @include breakpoint(small) {
+          margin-bottom: 0;
+        }
+
+        &:after {
+          @include bbva-font-icon ;
+          color: $breadcrumb-default-color;
+          @include font-size(2.4);
+          font-weight: 500;
+          position: absolute;
+          top: 0px;
+          right: -40px;
+          content: $breadcrumb-default-icon;
+        }
+        &:first-child a {
+          margin-left: 0;
+        }
+        &:last-child {
+          p {
+            color: $blue-medium-wcag;
+            @extend .body-copy;
+          }
+          p,&:after {
+            font-family: $breadcrumb-default-selected-font-family;
+            content: "";
+          }
+        }
+        a {
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  &__social-icons {
+    margin-top: 8px;
+    height: 32px;
+
+    @include breakpoint(small) {
+      margin-top: 0;
+    }
+
+    ul {
+      margin-bottom: 0;
+      justify-content: center;
+      display: flex;
+      @include breakpoint(small){
+        margin-top:0;
+        flex:1;
+      }
+      li {
+        display: $breadcrumb-default-display;
+        padding: 0;
+        margin-right: 32px;
+        margin-bottom: 0;
+
+        @include breakpoint(small){
+          margin-right: 16px;
+        }
+
+        &:after {
+          color: $breadcrumb-default-color;
+          content: "";
+          font-size: 16px;
+          font-weight: 500;
+          position: absolute;
+          right: -24px;
+        }
+        &:last-child {
+          margin-right: 0;
+          p,&:after {
+            font-family: $breadcrumb-default-selected-font-family;
+            content: "";
+          }
+        }
+        a {
+          margin:0;
+          display: block;
+          text-align: center;
+          span {
+            display: flex;
+            &:before {
+              font-size: 32px;
+            }
+          }
+
+          // social colors
+
+          .ui-facebook {
+            color: $color-facebook;
+          }
+          .ui-twitter {
+            color: $color-twitter;
+          }
+          .ui-linkedin {
+            color: $color-linkedin;
+          }
+          .ui-google-plus {
+            color: $color-googleplus;
+          }
+          .ui-pinterest {
+            color: $color-pinterest;
+          }
+        }
+      }
+    }
+  }
+}

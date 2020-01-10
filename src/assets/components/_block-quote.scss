@@ -1,0 +1,97 @@
+/*****  Testimonials  ****/
+
+blockquote {
+	border-bottom: 1px solid $grey200;
+	border-left: none;
+	border-top: 1px solid $grey200;
+	color: $blue-core;
+	margin: 4em 20%;
+	padding: 3em;
+    &.blockquote-aside {
+		display: block;
+		float: right;
+		margin: 3em 1em;
+		padding: 3em 1.75em;
+		position: relative;
+		width: 32%;
+	}
+	
+	p {
+		font-family: $serif;
+		font-size: 1.3125em;
+	}
+	
+	.attribution {
+		color: $grey600;
+		font-size: 1.3125em;
+		font-family: $sans-serif-bold;
+		font-size: 1em;
+		margin-top: -1em;
+	}
+}
+
+.blockquote .column {
+	@include span(4);
+}
+
+.testimonial {
+	background: $grey100;
+	border: none;
+	color: $grey600;
+	margin: 2rem 0 2rem 0;
+	position: relative;
+	padding: 6rem 15%;
+	display: flex;
+	flex-direction: column;
+	@include susy-breakpoint($desktop...) {
+		margin: 8rem 0 6rem 0;
+	}
+	
+	p {
+		@include font-size(2.4);
+		font-family: $serif-italic;
+		line-height: 1.5;
+	}
+	
+	.attribution {
+		font-family: $sans-serif;
+        @include font-size(1.7);
+		margin-top: -1em;
+		text-align: left;
+		align-self: flex-start;
+		max-width: 100%;
+	}
+	
+	&:before {
+		font-family: 'bbva-cm-icons';
+		content: $ico-cm_quotemark;
+		color: $blue-medium;
+		position: absolute;
+		left: 40%;
+		right: 40%;
+        @include font-size(5);
+		top: -3.5rem;
+		text-align: center;
+		@include susy-breakpoint($desktop...) {
+			@include font-size(8.8);
+			top: -6.5rem;
+			left: 91px;
+			text-align: left;
+		}
+	}
+	
+	@include susy-breakpoint($desktop...) {
+		padding: 8rem 8%;
+		 
+			 p {
+			@include font-size(2.4);
+			   
+			   @include font-size(4.5);
+		}
+		
+		.attribution {
+			@include font-size(2.2);
+		}
+	}
+}
+

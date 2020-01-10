@@ -1,0 +1,179 @@
+// Accordions
+// Accordions Colors
+$accordion-secondary-list-hover-default: $blue-medium-ov !default;
+$accordion-secondary-list-focus-default: $blue-medium-wcag !default;
+$accordion-secondary-list-current-page-default: $blue-medium-ov !default;
+
+// line is grey 300 over white but grey 400 over light grey backgrounds
+$accordion-primary-list-border-bottom-default: $grey300 !default;
+$accordion-primary-list-border-top-default: $grey300 !default;
+$accordion-item-default: $blue-medium-wcag !default;
+
+// Accordions Font size and family
+$accordion-secondary-list-font-size-default: 1.5 !default;
+$accordion-secondary-list-font-family-default: $sans-serif !default;
+$accordion-primary-list-font-family-default: $sans-serif-medium !default;
+$accordion-primary-list-font-size-default: 1.3 !default;
+$accordion-item-font-size-default: 2.4 !default;
+
+// Left Accordion item
+$left-accordion-font-family-default: $sans-serif-medium !default;
+$left-accordion-font-size-default: 1.3 !default;
+$left-accordion-item-font-size-default: 2.4 !default;
+
+.accordion {
+  background: $white;
+  margin: 0;
+  min-width: 208px;
+
+
+  &__item:last-child  &__header {
+    border-bottom: 1px solid $accordion-primary-list-border-top-default;
+  }
+
+  &__item:first-child &__header {
+    border-top: none;
+  }
+
+  &__header {
+    display: flex;
+    color: $grey600;
+    background: $white;
+    outline: none;
+    border: none;
+    border-top: 1px solid $accordion-primary-list-border-top-default;
+    width: 100%;
+    padding: 16px 8px 16px 8px;
+    margin-bottom: 1px;
+    position: relative;
+    text-align: left;
+    @extend .body-copy-bold;
+
+
+    @include breakpoint(small) {
+      padding: 24px 56px 24px 40px;
+    }
+
+    &:hover {
+      i {
+        color: $accordion-secondary-list-hover-default;
+      }
+    }
+
+    &:focus {
+      outline: 1px solid $accordion-secondary-list-focus-default;
+    }
+
+    &--active {
+      border-bottom: none !important;
+      i {
+         transform: rotate3d(0, 0, 1, 180deg) !important;
+        //  transform: translateX(-0.02px) rotate(180deg) !important;
+      }
+    }
+
+    i {
+      position: absolute;
+      color: $accordion-item-default;
+      @include font-size($accordion-item-font-size-default);
+      height: 24px;
+      align-self: center;
+      top: calc(50% - 12px);
+      right: 8px;
+      @include transition(transform);
+      transform: rotate3d(0, 0, 1, 0deg);
+
+      @include breakpoint(tablet) {
+        right: 16px;
+      }
+    }
+  }
+
+  &__content {
+    height: 0;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all);
+    overflow: hidden;
+    padding: 0 8px 0 8px;
+
+    @include breakpoint(small) {
+      padding: 0 16px 0 40px;
+    }
+
+    &--active {
+      @include transition(all);
+      height: auto;
+      visibility: visible;
+      opacity: 1;
+      padding-top: 24px;
+      padding-bottom: 40px;
+
+      @include breakpoint(small) {
+        padding-bottom: 48px;
+      }
+    }
+  }
+
+  &__item {
+    padding: 0;
+  }
+
+  &--left-accordion {
+    .accordion__header {
+      padding: 16px 40px 16px 48px;
+      @include breakpoint(small) {
+        padding: 24px 40px 24px 80px;
+      }
+      i {
+        left: 8px;
+        right: inherit;
+        @include breakpoint(small) {
+          left: 16px;
+        }
+      }
+    }
+
+    .accordion__content {
+      padding-left: 48px;
+
+      @include breakpoint(small) {
+        padding-left: 80px;
+      }
+    }
+  }
+
+  &--icon-plus {
+
+    .accordion__header--active {
+      
+      & .ui-add {
+        &:before {
+          @extend .ui-substract;
+        }
+      }
+
+      & .ui-expand {
+        &:before {
+          @extend .ui-collapse;
+        }
+      }
+    }
+  }
+
+  &--alternate {
+    background: $grey100;
+
+    .accordion__header, .accordion__content {
+      background: $grey100;
+    }
+
+    .accordion__header {
+      border-top-color: $grey400;
+    }
+
+    .accordion__header--active {
+      margin-bottom: 0;
+    }
+  } 
+}

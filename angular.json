@@ -28,9 +28,16 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/scss/sk.bbva.scss",
+              "src/assets/css/bbva.megamenu.lc-20191108-085341-lc.min.css",
+              "src/assets/css/bbva.megamenucard.lc-20191108-085341-lc.min.css",
+              "src/assets/css/bbva.searchbar.lc-20191108-085341-lc.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/js/sk.index.js",
+              "src/assets/js/sk.component.js"
+            ]
           },
           "configurations": {
             "production": {

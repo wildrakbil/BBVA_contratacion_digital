@@ -1,0 +1,544 @@
+  /////////////////////////////////////
+ //    Textfields and Textareas     //
+/////////////////////////////////////
+
+  /////////////////////
+ //    Variable     //
+/////////////////////
+
+// colors
+// - clear button colors
+$input-clear-btn-color-white: $blue-medium-wcag !default;
+$input-hover-clear-btn-color-white: $blue-dark !default;
+$input-clear-btn-color-blue: $white !default;
+$input-hover-clear-btn-color-blue: $grey300 !default;
+$input-clear-btn-color-error: $red-error !default;
+$input-hover-clear-btn-color-error: $red !default;
+
+// textarea dimensions
+$input-height-textarea: 128px !default;
+$textarea-padding-val: 24px !default;
+
+// clear button specs
+$input-clear-btn-size: 16px !default;
+$input-clear-btn-text-size: 2.0 !default;
+
+  ////////////////////////////
+ //    Textarea Mixins     //
+////////////////////////////
+
+@mixin hover-textarea-border($color) {
+  box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -moz-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -webkit-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -o-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color; 
+}
+
+    ///////////////////////////////
+   //                           //
+  //    Clear Button Class     //
+ //                           //
+///////////////////////////////
+
+.clear-btn {
+  font-size: 1px;
+  color: transparent;
+  position: absolute;
+  cursor: pointer;
+  border: none;
+  outline: 0px;
+  @include label-top($input-height);
+  right: $default-form-item-margin * 2;
+  width: $input-clear-btn-size;
+  height: $input-clear-btn-size;
+  background-image: none;
+  opacity: 0;
+  display: none;
+  margin: auto;
+
+  // background color white CSS
+  background-color: $input-bg-color-white;
+
+  &:before {
+    @include font-size($input-clear-btn-text-size);
+    line-height: $input-clear-btn-size;
+    width: $input-clear-btn-size;
+    height: $input-clear-btn-size;
+    margin-left: $default-form-item-margin * -1;
+    
+    // background color white CSS
+    color: $input-clear-btn-color-white;
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+  ////////////////////////////////
+ //    Focus, Hover, Active    //
+////////////////////////////////
+
+  &:hover,
+  &:focus,
+  &:active {
+    opacity: 1;
+
+    &:before {
+
+      // background color white CSS
+      color: $input-text-color-white;
+    }
+  }
+
+  /////////////////
+ //    Focus    //
+/////////////////
+
+  &:focus {
+    &:before {
+      @include focus-input-border($input-focus-border);
+      outline: 0px;
+    }
+  }
+}
+
+    //////////////////////////////////////////////////
+   //                                              //
+  //    Textfields Class Extended Input Class     //
+ //                                              //
+//////////////////////////////////////////////////
+
+.textfield {
+  @extend .input;
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+ 
+  ///////////////////////////////////////
+ //    Focus and Active With Value    //
+///////////////////////////////////////
+
+  &:focus ~ .input__label,
+  &:not([value=""]) ~ .input__label,
+  &.input--readonly:not([value=""]):focus ~ .input__label,
+  &.input--active ~ .input__label {
+    @extend .disclaimer-copy;
+    top: $default-form-item-margin;
+    pointer-events: none;
+  }
+
+  &:focus ~ .clear-btn {
+    opacity: 1;
+  }
+
+  &:not([value=""]) ~ .clear-btn {
+    display: block;
+  }
+
+  //////////////////////////////////////////
+ //    Disabled Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--disabled ~ .clear-btn,
+  &:disabled ~ .clear-btn {
+    display: none;
+  }
+
+  //////////////////////////////////////////
+ //    Readonly Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--readonly ~ .clear-btn {
+    display: none;
+  }
+
+  &.input--readonly:focus ~ .input__label {
+    @extend .body-copy;
+    top: $default-form-item-margin * 2;
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Height    //
+  //                        //
+ ////////////////////////////
+
+  &.input--height-48 {
+
+    & ~ .clear-btn {
+      @include label-top($input-height-48);
+    }
+
+    // states
+    // -- Focus and Active With Value
+    &:focus ~ .input__label,
+    &:not([value=""]) ~ .input__label,
+    &.input--readonly:not([value=""]):focus ~ .input__label,
+    &.input--active ~ .input__label {
+      top: $default-form-item-margin / 2;
+    }
+
+    // -- Readonly Attribute and Modfier
+    &.input--readonly:focus ~ .input__label {
+      @include label-top($input-height-48);
+    }
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  /////////////////////////////////
+ //    Background White Grey    //
+/////////////////////////////////
+
+  &.input--bg-white-grey {
+    & ~ .clear-btn { 
+
+      // background color white grey CSS
+      background-color: $input-bg-color-white-grey;
+    }
+  }
+
+  //////////////////////////////////
+ //    Background Blue Medium    //
+//////////////////////////////////
+
+  &.input--bg-blue-medium {
+
+    // element clear button
+    & ~ .clear-btn { 
+
+      // background color blue medium CSS
+      background-color: $input-bg-color-blue-medium;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Core    //
+////////////////////////////////
+
+  &.input--bg-blue-core {
+
+    // element clear button
+    & ~ .clear-btn {
+
+      // background color blue core CSS
+      background-color: $input-bg-color-blue-core;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Dark    //
+////////////////////////////////
+
+  &.input--bg-blue-dark {
+
+    // element clear button
+    & ~ .clear-btn {
+
+      // background color blue dark CSS
+      background-color: $input-bg-color-blue-dark;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  &.input--error ~ .clear-btn {
+    background-color: $input-error-bg-color;
+
+    &:before {
+      color: $input-clear-btn-color-error;
+    }
+
+    // states
+    &:hover,
+    &:focus,
+    &:active {
+      &:before {
+        color: $input-hover-clear-btn-color-error;        
+      }
+    }
+  }
+}
+
+    //////////////////////////////////////////////////////////////
+   //                                                          // 
+  //    Multiple Line Textarea Class Extended Input Class     //
+ //                                                          //
+//////////////////////////////////////////////////////////////
+
+.textarea {
+  @extend .input;
+
+  // base textarea styles
+  resize: none;
+  min-height: $input-height-textarea;
+  padding-top: $textarea-padding-val;
+
+  ////////////////////////////////////
+ //    Element Label Background    //
+////////////////////////////////////
+
+  &__label-bg {
+    position: absolute;
+    width: 99.9%;
+    height: $textarea-padding-val;
+    left: 1px;
+  }
+  
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+ 
+  ///////////////////////////////////////
+ //    Focus and Active With Value    //
+///////////////////////////////////////
+
+  &:empty:focus ~ .input__label,
+  &:not(:empty) ~ .input__label,
+  &.input--readonly:not(:empty):focus ~ .input__label,
+  &.input--active ~ .input__label {
+    @extend .disclaimer-copy;
+    top: $default-form-item-margin;
+    pointer-events: none;
+  }
+
+  &:focus ~ .clear-btn {
+    opacity: 1;
+  }
+
+  &:not(:empty) ~ .clear-btn {
+    display: block;
+  }
+
+  ///////////////////////
+ //    Hover State    //
+///////////////////////
+
+  &:hover {
+    @include hover-textarea-border($input-hover-border-color-white);
+  }
+
+  //////////////////////////////////////////
+ //    Disabled Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--disabled ~ .clear-btn,
+  &:disabled ~ .clear-btn {
+    display: none;
+  }
+
+  //////////////////////////////////////////
+ //    Readonly Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--readonly ~ .clear-btn {
+    display: none;
+  }
+
+  &.input--readonly:empty:focus + .input__label {
+    @extend .body-copy;
+    top: $default-form-item-margin * 2;
+  }
+
+  
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  /////////////////////////////////
+ //    Background White Grey    //
+/////////////////////////////////
+
+  &.input--bg-white-grey {
+    & ~ .clear-btn { 
+
+      // background color white grey CSS
+      background-color: $input-bg-color-white-grey;
+    }
+  }
+
+  //////////////////////////////////
+ //    Background Blue Medium    //
+//////////////////////////////////
+
+  &.input--bg-blue-medium {
+    // states
+    // - focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    // - hover
+    &:hover {
+      @include hover-textarea-border($input-hover-border-color-blue);
+    }
+
+    // element clear button
+    & ~ .clear-btn { 
+
+      // background color blue medium CSS
+      background-color: $input-bg-color-blue-medium;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      &:hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ///////////////////////////////
+ //    Background Blue Core    //
+////////////////////////////////
+
+  &.input--bg-blue-core {
+    // states
+    // - focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    // - hover
+    &:hover {
+      @include hover-textarea-border($input-hover-border-color-blue);
+    }
+
+    // element clear button
+    & ~ .clear-btn {
+
+      // background color blue core CSS
+      background-color: $input-bg-color-blue-core;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      :hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Dark    //
+////////////////////////////////
+
+  &.input--bg-blue-dark {
+    // states
+    // - focus
+    &:focus,
+    &:focus:hover {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    //- hover
+    &:hover {
+      @include hover-textarea-border($input-hover-border-color-blue);
+    }
+
+    // element clear button
+    & ~ .clear-btn {
+
+      // background color blue dark CSS
+      background-color: $input-bg-color-blue-dark;
+
+      &:before {
+        color: $input-clear-btn-color-blue;
+      }
+
+      // states
+      :hover,
+      &:focus,
+      &:active {
+        &:before {
+          color: $input-hover-clear-btn-color-blue;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  &.input--error ~ .clear-btn {
+    background-color: $input-error-bg-color;
+
+    &:before {
+      color: $input-clear-btn-color-error;
+    }
+
+    // states
+    &:hover,
+    &:focus,
+    &:active {
+      &:before {
+        color: $input-hover-clear-btn-color-error;        
+      }
+    }
+  }
+}
+
+

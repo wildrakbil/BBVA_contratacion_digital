@@ -1,0 +1,69 @@
+a.icon-logo-bbva :focus { outline: none; } 
+a:focus:not(.button):after, .links:focus:not(.button):after {
+    border: none;
+    }
+    
+a:hover, a.hovering, .links:hover, .links.hovering {
+     color: #fff;
+}
+.navigation__sections {
+    padding-top: 0px;
+}
+span.links--alternate {
+    font-family: "BentonSansBBVA-Medium", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 24px;
+}
+a.active.user-name {
+    line-height: 24px;
+    font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    letter-spacing: 0;
+}
+a.user-name.search {
+    margin-left: 8px;
+}
+.megamenu__fixed {
+    background-color: rgba(7, 33, 70, 0.5);
+    border-top: 1px solid #004481;
+
+}
+nav.megamenu__flyout {
+    width: auto;
+}
+span.megamenu__navigation__text {
+    width: 171px;
+    line-height: normal;
+    white-space: initial;
+}
+i.ui-next.white {
+    opacity: .7;
+    float: right;
+    margin: 5px 0 5px auto;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+input::placeholder {
+  border-bottom: 1px solid #fff;
+}
+
+.bucador {
+	display: block;
+    font-size: 16px; 
+    cursor: pointer;
+    position: inherit;
+    margin: auto;
+}
+
+span.ui-close.white.bucador {
+
+	position: absolute;
+    right: 0;
+    top: 26px;
+}
+
+input#searchQuery_ece9655e-a322-4130-9856-031d9aaddd07 {
+	padding-left: 8px;
+}

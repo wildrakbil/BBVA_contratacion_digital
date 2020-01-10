@@ -1,0 +1,859 @@
+///////////////////////////
+//    PRIMARY COLORS    //
+/////////////////////////
+
+// Blues
+$blue-core: #004481; // BBVA Core Blue
+$navy: #072146; // BBVA Navy
+$blue-core-ov: #043263; // BBVA Core Dark Blue
+$blue-dark: #0a5393; // New blue Variable name will change maybe
+
+// Medium Blues
+$blue-medium-ov: #1464A5; // BBVA Core Light Blue
+$blue-medium-wcag: #1973b8; // BBVA Medium Blue, Slightly Darkened for WCAG AA Compliance on Color BG's (grey100, blue white light)
+$blue-white-medium: #49A5E6; // BBVA Medium Light Blue
+
+// Light Blues
+$blue-light: #5bbeff; // BBVA Sky Blue
+$blue-white-light: #d4edfc; // BBVA Sky Light Blue
+
+// Blanco
+$white: #ffffff; // Just White
+$white30: rgba(255, 255, 255, 0.3); // White with 30% opacity for dark background fields
+
+// Aquas
+$aqua: #2dcccd; // BBVA Aqua
+$aqua-dark: #028484; // BBVA Aqua Dark
+$aqua-wcag: #02a5a5; // BBVA Aqua Medium, Slightly Darkened for WCAG AA Compliance
+$aqua-light: #5ac4c4; // BBVA Aqua Light
+$aqua-white: #eaf9fa; // BBVA Aqua White
+
+/////////////////////////////
+//    SECONDARY COLORS    //
+///////////////////////////
+
+$grey600: #121212; // BBVA 600
+$grey500: #666666; // BBVA 500
+$grey400: #bdbdbd; // BBVA 400
+$grey300: #d3d3d3; // BBVA 300
+$grey200: #e9e9e9; // BBVA 200
+$grey100: #f4f4f4; // BBVA 100
+
+
+///////////////////////////
+//    TERIARY COLORS    //
+//////////////////////////
+
+// Reds
+$red: #da3851; // BBVA Red
+$red-dark: #b92a45; // BBVA Red Dark
+$red-error: $red-dark; // BBVA Red Dark use for error messages
+$red-medium: #c0475e; // BBVA Red Medium
+$red-light: #e77d8e; // BBVA Red Light
+$red-white: #f4c3ca; // BBVA Red White
+
+// Corals
+$coral: #f35e61; // BBVA Coral
+$coral-dark: #cb353a; // BBVA Coral Dark
+$coral-medium: #d44b50; // BBVA Coral Medium
+$coral-light: #f59799; // BBVA Coral Light
+$coral-white: #fcdfdf; // BBVA Coral White
+
+// Oranges
+$orange: #f7893b; // BBVA Orange
+$orange-dark: #c65302; // BBVA Orange Dark
+$orange-medium: #d8732c; // BBVA Orange Medium
+$orange-light: #fab27f; // BBVA Orange Light
+$orange-white: #fde7d8; // BBVA Orange White
+
+// Yellows
+$yellow: #f8cd51; // BBVA Yellow
+$yellow-dark: #9c6c01; // BBVA Yellow Dark
+$yellow-medium: #c49735; // BBVA Yellow Medium
+$yellow-light: #fade8e; // BBVA Yellow Light
+$yellow-white: #fef5dc; // BBVA Yellow White
+
+// Sands
+$sand: #d8be75; // BBVA Sand
+$sand-dark: #8e7022; // BBVA Sand Dark
+$sand-medium: #b79e5e; // BBVA Sand Medium
+$sand-light: #e6d5a5; // BBVA Sand Light
+$sand-white: #f3ebd5; // BBVA Sand White
+
+// Greens
+$green: #48ae64; // BBVA Green
+$green-dark: #277a3e; // BBVA Green Dark
+$green-medium: #388d4f; // BBVA Green Medium
+$green-light: #88ca9a; // BBVA Green Light
+$green-white: #d9efe0; // BBVA Green White
+
+// Pinks
+$pink: #f78be8; // BBVA Pink
+$pink-dark: #ad53a1; // BBVA Pink Dark
+$pink-medium: #c569b9; // BBVA Pink Medium
+$pink-light: #fab3f0; // BBVA Pink Light
+$pink-white: #fddcf8; // BBVA Pink White
+
+// Purples
+$purple: #8f7ae5; // BBVA Purple
+$purple-dark: #6754b8; // BBVA Purple Dark
+$purple-medium: #7c6ac7; // BBVA Purple Medium
+$purple-light: #b6a8ee; // BBVA Purple Light
+$purple-white: #ddd7f7; // BBVA Purple White
+
+
+///////////////////////////
+//    SPECIAL COLORS    //
+/////////////////////////
+
+$black: #000000; // BBVA Black
+$overlay: rgba(6, 32, 69, 0.25); // Dark Blue Overlay with 25% Opacity
+$blue: #237aba; // "Blue" non-standard color
+$blue-medium: #2a86ca; // "Blue Medium" non-standard color
+$aqua-wcag-dark: #018787; // WCAG AA Copliance Extra "Aqua Dark" Color
+$blue-white: #aacee7; // "White Blue," non-standard color
+$menu-border: transparentize($grey300, .70); // Mobile Menu style color for borders
+
+// Extra Colors for Buttons
+$btn-yellow: #e5b52a; // Yellow Button
+$btn-yellow-dark: #b68c11; // Dark Yellow Button
+$btn-orange-dark: #c4580a; // Dark Orange Button
+$btn-salmon: #f15a5f; // Performance Testing Button Color
+
+// $light-blue Color with opacities
+$blue-white-light-18: lighten($blue-light, 18%); // "White Blue," non-standard color
+$blue-white-light-28: lighten($blue-light, 28%); // "White Blue," non-standard color, Much Lighter
+
+//////////////////////////
+//    SOCIAL COLORS    //
+////////////////////////
+
+$color-facebook: #3b5998; // Blue Facebook
+$color-twitter: #1da1f2; // Baby Blue Twitter
+$color-instagram: #675144; // Brown Instagram
+$color-linkedin: #0077b5; // Blue Linkedin
+$color-googleplus: #dd4b39; // Red Googleplus
+$color-pinterest: #bd081c; // Red Pinterest
+$color-youtube: #bb0000; // Red Youtube
+
+//////////////////////////
+//    STATUS COLORS    //
+////////////////////////
+
+$danger: #d9534f; // Red Errors
+$warning: #f0ad4e; // Orange Warnings
+$success: #5cb85c; // Green Success
+$info: #337ab7; // Blue Information
+
+///////////////////////////
+//    PRIMARY COLORS    //
+/////////////////////////
+
+.blue-core {
+  color: $blue-core;
+}
+
+.bg-blue-core {
+  background-color: $blue-core !important;
+}
+
+.navy {
+  color: $navy;
+}
+
+.bg-navy {
+  background-color: $navy !important;
+}
+
+.blue {
+  color: $blue;
+}
+
+.bg-blue {
+  background-color: $blue;
+}
+
+.blue-medium {
+  color: $blue-medium;
+}
+
+.bg-blue-medium {
+  background-color: $blue-medium;
+}
+
+.blue-medium-wcag {
+  color: $blue-medium-wcag;
+}
+
+.bg-blue-medium-wcag {
+  background-color: $blue-medium-wcag;
+}
+
+.blue-light {
+  color: $blue-light;
+}
+
+.bg-blue-light {
+  background-color: $blue-light;
+}
+
+.blue-medium-ov {
+  color: $blue-medium-ov;
+}
+
+.bg-blue-medium-ov {
+  background-color: $blue-medium-ov;
+}
+
+.blue-core-ov {
+  color: $blue-core-ov;
+}
+
+.bg-blue-core-ov {
+  background-color: $blue-core-ov;
+}
+
+.blue-dark {
+  color: $blue-dark;
+}
+
+.bg-blue-dark {
+  background-color: $blue-dark !important;
+}
+
+.blue-white-medium {
+  color: $blue-white-medium;
+}
+
+.bg-blue-white-medium {
+  background-color: $blue-white-medium;
+}
+
+.blue-white-light {
+  color: $blue-white-light;
+}
+
+.bg-blue-white-light {
+  background-color: $blue-white-light;
+}
+
+/////////////////////////////
+//    SECONDARY COLORS    //
+///////////////////////////
+
+.aqua {
+  color: $aqua;
+}
+
+.bg-aqua {
+  background-color: $aqua;
+}
+
+.aqua-wcag {
+  color: $aqua-wcag;
+}
+
+.bg-aqua-wcag {
+  background-color: $aqua-wcag;
+}
+
+.aqua-white {
+  color: $aqua-white;
+}
+
+.bg-aqua-white {
+  background-color: $aqua-white;
+}
+
+.aqua-light {
+  color: $aqua-light;
+}
+
+.bg-aqua-light {
+  background-color: $aqua-light;
+}
+
+.aqua-dark {
+  color: $aqua-dark;
+}
+
+.bg-aqua-dark {
+  background-color: $aqua-dark;
+}
+
+.aqua-wcag-dark{
+  color: $aqua-wcag-dark;
+}
+
+.bg-aqua-wcag-dark{
+  background-color: $aqua-wcag-dark;
+}
+
+.grey600 {
+  color: $grey600;
+}
+
+.bg-grey600 {
+  background-color: $grey600;
+}
+
+.grey500 {
+  color: $grey500;
+}
+
+.bg-grey500 {
+  background-color: $grey500;
+}
+
+.grey400 {
+  color: $grey400;
+}
+
+.bg-grey400 {
+  background-color: $grey400;
+}
+
+.grey300 {
+  color: $grey300;
+}
+
+.bg-grey300 {
+  background-color: $grey300;
+}
+
+.grey200 {
+  color: $grey200;
+}
+
+.bg-grey200 {
+  background-color: $grey200;
+}
+
+.grey100 {
+  color: $grey100;
+}
+
+.bg-grey100 {
+  background-color: $grey100 !important;
+}
+
+.white {
+  color: $white;
+}
+
+.bg-white {
+  background-color: $white;
+}
+
+///////////////////////////////
+//    TERIARY COLORS        //
+/////////////////////////////
+
+.red {
+  color: $red;
+}
+
+.bg-red {
+  background-color: $red;
+}
+
+.red-white {
+  color: $red-white;
+}
+
+.bg-red-white {
+  background-color: $red-white;
+}
+
+.red-light {
+  color: $red-light;
+}
+
+.bg-red-light {
+  background-color: $red-light;
+}
+
+.red-dark {
+  color: $red-dark;
+}
+
+.bg-red-dark {
+  background-color: $red-dark;
+}
+
+.red-error {
+  color: $red-error;
+}
+
+.bg-red-error {
+  background-color: $red-error;
+}
+
+.red-medium {
+  color: $red-medium;
+}
+
+.bg-red-medium {
+  background-color: $red-medium;
+}
+
+.coral {
+  color: $coral;
+}
+
+.bg-coral {
+  background-color: $coral;
+}
+
+.coral-white {
+  color: $coral-white;
+}
+
+.bg-coral-white {
+  background-color: $coral-white;
+}
+
+.coral-light {
+  color: $coral-light;
+}
+
+.bg-coral-light {
+  background-color: $coral-light;
+}
+
+.coral-dark {
+  color: $coral-dark;
+}
+
+.bg-coral-dark {
+  background-color: $coral-dark;
+}
+
+.coral-medium {
+  color: $coral-medium;
+}
+
+.bg-coral-medium {
+  background-color: $coral-medium;
+}
+
+.orange {
+  color: $orange;
+}
+
+.bg-orange {
+  background-color: $orange;
+}
+
+.orange-white {
+  color: $orange-white;
+}
+
+.bg-orange-white {
+  background-color: $orange-white;
+}
+
+.orange-light {
+  color: $orange-light;
+}
+
+.bg-orange-light {
+  background-color: $orange-light;
+}
+
+.orange-dark {
+  color: $orange-dark;
+}
+
+.bg-orange-dark {
+  background-color: $orange-dark;
+}
+
+.orange-medium {
+  color: $orange-medium;
+}
+
+.bg-orange-medium {
+  background-color: $orange-medium;
+}
+
+.yellow {
+  color: $yellow;
+}
+
+.bg-yellow {
+  background-color: $yellow;
+}
+
+.yellow-white {
+  color: $yellow-white;
+}
+
+.bg-yellow-white {
+  background-color: $yellow-white;
+}
+
+.yellow-light {
+  color: $yellow-light;
+}
+
+.bg-yellow-light {
+  background-color: $yellow-light;
+}
+
+.yellow-medium {
+  color: $yellow-medium;
+}
+
+.bg-yellow-medium {
+  background-color: $yellow-medium;
+}
+
+.yellow-dark {
+  color: $yellow-dark;
+}
+
+.bg-yellow-dark {
+  background-color: $yellow-dark;
+}
+
+.sand {
+  color: $sand;
+}
+
+.bg-sand {
+  background-color: $sand;
+}
+
+.sand-white {
+  color: $sand-white;
+}
+
+.bg-sand-white {
+  background-color: $sand-white;
+}
+
+.sand-light {
+  color: $sand-light;
+}
+
+.bg-sand-light {
+  background-color: $sand-light;
+}
+
+.sand-dark {
+  color: $sand-dark;
+}
+
+.bg-sand-dark {
+  background-color: $sand-dark;
+}
+
+.sand-medium {
+  color: $sand-medium;
+}
+
+.bg-sand-medium {
+  background-color: $sand-medium;
+}
+
+.green {
+  color: $green;
+}
+
+.bg-green {
+  background-color: $green;
+}
+
+.green-white {
+  color: $green-white;
+}
+
+.bg-green-white {
+  background-color: $green-white;
+}
+
+.green-light {
+  color: $green-light;
+}
+
+.bg-green-light {
+  background-color: $green-light;
+}
+
+.green-dark {
+  color: $green-dark;
+}
+
+.bg-green-dark {
+  background-color: $green-dark;
+}
+
+.green-medium {
+  color: $green-medium;
+}
+
+.bg-green-medium {
+  background-color: $green-medium;
+}
+
+.pink {
+  color: $pink;
+}
+
+.bg-pink {
+  background-color: $pink;
+}
+
+.pink-white {
+  color: $pink-white;
+}
+
+.bg-pink-white {
+  background-color: $pink-white;
+}
+
+.pink-light {
+  color: $pink-light;
+}
+
+.bg-pink-light {
+  background-color: $pink-light;
+}
+
+.pink-dark {
+  color: $pink-dark;
+}
+
+.bg-pink-dark {
+  background-color: $pink-dark;
+}
+
+.pink-medium {
+  color: $pink-medium;
+}
+
+.bg-pink-medium {
+  background-color: $pink-medium;
+}
+
+.purple {
+  color: $purple;
+}
+
+.bg-purple {
+  background-color: $purple;
+}
+
+.purple-white {
+  color: $purple-white;
+}
+
+.bg-purple-white {
+  background-color: $purple-white;
+}
+
+.purple-light {
+  color: $purple-light;
+}
+
+.bg-purple-light {
+  background-color: $purple-light;
+}
+
+.purple-dark {
+  color: $purple-dark;
+}
+
+.bg-purple-dark {
+  background-color: $purple-dark;
+}
+
+.purple-medium {
+  color: $purple-medium;
+}
+
+.bg-purple-medium {
+  background-color: $purple-medium;
+}
+
+///////////////////////////
+//    SPECIAL COLORS    //
+/////////////////////////
+
+.black {
+ color: $black;
+}
+
+.bg-black {
+  background-color: $black;
+}
+
+.blue-white {
+ color: $blue-white;
+}
+
+.bg-blue-white {
+  background-color: $blue-white;
+}
+
+.btn-yellow {
+ color: $btn-yellow;
+}
+
+.bg-btn-yellow {
+  background-color: $btn-yellow;
+}
+
+.btn-yellow-dark {
+ color: $btn-yellow-dark;
+}
+
+.bg-btn-yellow-dark {
+  background-color: $btn-yellow-dark;
+}
+
+.btn-orange-dark {
+ color: $btn-orange-dark;
+}
+
+.bg-btn-orange-dark {
+  background-color: $btn-orange-dark;
+}
+
+.btn-salmon {
+ color: $btn-salmon;
+}
+
+.bg-btn-salmon {
+  background-color: $btn-salmon;
+}
+
+.overlay {
+  color: $overlay;
+}
+
+.bg-overlay {
+  background-color: $overlay;
+}
+
+.blue-white-light-28 {
+  color: $blue-white-light-28;
+}
+
+.bg-blue-white-light-28 {
+  background-color: $blue-white-light-28;
+}
+
+.blue-white-light-18 {
+  color: $blue-white-light-18;
+}
+
+.bg-blue-white-light-18 {
+  background-color: $blue-white-light-18;
+}
+
+.menu-border {
+  color: $menu-border;
+}
+
+.bg-menu-border {
+  background-color: $menu-border;
+}
+
+/////////////////////////
+//    SOCIAL COLORS   //
+///////////////////////
+
+.color-facebook {
+  color: $color-facebook;
+}
+
+.bg-color-facebook {
+  background-color: $color-facebook;
+}
+
+.color-twitter {
+  color: $color-twitter;
+}
+
+.bg-color-twitter {
+  background-color: $color-twitter;
+}
+
+.color-instagram {
+  color: $color-instagram;
+}
+
+.bg-color-instagram {
+  background-color: $color-instagram;
+}
+
+.color-linkedin {
+  color: $color-linkedin;
+}
+
+.bg-color-linkedin {
+  background-color: $color-linkedin;
+}
+
+.color-googleplus {
+  color: $color-googleplus;
+}
+
+.bg-color-googleplus {
+  background-color: $color-googleplus;
+}
+
+.color-pinterest {
+  color: $color-pinterest;
+}
+
+.bg-color-pinterest {
+  background-color: $color-pinterest;
+}
+
+.color-youtube {
+  color: $color-youtube;
+}
+
+.bg-color-youtube {
+  background-color: $color-youtube;
+}
+
+/////////////////////////
+//    STATUS COLORS   //
+///////////////////////
+
+.danger {
+  color: $danger;
+}
+
+.bg-danger {
+  background-color: $danger;
+}
+
+.warning {
+  color: $warning;
+}
+
+.bg-warning {
+  background-color: $warning;
+}
+
+.success {
+  color: $success;
+}
+
+.bg-success {
+  background-color: $success;
+}
+
+.info {
+  color: $info;
+}
+
+.bg-info {
+  background-color: $info;
+}
+

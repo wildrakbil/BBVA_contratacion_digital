@@ -1,0 +1,81 @@
+/////////////////////
+//   Prefooter    //
+///////////////////
+
+$pre-footer-background-color: $white !default;
+$pre-footer-border-bottom: 1px solid $grey300 !default;
+$pre-footer-copy-color: $grey500 !default;
+$pre-footer-mobile-padding: 32px !default;
+$pre-footer-desktop-padding: 64px !default;
+
+
+///////////////////////////////////////
+//   Prefooter - Alternate Color    //
+/////////////////////////////////////
+
+$pre-footer-alternative-background-color: $grey100 !default;
+
+
+.pre-footer {
+  background-color: $pre-footer-background-color;
+  padding-top: $pre-footer-mobile-padding;
+  padding-bottom: $pre-footer-mobile-padding;
+
+  &--alternative {
+    background: $pre-footer-alternative-background-color;
+  }
+
+  .dividers__container {
+    margin: 16px 0 24px 0;
+  }
+
+  @include breakpoint(large) {
+    padding-top: $pre-footer-desktop-padding;
+    padding-bottom: $pre-footer-desktop-padding;
+    .dividers__container {
+      display: none;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    @extend .body-copy-bold;
+  }
+  
+
+  &__nav {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 0;
+
+      li {
+        padding: 8px 0;
+        flex: 1 0 50%;
+        @include breakpoint(large) {
+          flex: 1 0 100%;
+          padding: 8px 0 0 0;
+        }
+        a {
+          @include breakpoint(large) {
+            margin-bottom: -8px;
+          }
+        }
+      }
+    }
+  }
+
+  &__message {
+    a {
+      word-break: avoid;
+    }
+    .body-copy {
+      color: $pre-footer-copy-color;
+      margin-bottom: 16px;
+    }
+
+    .pre-footer__title {
+      margin-bottom: 16px;
+    }
+  }
+}

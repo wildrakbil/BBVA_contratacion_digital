@@ -1,0 +1,289 @@
+//Background Colors
+//Modifier for background color: Aqua
+$aqua-default: $aqua !default;
+$aqua-selector-default: $aqua-white !default;
+//Modifier for background color: Blue Medium 
+$blue-medum-default: $blue-medium-wcag !default;
+$blue-medium-selector-default: $blue-core !default;
+$blue-medium-shape-color-default: $blue-core-ov !default;
+//Modifier for background color: Blue Core
+$blue-core-default: $blue-core !default;
+$blue-core-selector-default: $blue !default;
+//Modifier for background color: Core Light Blue
+$core-light-blue-default: $blue-medium-ov !default;
+$core-light-blue-selector-default: $blue-core-ov !default;
+//Modifier for background color: Md Light Blue
+$md-light-blue-default: $blue-white-medium !default;
+$md-light-blue-selector-default: $blue-core !default;
+$md-light-blue-shape-selector-default: $blue-core-ov !default;
+//Modifier for background color: Sky Blue 
+$sky-blue-default: $blue-light !default;
+$sky-blue-selector-default: $blue-medium-wcag !default;
+$sky-blue-shape-selector-default: $blue-core !default;
+//Modifier for background color: Navy 
+$backgrounds-navy-default: $navy !default;
+$backgrounds-navy-selector-default: $blue !default;
+//Modifier for background color: Core Dark Blue 
+$core-dark-blue-default: $blue-core-ov !default;
+$core-dark-blue-selector-default: $blue !default;
+//Modifier for background color: Aqua Dark
+$aqua-dark-default: $aqua-wcag-dark !default;
+$aqua-dark-selector-default: $aqua-white !default;
+//Modifier for background color: Aqua Light
+$aqua-light-default: $aqua-light !default;
+$aqua-light-selector-default: $aqua-white !default;
+//Modifier for background color: bg grey 200
+$bg-grey-200-default: $grey200 !default;
+$bg-grey-200-selector-default: $grey400 !default;
+//Modifier for background color: bg grey 100
+$bg-grey-100-default: $grey100 !default;
+$bg-grey-100-selector-default: $grey300 !default;
+///////////////////
+// PROMO BANNER //
+/////////////////
+//Modifier for background color: bg medium Spotlight outer
+$bg-medium-spotlight-outer-selector-default: $blue-light !default;
+//Modifier for background color: bg blue core Spotlight outer
+$bg-core-spotlight-outer-selector-default: $blue !default;
+//Modifier for background color: bg aqua core Spotlight outer
+$bg-aqua-spotlight-outer-selector-default: $aqua-white !default;
+.backgrounds {
+  width: 100%;
+  height: 610px; //////////////////////////////
+  // BG WITH IMG STARTS HERE //
+  ////////////////////////////
+  position: relative;
+  &__banner {
+    background-size: cover;
+    background-position: center bottom;
+    display: flex;
+    height: auto;
+    max-height: 100%;
+    position: relative;
+    overflow: hidden;
+    flex-direction: column; //media for backgrounds__banner element for large screens
+    @include breakpoint(large) {
+      flex-direction: row;
+      max-height: 452px;
+      height: 452px;
+      .blue-core-img {
+        &:before {
+          background: $blue-medium-ov;
+        }
+        &:after {
+          background: $blue-medium-ov;
+        }
+      }
+      .blue-medium-img {
+        &:before {
+          background: $blue-core-ov;
+        }
+        &:after {
+          background: $blue-core-ov;
+        }
+      }
+      .bg-aqua-img {
+        &:before {
+          background: $aqua-wcag;
+        }
+        &:after {
+          background: $aqua-wcag;
+        }
+      }
+    }
+  } //media for global backgrounds class for large screens
+  @include breakpoint(large) {
+    &__image-cover-color {
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      right: -320px;
+      background: $black;
+      opacity: 0.1;
+      -webkit-transform: skew(-58deg);
+      transform: skew(-234deg);
+      border-right: none;
+      z-index: 2;
+      &--aqua {
+        background: $aqua-dark-default;
+      }
+    }
+    &__image-cover-color-left {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      left: -499px;
+      background: $black;
+      opacity: 0.1;
+      -webkit-transform: skew(-58deg);
+      -ms-transform: skew(-234deg);
+      transform: skew(-105deg);
+      border-right: none;
+      z-index: 2;
+      top: 91px;
+      &--aqua {
+        background: $aqua-dark-default;
+      }
+    }
+  }
+  &__banner-content {
+    display: flex;
+    order: 2;
+    text-align: center;
+    width: 100%;
+    padding: 3rem 5rem;
+    min-height: 340px;
+    position: relative;
+    top: 320px;
+    @include breakpoint(large) {
+      order: 1;
+      flex-grow: 2;
+      padding: 5rem;
+      width: 50%;
+      text-align: left;
+      min-height: 452px;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+    }
+  }
+  .image-cover {
+    z-index: 1;
+    order: 1;
+    position: absolute;
+    width: 100%;
+    right: 0;
+    height: 300px;
+    transform: skewY(186deg); // IE 9 prefix
+    -ms-transform: skewY(186deg); // Safari and Chrome prefix
+    -webkit-transform: skewY(186deg); // Media for Imag manipulation for large screens
+    @include breakpoint(large) {
+      right: -132px;
+      width: 60%;
+      height: 452px;
+      transform: skew(30deg); // IE 9 prefix
+      -ms-transform: skew(30deg); // Safari and Chrome prefix
+      -webkit-transform: skew(30deg);
+      overflow: hidden;
+      z-index: 1;
+      position: absolute;
+      display: flex;
+    }
+    &__banner-image {
+      width: 100%;
+      height: 340px;
+      max-height: 452px;
+      position: absolute;
+      bottom: -7px;
+      transform: skewY(-190deg); // IE 9 prefix
+      -ms-transform: skewY(-190deg); // Safari and Chrome prefix
+      -webkit-transform: skewY(-190deg); // media for image size height, less than 769px
+      
+      //media for large screens up to 769
+      @include breakpoint(large) {
+        order: 2;
+        height: 452px;
+        max-height: 452px;
+        position: absolute;
+        right: 132px;
+        height: 100%;
+        transform: skew(-30deg); // IE 9 prefix
+        -ms-transform: skew(-30deg); // Safari and Chrome prefix
+        -webkit-transform: skew(-30deg);
+        width: 100%;
+        bottom: 0;
+      }
+    }
+  }
+}
+
+/****IE and FF support SVG*/
+
+.spotlight-svg,
+.spotlight-withimg-svg {
+  width: 100%;
+  height: 640px;
+  position: relative;
+  &--bg-blue-core-ov {
+    background-color: $blue-core-ov;
+  }
+  &--bg-blue-medium-wcag{
+    background-color: $blue-medium-wcag;
+  }
+  &--bg-aqua {
+    background-color: $aqua;
+  } 
+  @include breakpoint (large) {
+    height: auto;
+    &--bg-blue-core-ov {
+      background-color: $white;
+    }
+    &--bg-blue-medium-wcag {
+      background-color: $white;
+    }
+    &--bg-aqua {
+      background-color: $white;
+    }
+  }
+}
+
+.spotlight-svg svg,
+.spotlight-withimg-svg svg {
+  position: absolute;
+  width: 100%;
+  display: block;
+  top: 30px;
+  left: 0px;
+  border-right: 1px solid transparent;
+  #core-blue-img-rectangle-2 {
+    display: none;
+  } //BBVA Medium Blue With Image
+  #medium-blue-img-rectangle-2 {
+    display: none;
+  } //BBVA Aqua With Image
+  #aqua-img-rectangle-2 {
+    display: none;
+  }
+  
+  @include breakpoint(small) {
+    height: 100%; 
+    top: 0;
+  }
+  @include breakpoint(large) {
+    
+    top: 0; //BBVA Core Blue With Image
+    #core-blue-img-rectangle-1 {
+      display: none;
+    }
+    #core-blue-img-rectangle-2 {
+      display: none;
+    }
+    #core-blue-img-path-2 {
+      display: none;
+    } //BBVA medium blue with image 2
+    #medium-blue-img-rectangle-1 {
+      display: none;
+    }
+    #medium-blue-img-rectangle-2 {
+      display: none;
+    }
+    #medium-blue-img-path-2 {
+      display: none;
+    } //BBVA Aqua With Image
+    #aqua-img-rectangle-1 {
+      display: none;
+    }
+    #aqua-img-rectangle-2 {
+      display: none;
+    }
+    #aqua-img-path-2 {
+      display: none;
+    }
+  }
+}
+
+.spotlight-svg rect,
+.spotlight-withimg-svg rect {
+  position: relative;
+  fill-opacity: 0;
+}

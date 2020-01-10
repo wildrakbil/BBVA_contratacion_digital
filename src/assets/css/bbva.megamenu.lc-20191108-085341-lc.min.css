@@ -1,0 +1,154 @@
+.megamenu{position:relative;zoom:1;width:100%;display:block}
+.megamenu::before,.megamenu::after{content:' ';display:block;height:0;width:0;overflow:hidden}
+.megamenu::after{clear:both}
+.megamenu__fixed{position:fixed;z-index:13;width:100%;top:0;background-color:#072146;margin-top:-120vh;max-height:calc(100vh - 48px);min-height:calc(100vh - 48px);overflow:hidden;-webkit-transition:margin-top .33333s;transition:margin-top .33333s}
+@media(min-width:992px){.megamenu__fixed{background-color:#043263}
+}
+@media all and (-ms-high-contrast:none),(-ms-high-contrast:active){.megamenu__fixed{margin-top:-120%;-ms-overflow-style:none}
+}
+@media(min-width:992px){.megamenu__fixed{max-height:calc(100vh - 88px);min-height:calc(100vh - 88px)}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__fixed{position:relative}
+}
+.megamenu__fixed .megamenu--preventfocus{display:none}
+.megamenu__trigger{cursor:pointer;width:100%}
+@media(min-width:992px){.megamenu__trigger{width:5.6em}
+}
+.megamenu__trigger__open{display:block}
+.megamenu__trigger__open i{font-size:24px;margin-left:8px}
+.megamenu__trigger__close{display:none}
+.megamenu__trigger__close i{font-size:24px;margin-left:8px}
+.megamenu__trigger.megamenu--open .megamenu__trigger__open{display:none}
+.megamenu__trigger.megamenu--open .megamenu__trigger__close{white-space:nowrap;display:block}
+.megamenu__container{display:block;float:left;width:100%;position:relative}
+.megamenu__navigation__container{background-color:#072146;position:absolute;padding:0;overflow-y:auto;right:0;top:0;z-index:13}
+@media(min-width:0) and (max-width:991px){.megamenu__navigation__container{position:relative;overflow-y:visible}
+}
+.keyboard-focus .megamenu__navigation__container a:focus{outline:1px solid #1d73b2;outline-offset:4px}
+@media(min-width:0) and (max-width:991px){.megamenu__navigation{width:100%;position:relative;float:left;clear:both;margin:0;padding:0}
+}
+@media(min-width:992px) and (max-width:1199px){.megamenu__navigation{width:300px}
+}
+@media(min-width:1200px){.megamenu__navigation{width:280px}
+}
+@media(min-width:992px){.megamenu__navigation{display:block;float:left;min-height:calc(100vh - 88px);max-height:calc(100vh - 88px)}
+.megamenu__navigation.megamenu--expanded{width:50vw}
+.sticky .megamenu__navigation{min-height:calc(100vh - 48px);max-height:calc(100vh - 48px)}
+}
+.megamenu__navigation__link{font-family:"BentonSansBBVA-Book",Helvetica,Arial,sans-serif;font-size:16px;color:#fff;text-align:left;letter-spacing:0;line-height:16px;opacity:.7}
+@media(min-width:600px){.megamenu__navigation__link{font-size:20px}
+}
+@media(min-width:992px){.megamenu__navigation__link{font-size:16px}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__navigation__link{width:100%;max-height:100%;display:block;padding:0 24px;line-height:56px;-webkit-box-sizing:border-box;box-sizing:border-box}
+.accordion--mobile .megamenu__navigation__link.accordion__list__item__heading{font-family:"BentonSansBBVA-Book",Helvetica,Arial,sans-serif;font-size:16px;color:#fff;text-align:left;letter-spacing:0;line-height:16px;opacity:1;border-bottom:1px solid #29507a;line-height:24px;padding:16px 16px 14px 24px}
+}
+@media(min-width:0) and (max-width:991px) and (min-width:600px){.accordion--mobile .megamenu__navigation__link.accordion__list__item__heading{font-size:20px}
+}
+@media(min-width:0) and (max-width:991px) and (min-width:992px){.accordion--mobile .megamenu__navigation__link.accordion__list__item__heading{font-size:16px}
+}
+@media(min-width:0) and (max-width:991px){.accordion--mobile .megamenu__navigation__link.accordion--nosubmenu{border-bottom:1px solid #29507a}
+}
+@media(min-width:600px) and (max-width:991px){.megamenu__navigation__link{font-size:16px}
+}
+@media(min-width:992px){.megamenu__navigation__link{line-height:32px;height:32px;width:100%;display:block}
+.megamenu__navigation__link .bbva-icon{opacity:.7;float:right;margin:5px 0 5px auto}
+}
+.megamenu__navigation__link--active,.megamenu__navigation__link:focus,.megamenu__navigation__link:active,.megamenu__navigation__link:hover{opacity:1}
+.megamenu__navigation__link--active .bbva-icon,.megamenu__navigation__link:focus .bbva-icon,.megamenu__navigation__link:active .bbva-icon,.megamenu__navigation__link:hover .bbva-icon{opacity:1}
+.megamenu__navigation__link:focus{outline:0}
+.megamenu__navigation__text{display:inline-block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;max-width:calc(100% - 22px)}
+.megamenu__navigation__home{font-family:"BentonSansBBVA-Book",Helvetica,Arial,sans-serif;font-size:16px;color:#fff;text-align:left;letter-spacing:0;line-height:56px;width:100%;max-height:100%;display:block;padding:0 16px;-webkit-box-sizing:border-box;box-sizing:border-box;opacity:.7;border-bottom:1px solid #29507a}
+@media(min-width:600px){.megamenu__navigation__home{font-size:20px}
+}
+@media(min-width:992px){.megamenu__navigation__home{display:none}
+}
+.megamenu__navigation__home .bbva-icon{color:#49a5e6;line-height:20px;font-size:20px}
+.megamenu__navigation__highlight{font-family:"BentonSansBBVA-Bold",Helvetica,Arial,sans-serif;font-size:16px;color:#fff;text-align:left;letter-spacing:0;line-height:20px;opacity:.7}
+@media(min-width:0) and (max-width:991px){.megamenu__navigation__highlight{padding:0 24px;display:-webkit-box;display:-ms-flexbox;display:flex;line-height:16px;min-height:56px}
+}
+@media(min-width:992px){.megamenu__navigation__highlight{padding:6px 0}
+}
+.megamenu__navigation__highlight--active,.megamenu__navigation__highlight:focus,.megamenu__navigation__highlight:active,.megamenu__navigation__highlight:hover{opacity:1}
+.megamenu__navigation__title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+@media(min-width:992px) and (max-width:1199px){.megamenu__flyout{width:calc(50vw - 360px);margin:32px}
+.megamenu--expanded .megamenu__flyout{max-width:192px}
+}
+@media(min-width:1200px){.megamenu__flyout{width:238px;margin:32px}
+}
+.megamenu__flyout__extraslinks{padding:0 16px;display:block;float:left;width:100%}
+.megamenu__flyout__extraslinks:last-child{padding-bottom:112px}
+.megamenu__flyout__extraslinks>div:first-child{border-top:1px solid #2b4261;padding-top:16px}
+.megamenu__flyout__extraslinks>div:last-child{border-bottom:1px solid #2b4261;padding-bottom:16px}
+.megamenu__flyout__extraslinks .header__createaccount,.megamenu__flyout__extraslinks .header__access{font-family:"BentonSansBBVA-Book",Helvetica,Arial,sans-serif;font-size:12px;line-height:28px;text-align:left;margin:0;line-height:32px}
+.megamenu__flyout__extraslinks .header__access{color:#fff;opacity:.7}
+.megamenu__flyout__extraslinks .header__access .bbva-icon{color:#1d73b2}
+@media(min-width:992px){.megamenu__flyout__extraslinks{display:none}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout--nonmobile{display:none}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__list{background-color:#043263}
+}
+.megamenu__flyout__title{font-family:"BentonSansBBVA-Medium",Helvetica,Arial,sans-serif;font-size:18px;color:#fff;letter-spacing:normal;line-height:24px;color:#fff}
+@media(min-width:600px){.megamenu__flyout__title{font-size:22px;line-height:32px}
+}
+@media(min-width:0) and (max-width:1199px){.megamenu__flyout__title{margin-bottom:8px}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__title{display:none}
+}
+.megamenu__flyout__linkwithicon{margin-top:0;padding-top:32px;padding-bottom:32px;width:100%;float:left;display:block;clear:both}
+@media(min-width:992px){.megamenu__flyout__linkwithicon{border-top:1px solid rgba(255,255,255,0.15);margin-top:16px;padding-top:16px}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__linkwithicon{display:none}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__linkwithicon--mobile{background-color:#072146;display:block;float:left;width:100%;clear:both;padding:16px 16px}
+}
+@media(min-width:992px){.megamenu__flyout__linkwithicon--mobile{display:none}
+}
+.megamenu__flyout--langs .megamenu__flyout__linkwithicon{padding-bottom:0}
+.megamenu__flyout__linkwithicon .bbva-icon{color:#1d73b2}
+.megamenu__flyout__languages{clear:both;padding:16px 0;margin:16px 8px;float:left;width:calc(100% - 16px)}
+@media(min-width:992px){.megamenu__flyout__languages{margin-top:0}
+}
+.megamenu__flyout__languages--mobile{padding:0 16px 114px}
+@media(min-width:992px){.megamenu__flyout__languages--mobile{display:none}
+}
+@media(min-width:992px){.megamenu__flyout__secondary{position:absolute;height:100%;right:0;top:0;border-left:1px solid #2b4261;margin-top:32px;padding:32px;opacity:0;max-height:calc(100vh - 152px);min-height:calc(100vh - 152px);min-width:300px;pointer-events:none}
+.megamenu__flyout__secondary a,.megamenu__flyout__secondary span{pointer-events:none;position:relative;display:none}
+.megamenu__flyout__secondary.megamenu--expanded{pointer-events:auto;opacity:1;display:block}
+.megamenu__flyout__secondary.megamenu--expanded a,.megamenu__flyout__secondary.megamenu--expanded span{pointer-events:auto;position:relative;display:block;height:auto;min-height:32px;line-height:16px}
+}
+.megamenu__flyout__secondary .accordion__list__content{position:relative}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__secondary .accordion__list__content{padding-left:24px;overflow-y:hidden}
+}
+@media(min-width:992px){.megamenu__flyout__secondary .accordion__list__content--haschilden ul{margin-left:8px}
+}
+@media(min-width:0) and (max-width:991px){.megamenu__flyout__secondary{background-color:#072146}
+.megamenu__flyout__secondary .megamenu__flyout__linkwithicon{width:calc(100% - 32px);border-top:1px solid #2b4261;margin:0 16px;padding:0}
+.megamenu__flyout__secondary .megamenu__flyout__linkwithicon .megamenu__navigation__link{padding:0 8px}
+}
+@media(min-width:992px) and (max-width:1199px){.megamenu__flyout__secondary{width:calc(100% - 240px)}
+}
+@media(min-width:1200px){.megamenu__flyout__secondary{width:calc(100% - 294px)}
+}
+.megamenu__flyout__secondary.megamenu--expanded{pointer-events:initial;opacity:1}
+.megamenu__body--lock .general-wrapper{overflow:hidden;position:fixed;height:100vh;width:100%}
+@media(min-width:992px){.megamenu__body--lock{position:static}
+}
+.megamenu__body--lock .mainnavigation__link{border-bottom:0}
+@media(min-width:0) and (max-width:991px){.megamenu__body--lock.sticky .megamenu__fixed{margin-top:0;-webkit-transition:none;transition:none}
+}
+.megamenu__body--lock .megamenu__fixed{border-top:1px solid rgba(255,255,255,0.15)}
+@media(min-width:992px){.megamenu--fade .megamenu__card__link{pointer-events:none}
+}
+.megamenu--open .megamenu__fixed{margin-top:48px;top:0;overflow:hidden}
+@media(min-width:0) and (max-width:991px){.megamenu--open .megamenu__fixed{overflow:auto;max-height:calc(100vh - 48px);min-height:calc(100vh - 48px)}
+}
+@media(min-width:992px){.megamenu--open .megamenu__fixed{margin-top:72px}
+.sticky .megamenu--open .megamenu__fixed{margin-top:48px;max-height:calc(100vh - 48px);min-height:calc(100vh - 48px)}
+}
+@media(min-width:0) and (max-width:991px){.megamenu--open.header__container{width:100%;position:fixed}
+}
+.megamenu--hidden{display:none}
+@media(min-width:992px){.megamenu__mainnavigation--mobile{display:none}
+}

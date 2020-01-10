@@ -1,0 +1,156 @@
+// Durations
+$mobile-animation-duration: 375;
+$tablet-animation-duration: (30/100) * $mobile-animation-duration;
+$desktop-animation-duration: 200;
+
+// Curves
+$standard-curve: cubic-bezier(0.4, 0.0, 0.2, 1);
+$deceleration-curve: cubic-bezier(0.0, 0.0, 0.2, 1);
+$acceleration-curve: cubic-bezier(0.4, 0.0, 1, 1);
+$sharp-curve: cubic-bezier(0.4, 0.0, 0.6, 1);
+//
+$principal-curve: cubic-bezier(0.25, .1, 0.25, 1);
+// Transitions
+@mixin transition($property, $curve: standard) {
+  @if $curve==standard {
+    -moz-transition: $property $mobile-animation-duration*1ms $standard-curve;
+    -o-transition: $property $mobile-animation-duration*1ms $standard-curve;
+    -webkit-transition: $property $mobile-animation-duration*1ms $standard-curve;
+    transition: $property $mobile-animation-duration*1ms $standard-curve;
+    @include breakpoint(tablet) {
+      -moz-transition: $property $tablet-animation-duration*1ms $standard-curve;
+      -o-transition: $property $tablet-animation-duration*1ms $standard-curve;
+      -webkit-transition: $property $tablet-animation-duration*1ms $standard-curve;
+      transition: $property $tablet-animation-duration*1ms $standard-curve;
+    }
+    @include breakpoint(small) {
+      -moz-transition: $property $desktop-animation-duration*1ms $standard-curve;
+      -o-transition: $property $desktop-animation-duration*1ms $standard-curve;
+      -webkit-transition: $property $desktop-animation-duration*1ms $standard-curve;
+      transition: $property $desktop-animation-duration*1ms $standard-curve;
+    }
+  }
+  @else if $curve==deceleration {
+    -moz-transition: $property $mobile-animation-duration*1ms $deceleration-curve;
+    -o-transition: $property $mobile-animation-duration*1ms $deceleration-curve;
+    -webkit-transition: $property $mobile-animation-duration*1ms $deceleration-curve;
+    transition: $property $mobile-animation-duration*1ms $deceleration-curve;
+    @include breakpoint(tablet) {
+      -moz-transition: $property $tablet-animation-duration*1ms $deceleration-curve;
+      -o-transition: $property $tablet-animation-duration*1ms $deceleration-curve;
+      -webkit-transition: $property $tablet-animation-duration*1ms $deceleration-curve;
+      transition: $property $tablet-animation-duration*1ms $deceleration-curve;
+    }
+    @include breakpoint(small) {
+      -moz-transition: $property $desktop-animation-duration*1ms $deceleration-curve;
+      -o-transition: $property $desktop-animation-duration*1ms $deceleration-curve;
+      -webkit-transition: $property $desktop-animation-duration*1ms $deceleration-curve;
+      transition: $property $desktop-animation-duration*1ms $deceleration-curve;
+    }
+  }
+  @else if $curve==acceleration {
+    -moz-transition: $property $mobile-animation-duration*1ms $acceleration-curve;
+    -o-transition: $property $mobile-animation-duration*1ms $acceleration-curve;
+    -webkit-transition: $property $mobile-animation-duration*1ms $acceleration-curve;
+    transition: $property $mobile-animation-duration*1ms $acceleration-curve;
+    @include breakpoint(tablet) {
+      -moz-transition: $property $tablet-animation-duration*1ms $acceleration-curve;
+      -o-transition: $property $tablet-animation-duration*1ms $acceleration-curve;
+      -webkit-transition: $property $tablet-animation-duration*1ms $acceleration-curve;
+      transition: $property $tablet-animation-duration*1ms $acceleration-curve;
+    }
+    @include breakpoint(small) {
+      -moz-transition: $property $desktop-animation-duration*1ms $acceleration-curve;
+      -o-transition: $property $desktop-animation-duration*1ms $acceleration-curve;
+      -webkit-transition: $property $desktop-animation-duration*1ms $acceleration-curve;
+      transition: $property $desktop-animation-duration*1ms $acceleration-curve;
+    }
+  }
+  @else if $curve==sharp {
+    -moz-transition: $property $mobile-animation-duration*1ms $sharp-curve;
+    -o-transition: $property $mobile-animation-duration*1ms $sharp-curve;
+    -webkit-transition: $property $mobile-animation-duration*1ms $sharp-curve;
+    transition: $property $mobile-animation-duration*1ms $sharp-curve;
+    @include breakpoint(tablet) {
+      -moz-transition: $property $tablet-animation-duration*1ms $sharp-curve;
+      -o-transition: $property $tablet-animation-duration*1ms $sharp-curve;
+      -webkit-transition: $property $tablet-animation-duration*1ms $sharp-curve;
+      transition: $property $tablet-animation-duration*1ms $sharp-curve;
+    }
+    @include breakpoint(small) {
+      -moz-transition: $property $desktop-animation-duration*1ms $sharp-curve;
+      -o-transition: $property $desktop-animation-duration*1ms $sharp-curve;
+      -webkit-transition: $property $desktop-animation-duration*1ms $sharp-curve;
+      transition: $property $desktop-animation-duration*1ms $sharp-curve;
+    }
+  }
+}
+
+@mixin animation($curve: standard) {
+  @if $curve==standard {
+     animation-duration: $mobile-animation-duration*1ms;
+     animation-timing-function: $standard-curve;
+    @include breakpoint(tablet) {
+       animation-duration: $tablet-animation-duration*1ms;
+       animation-timing-function: $standard-curve;
+    }
+    @include breakpoint(small) {
+       animation-duration: $desktop-animation-duration*1ms;
+       animation-timing-function: $standard-curve;
+    }
+  }
+  @else if $curve==deceleration {
+     animation-duration: $mobile-animation-duration*1ms;
+     animation-timing-function: $deceleration-curve;
+    @include breakpoint(tablet) {
+       animation-duration: $tablet-animation-duration*1ms;
+       animation-timing-function: $deceleration-curve;
+    }
+    @include breakpoint(small) {
+       animation-duration: $desktop-animation-duration*1ms;
+       animation-timing-function: $deceleration-curve;
+    }
+  }
+  @else if $curve==acceleration {
+     animation-duration: $mobile-animation-duration*1ms;
+     animation-timing-function: $acceleration-curve;
+    @include breakpoint(tablet) {
+       animation-duration: $tablet-animation-duration*1ms;
+       animation-timing-function: $acceleration-curve;
+    }
+    @include breakpoint(small) {
+       animation-duration: $desktop-animation-duration*1ms;
+       animation-timing-function: $acceleration-curve;
+    }
+  }
+  @else if $curve==sharp {
+     animation-duration: $mobile-animation-duration*1ms;
+     animation-timing-function: $sharp-curve;
+    @include breakpoint(tablet) {
+       animation-duration: $tablet-animation-duration*1ms;
+       animation-timing-function: $sharp-curve;
+    }
+    @include breakpoint(small) {
+       animation-duration: $desktop-animation-duration*1ms;
+       animation-timing-function: $sharp-curve;
+    }
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes scaleOut {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}

@@ -1,0 +1,238 @@
+/////////////////////
+//    Variable     //
+/////////////////////
+
+// colors
+// - search button colors
+$input-search-btn-color-white: $blue-medium-wcag !default;
+$input-hover-search-btn-color-white: $blue-dark !default;
+$input-search-btn-color-blue: $white !default;
+$input-hover-search-btn-color-blue: $grey300 !default;
+$input-search-btn-color-error: $red-error !default;
+$input-hover-search-btn-color-error: $red !default;
+$search-option-color-white: $grey500 !default;
+$search-option-more-color-white: $blue-medium-wcag !default;
+$search-option-color-blue: $white !default;
+
+$input-height-40: 41px !default;
+
+
+@mixin menu-border($color) {
+  box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -moz-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -webkit-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color;
+  -o-box-shadow: inset 1px 0px 0px $color, inset 0px 1px 0px $color, 1px -1px 0px $color; 
+}
+
+// textarea dimensions
+$input-height-textarea: 128px !default;
+$textarea-padding-val: 24px !default;
+
+// search button specs
+$input-search-btn-size: 16px !default;
+$input-search-btn-text-size: 2.0 !default;
+
+.predictiveText {
+  position: relative;
+
+  ////////////////////////////
+  //                        //
+  //    Modifiers Height    //
+  //                        //
+  ////////////////////////////
+
+  &.input--height-48 {
+    padding-top: 2px;
+
+    .clear-btn, .search-btn {
+      @include label-top($input-height-48);
+    }
+
+    // states
+    // -- Focus and Active With Value
+    &:focus ~ .input__label,
+    &:not([value=""]) ~ .input__label,
+    &.predictiveText--readonly:not([value=""]):focus ~ .input__label,
+    &.predictiveText--active ~ .input__label {
+      top: $default-form-item-margin / 2;
+    }
+
+    // element predictiveText menu
+    .predictiveText__menu {
+      top: $input-height-48;
+
+      // element dropdown menu item
+      .item {
+        padding-top: $default-form-item-margin + 4;
+        padding-bottom: $default-form-item-margin + 4;
+      }
+    }
+  }
+
+  &.input--height-40 {
+    padding-top: 2px;
+
+    .clear-btn, .search-btn {
+      top: 12px;
+    }
+
+    // states
+    // -- Focus and Active With Value
+    &:focus ~ .input__label,
+    &:not([value=""]) ~ .input__label,
+    &.predictiveText--readonly:not([value=""]):focus ~ .input__label,
+    &.predictiveText--active ~ .input__label {
+      top: $default-form-item-margin / 2;
+    }
+
+    // element predictiveText menu
+    .predictiveText__menu {
+      top: $input-height-40;
+
+      // element dropdown menu item
+      .item {
+        padding-top: $default-form-item-margin;
+        padding-bottom: $default-form-item-margin;
+      }
+    }
+  }
+    
+  &__searchfield {
+    @extend .textfield;
+  }
+
+  .search-btn {
+    //@extend .clear-btn;
+    width: $input-search-btn-size;
+    height: $input-search-btn-size;
+    opacity: 1;
+    display: block;
+    margin: auto;
+
+    font-size: 1px;
+    color: transparent;
+    position: absolute;
+    border: none;
+    outline: 0px;
+    @include label-top($input-height);
+    right: $default-form-item-margin * 2;
+    background-image: none;
+
+    // background color white CSS
+    background-color: $input-bg-color-white;
+
+    &:before {
+      @include font-size($input-search-btn-text-size);
+      line-height: $input-search-btn-size;
+      width: $input-search-btn-size;
+      height: $input-search-btn-size;
+      margin-left: $default-form-item-margin * -1;
+
+      // background color white CSS
+      color: $input-search-btn-color-white;
+    }
+  }
+
+  .clear-btn {
+      height: $input-search-btn-size + 2;
+      width: $input-search-btn-size + 2;
+
+      &:before {
+        // background color white CSS
+        color: $input-search-btn-color-white;
+      }
+  }
+
+  &__menu {
+    @extend .dropdown__menu;
+    //height: unset;
+    padding: 0;
+    overflow-y: hidden;
+    border: 1px solid $grey300;
+    //@include menu-border($input-hover-border-color-white);
+
+    
+
+    // element item in menu
+    .item {
+      @extend .body-copy;
+      font-size: 1.2rem;
+      word-break: keep-all;
+      padding: $default-form-item-margin * 2 16px $default-form-item-margin * 2 16px;
+      //margin: 0 $default-form-item-margin * 2;
+      border-bottom: $input-border-val;
+
+      // background color white CSS
+      color: $dropdown-option-color-white;
+      border-bottom-color: $dropdown-option-border-color-white;
+
+      &:last-child  {
+        border-bottom: 0px;
+      }
+
+      // dropdown menu items states and interactions
+      &:focus,
+      &:hover,
+      &:active,
+      &.selected {
+        outline: 0px;
+
+        // background color white CSS
+        color: $dropdown-option-hover-color-blue;
+        background: $input-search-btn-color-white;
+        margin: 0;
+        padding-left: 16px;
+        padding-right: 16px;
+        
+        & a {
+          font-family: $sans-serif-medium;
+          color: $search-option-color-blue;
+        }
+      }
+
+      &__more {
+        text-align: center;
+        a {
+          color: $search-option-more-color-white;
+          font-size: 1.2rem;
+          width: 100%;
+        }
+      }
+
+      &:not(.item__more) {
+        &:focus,
+        &:hover,
+        &:active,
+        &.selected {
+          outline: 0px;
+
+          // background color white CSS
+          color: $dropdown-option-hover-color-blue;
+          background: $input-search-btn-color-white;
+          margin: 0;
+          padding-left: 16px;
+          padding-right: 16px;
+          
+          & a {
+            font-family: $sans-serif-medium;
+            color: $search-option-color-blue;
+          }
+        }
+        
+        a {
+          font-family: $sans-serif;
+          font-size: 1.2rem;
+          color: $search-option-color-white;
+
+          &:focus,
+          &:hover,
+          &:active,
+          &.selected {
+            font-family: $sans-serif-medium;
+            color: $search-option-color-blue;
+          }
+        }
+      }
+    }
+  }
+}

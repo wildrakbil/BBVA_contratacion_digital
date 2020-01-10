@@ -1,0 +1,401 @@
+  ////////////////////////////////////////
+ //    Standard Input Control Class    //
+////////////////////////////////////////
+
+  ////////////////////
+ //    Variables   //
+////////////////////
+
+// colors
+// - text colors
+$input-control-label-color-white: $grey600 !default;
+$input-control-label-color-blue: $white !default;
+
+// - fill colors
+$input-control-default-fill: $blue-core !default;
+$input-control-alternative-fill: $white !default;
+
+// - states colors
+// -- hover
+$input-control-bg-white-hover-background: $grey100 !default;
+$input-control-bg-white-grey-hover-background: $white !default;
+$input-control-bg-blue-medium-hover-background: $blue-medium-ov !default;
+$input-control-bg-blue-core-hover-background: $blue-core !default;
+$input-control-bg-blue-dark-hover-background: $blue-core-ov !default;
+
+// -- error
+$input-control-error-fill: $red-error !default;
+$input-control-error-bg-color: $coral-white !default;
+
+// -- readonly
+$input-control-readonly-fill-white: $grey500 !default;
+$input-control-readonly-fill-blue: $grey300 !default;
+
+// --- readonly dimension
+$input-control-readonly-mark-margin: 4px !default;
+
+// dimensions
+$input-control-default-size: 24px !default;
+$input-control-box-padding: 3px !default;
+
+  //////////////////////
+ //   Input Mixins   //
+//////////////////////
+
+@mixin input-control-animation($scale, $animation) {
+  transform: scale(0.1);
+  animation: scaleOut 0.3s forwards $principal-curve;
+}
+
+     ///////////////////////////////////
+    //                               //
+   //    Input Control Base Class   //
+  //                               //
+ ///////////////////////////////////
+ .input-control {
+
+  // base input styles
+  @include hidden;
+
+  /////////////////////////
+ //    Element Label    //
+/////////////////////////
+
+  &__label {
+    @extend .body-copy;
+    cursor: pointer;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    // background color white CSS
+    color: $input-control-label-color-white;
+
+  ///////////////////////
+ //    Hover State    //
+///////////////////////
+
+    &:hover .input-control__box {
+
+      // background color white CSS
+      background: $input-control-bg-white-hover-background;
+    }
+  }
+
+  ///////////////////////
+ //    Element Box    //
+///////////////////////
+
+  &__box {
+    height: $input-control-default-size;
+    width: $input-control-default-size;
+    border-radius: $input-border-radius-val;
+    margin-right: $default-form-item-margin;
+    padding: $input-control-box-padding;
+    border: $input-border-val;
+
+    // background color white CSS
+    background-color: $input-bg-color-white;
+    border-color: $input-border-color-white;
+  }
+
+  ////////////////////////
+ //    Element Text    //
+////////////////////////
+
+  &__text {
+    flex: 1 0 auto;
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+  //////////////////////////////////////////
+ //    Required Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--required + .input-control__label:after,
+  &:required + .input-control__label:after {
+    margin-left: $input-control-readonly-mark-margin;
+    content: "*";
+  }
+
+  ///////////////////////
+ //    Focus State    //
+///////////////////////
+  
+  &:focus + .input-control__label .input-control__box {
+    @include focus-input-border($input-focus-border);
+  }
+
+  &:focus + .input-control__label .input-control__box {
+    
+    // background color white CSS
+    background-color: $input-control-bg-white-hover-background;
+  }
+
+  &:focus + .input-control__label:hover .input-control__box {
+
+    // background color white CSS
+    background-color: $input-control-bg-white-hover-background;
+  }
+
+  //////////////////////////////////////////
+ //    Disabled Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--disabled + .input-control__label,
+  &:disabled + .input-control__label {
+    opacity: $input-disabled-opacity;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  //////////////////////////////////////////
+ //    Readonly Attribute and Modfier    //
+//////////////////////////////////////////
+
+  &.input--readonly + .input-control__label,
+  &:read-only + .input-control__label {
+    pointer-events: none;
+    cursor: not-allowed;
+
+    // background color white CSS
+    color: $input-readonly-label-color-white;
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  /////////////////////////////////
+ //    Background White Grey    //
+/////////////////////////////////
+
+  &.input--bg-white-grey {
+    & + .input-control__label .input-control__box {
+      background-color: $input-bg-color-white-grey;
+    }
+
+    // states
+    // - focus
+    &:focus + .input-control__label .input-control__box {
+      background-color: $input-control-bg-white-grey-hover-background;
+    }
+
+    &:focus + .input-control__label:hover .input-control__box {
+      background-color: $input-control-bg-white-grey-hover-background;
+    }
+
+    // - hover
+    & + .input-control__label:hover .input-control__box {
+      background: $input-control-bg-white-grey-hover-background;
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Core    //
+////////////////////////////////
+
+  &.input--bg-blue-core {
+    & + .input-control__label {
+      color: $input-control-label-color-blue;
+
+      .input-control__box {
+        background-color: $input-bg-color-blue-core;
+        border-color: $input-border-color-blue;
+      }
+    }
+
+    // states
+    // - readonly
+    &.input--readonly + .input-control__label .input-control__box,
+    &:read-only + .input-control__label .input-control__box {
+      color: $input-readonly-label-color-blue;
+    }
+
+    // states
+    // - focus
+    &:focus + .input-control__label .input-control__box {
+      background-color: $input-control-bg-blue-medium-hover-background;
+    }
+
+    &:focus + .input-control__label:hover .input-control__box {
+      background-color: $input-control-bg-blue-medium-hover-background;
+    }
+
+    // - hover
+    & + .input-control__label:hover .input-control__box {
+      background: $input-control-bg-blue-medium-hover-background;
+    }
+
+    &:focus + .input-control__label .input-control__box {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    // - error
+    &.input--error {
+      & + .input-control__label {
+        .input-control__box {
+          background-color: $input-bg-color-white;
+        }
+      }
+      & ~ .input__error-msg {
+        color: $input-error-message-white;
+
+        &:before {
+          color: $input-error-icon-color-white;
+          left: $default-form-item-margin * 5;
+        }
+      }
+    }
+  }
+
+  //////////////////////////////////
+ //    Background Blue Medium    //
+//////////////////////////////////
+
+&.input--bg-blue-medium {
+    & + .input-control__label {
+      color: $input-control-label-color-blue;
+
+      .input-control__box {
+        background-color: $input-bg-color-blue-medium;
+        border-color: $input-border-color-blue;
+      }
+    }
+
+    // states
+    // - readonly
+    &.input--readonly + .input-control__label .input-control__box,
+    &:read-only + .input-control__label .input-control__box {
+      color: $input-readonly-label-color-blue;
+    }
+
+    // states
+    // - focus
+    &:focus + .input-control__label .input-control__box {
+      background-color: $input-control-bg-blue-core-hover-background;
+    }
+
+    &:focus + .input-control__label:hover .input-control__box {
+      background-color: $input-control-bg-blue-core-hover-background;
+    }
+
+    // - hover
+    & + .input-control__label:hover .input-control__box {
+      background: $input-control-bg-blue-core-hover-background;
+    }
+
+    &:focus + .input-control__label .input-control__box {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    // - error
+    &.input--error {
+      & + .input-control__label {
+        .input-control__box {
+          background-color: $input-bg-color-white;
+        }
+      }
+      & ~ .input__error-msg {
+        color: $input-error-message-white;
+
+        &:before {
+          color: $input-error-icon-color-white;
+          left: $default-form-item-margin * 5;
+        }
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    Background Blue Dark    //
+////////////////////////////////
+
+  &.input--bg-blue-dark {
+    & + .input-control__label {
+      color: $input-control-label-color-blue;
+
+      .input-control__box {
+        background-color: $input-bg-color-blue-dark;
+        border-color: $input-border-color-blue;
+      }
+    }
+
+    // states
+    // - readonly
+    &.input--readonly + .input-control__label .input-control__box,
+    &:read-only + .input-control__label .input-control__box {
+      color: $input-readonly-label-color-blue;
+    }
+
+    /// states
+    // - focus
+    &:focus + .input-control__label .input-control__box {
+      background-color: $input-control-bg-blue-dark-hover-background;
+    }
+
+    &:focus + .input-control__label:hover .input-control__box {
+      background-color: $input-control-bg-blue-dark-hover-background;
+    }
+
+    // - hover
+    & + .input-control__label:hover .input-control__box {
+      background: $input-control-bg-blue-dark-hover-background;
+    }
+
+    &:focus + .input-control__label .input-control__box {
+      @include focus-input-border($input-focus-border-white);
+    }
+
+    // - error
+    &.input--error {
+      & + .input-control__label {
+        .input-control__box {
+          background-color: $input-bg-color-white;
+        }
+      }
+      & ~ .input__error-msg {
+        color: $input-error-message-white;
+
+        &:before {
+          color: $input-error-icon-color-white;
+          left: $default-form-item-margin * 5;
+        }
+      }
+    }
+  }
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  &.input--error {
+    & + .input-control__label {
+      @extend .body-copy-bold;
+      color: $input-error-label-color;
+    }
+
+    & + .input-control__label .input-control__box,
+    & + .input-control__label:hover .input-control__box,
+    &:focus + .input-control__label .input-control__box,
+    &:focus + .input-control__label:hover .input-control__box {
+      background-color: $input-control-error-bg-color;
+      border-color: $input-error-border-color;
+    }
+
+    & ~ .input__error-msg {
+      padding-top: 0px;
+      padding-left: $default-form-item-margin * 7;
+      flex: 1 0 100%;
+
+      &:before {
+        left: $default-form-item-margin * 4;
+      }
+    }
+  }
+
+ }

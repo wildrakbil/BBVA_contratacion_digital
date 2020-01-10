@@ -1,0 +1,580 @@
+/////////////////////
+// Card Defaults
+///////////////////
+
+$card-default-card-shadow: 0 1px 1px 0 rgba(18, 18, 18, 0.2);
+$card-background-color: $white;
+$card-title-color: $grey600;
+$card-outline-color: $blue-medium-wcag;
+
+@mixin editorial-img-properties {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-position-y: 0;
+}
+
+@mixin cross-selling-properties {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+
+@mixin card-shadow {
+  border-radius: 1px;
+  background: $white;
+  box-shadow: $card-default-card-shadow;
+  width: 100%;
+  padding: 0;
+  &:focus {
+    outline:$card-outline-color solid 0.8px !important;
+  }
+}
+
+@mixin card-focus-state {
+  &:focus {
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: -8px;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 16px);
+      border: 1px solid #1973b8;
+    }
+  }
+}
+
+@mixin card-link-properties {
+  color: $blue-medium-wcag;
+  font-family: $sans-serif-medium;
+  padding: 0;
+}
+
+@mixin card-desc-desktop-padding {
+  @include breakpoint(small){
+    padding: 24px 32px;
+  }
+}
+
+@mixin credit-card-shadow {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+  width: 37%;
+  height: 16px;
+  border-radius: 50%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.1) 0, transparent 80%);
+  transition: width 0.4s;
+  @include breakpoint(small){
+    top: 91px;
+    width: 50%;
+  }
+}
+
+@mixin product-card-img {
+  position: absolute;
+  margin: 0 auto;
+  top: -40px;
+  left: 0;
+  right: 0;
+  width: 140px;
+  height: 88px;
+  transition: top 0.4s;
+  @include breakpoint(small){
+    width: 190px;
+    height: 120px;
+    top: -64px;
+  }
+}
+
+a, div {
+
+  &.card {
+      margin-bottom: 32px;
+      width: 100%;
+      @include card-focus-state;
+      /////////////////////
+      // Editorial Cards
+      ///////////////////
+
+      .card__editorial {
+
+        /////////////////////////
+        // Editorial Cards: Main
+        ///////////////////////
+
+        &.card__editorial--main {
+          @include card-shadow;
+          .card__desc{
+            padding: 16px;
+            .mobile-title{
+              p.caps-tag-sm {
+                margin-bottom: 8px;
+              }
+              h4 {
+                color: $card-title-color;
+                margin-bottom: 8px;
+                @extend .h4-header;
+              }
+            }
+            section {
+              @extend .body-copy;
+              p {
+                margin-top: 0;
+                &:first-child {
+                  margin-bottom: 16px;
+                  // @include breakpoint(small){
+                  //   margin-bottom: 48px;
+                  // }
+                }
+              }
+            }
+            p {
+              color: $grey500;
+              &.links {
+                @include card-link-properties;
+              }
+            }
+            @include breakpoint(small){
+              padding: 24px 32px;
+            }
+          }
+          .card__img {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            @include breakpoint(small){
+              height: 376px;
+            }
+          }
+        }
+
+        /////////////////////////
+        // Editorial Cards: Home
+        ///////////////////////
+
+        &.card__editorial--home {
+          @include card-shadow;
+          display: flex;
+          flex-direction: column;
+          @include breakpoint(tablet){
+            flex-direction: column;
+          }
+          @include breakpoint(small){
+            flex-direction: row;
+          }
+          [class^="col-"], [class*="col-"] {
+            padding: 0 0;
+          }
+          .card__desc{
+            flex:1;
+            padding: 16px;
+            @include card-desc-desktop-padding;
+            .mobile-title{
+              p.caps-tag-sm {
+                margin-bottom: 8px;
+              }
+              h4 {
+                color: $card-title-color;
+                margin-bottom: 8px;
+              }
+            }
+            section {
+              @extend .body-copy;
+              p {
+                margin-top: 0;
+                &:first-child {
+                  margin-bottom: 16px;
+                  // @include breakpoint(small){
+                  //   margin-bottom: 48px;
+                  // }
+                }
+              }
+            }
+            p {
+              color: $grey500;
+              line-height: 24px;
+              &.links {
+                @include card-link-properties;
+              }
+            }
+            @include breakpoint(small){
+              padding: 24px 16px 24px 0;
+            }
+          }
+          .card__img {
+            flex:1;
+            height: 200px;
+            width: 100%;
+            position: relative;
+            @include breakpoint(small){
+              height: 100%;
+              margin-left: -16px;
+              width: 106%;
+            }
+          }
+
+          @include breakpoint(small){
+            [class^="col-"], [class*="col-"] {
+              padding: 0 16px;
+            }
+          }
+        }
+
+        //////////////////////////
+        // Editorial Cards: Blog
+        ///////////////////////
+
+        &.card__editorial--blog {
+          @include card-shadow;
+          .card__desc{
+            padding: 16px;
+            @include card-desc-desktop-padding;
+            .mobile-title{
+              p.caps-tag-sm {
+                margin-bottom: 8px;
+              }
+              h4 {
+                color: $card-title-color;
+                margin-bottom: 8px;
+              }
+            }
+            section {
+              @extend .body-copy;
+              p {
+                margin-top: 0;
+                &:first-child {
+                  margin-bottom: 16px;
+                  // @include breakpoint(small){
+                  //   margin-bottom: 48px;
+                  // }
+                }
+              }
+            }
+            p {
+              line-height: 24px;
+              color: $grey500;
+              &.links {
+                @include card-link-properties;
+              }
+            }
+          }
+          .card__img {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            @include breakpoint(small){
+              height: 250px;
+            }
+          }
+        }
+
+        //////////////////////////
+        // Editorial Cards: White
+        ////////////////////////
+
+        &.card__editorial--white-title {
+          @include card-shadow;
+          .card__desc{
+            padding: 16px;
+            @include card-desc-desktop-padding;
+            section {
+              @extend .body-copy;
+              p {
+                margin-top: 0;
+                &:first-child {
+                  margin-bottom: 16px;
+                  // @include breakpoint(small){
+                  //   margin-bottom: 48px;
+                  // }
+                }
+              }
+            }
+            p {
+              line-height: 24px;
+              color: $grey500;
+              &.links {
+                @include card-link-properties;
+              }
+            }
+          }
+          .card__img {
+            height: 250px;
+            width: 100%;
+            position: relative;
+            @include breakpoint(small){
+              height: 376px;
+            }
+            .mobile-title{
+              position: absolute;
+              color:$white;
+              bottom: 0;
+              padding-left: 16px;
+              @include breakpoint(small){
+                    padding-left: 32px;;
+                  }
+              p.caps-tag-sm {
+                margin-bottom: 8px;
+                color:$white;
+              }
+              h4 {
+                color: $card-title-color;
+              }
+            }
+          }
+        }
+
+      }
+
+      //////////////////
+      // Product Cards
+      ///////////////
+
+      .card__product {
+        @include card-shadow;
+        background-color: $card-background-color;
+        margin-top: 74px;
+        .card__img {
+          position: relative;
+          height: 96px;
+          @include breakpoint(small){
+            height: 104px;
+          }
+          span {
+            @include product-card-img;
+          }
+          &:after {
+            @include credit-card-shadow;
+          }
+        }
+        .card__desc {
+          padding: 0 16px 16px 16px;
+          @include card-desc-desktop-padding;
+          h4 {
+            color: $card-title-color;
+            margin-bottom: 8px;
+            @include breakpoint(small){
+              margin-bottom: 16px;
+            }
+          }
+          p {
+            line-height: 24px;
+            color: $grey500;
+            &.links {
+              @include card-link-properties;
+            }
+          }
+          section {
+            @extend .body-copy;
+            p {
+              margin-top: 0;
+              &:first-child {
+                margin-bottom: 16px;
+                // @include breakpoint(small){
+                //     margin-bottom: 48px;
+                // }
+              }
+            }
+          }
+        }
+        @include breakpoint(small){
+          &:hover {
+            .card__img {
+              span {
+                top: -80px !important;
+              }
+              &:after {
+                width: 30% !important;
+              }
+            }
+          }
+        }
+        &:hover {
+          .card__img {
+            span {
+              top: -58px;
+            }
+            &:after {
+              width: 25%;
+            }
+          }
+        }
+      }
+
+      ////////////////////////
+      // Cross Selling Cards
+      /////////////////////
+
+      .card__cross-selling {
+        @include card-shadow;
+          background-color: $card-background-color;
+          .card__desc{
+            padding: 16px;
+            .mobile-title{
+              h4 {
+                color: $card-title-color;
+                margin-bottom: 8px;
+              }
+            }
+            section {
+              @extend .body-copy;
+              p {
+                margin-top: 0;
+                &:first-child {
+                  margin-bottom: 16px;
+                  // @include breakpoint(small){
+                  //   margin-bottom: 48px;
+                  // }
+                }
+              }
+            }
+            p {
+              line-height: 24px;
+              color: $grey500;
+              &.links {
+                @include card-link-properties;
+              }
+            }
+            @include breakpoint(small){
+              padding: 24px 32px;
+            }
+          }
+          .card__img {
+            height: 200px;
+            width: 100%;
+            position: relative;
+            @include breakpoint(small){
+              height: 250px;
+            }
+          }
+          &--8-columns{
+            @include card-shadow;
+            background-color: $card-background-color;
+            .card__desc{
+              padding: 16px;
+              .mobile-title{
+                h4 {
+                  color: $card-title-color;
+                  margin-bottom: 8px;
+                }
+              }
+              p {
+                line-height: 24px;
+                color: $grey500;
+                &.links {
+                  @include card-link-properties;
+                }
+              }
+              @include breakpoint(small){
+                padding: 24px 32px;
+              }
+            }
+            .card__img {
+                height: 200px;
+                width: 100%;
+                position: relative;
+              .img {
+                // background: url('img/component-cards-1.png');
+                @include cross-selling-properties;
+              }
+            }
+            @include breakpoint(small){
+              display: flex;
+              .card__img {
+                height: auto;
+                flex: 1.1;
+                min-height: 369px;
+              }
+              .card__desc{
+                flex: 1.01;
+                display: flex;
+                flex-direction: column;
+                content-title {
+                  flex:2;
+                }
+              }
+            }
+          }
+        }
+
+      ////////////////////////
+      // Video Cards
+      /////////////////////
+
+      .card__video {
+        @include card-shadow;
+        background-color: $card-background-color;
+        .card__desc{
+          padding: 16px;
+          .mobile-title{
+            h4 {
+              color: $card-title-color;
+              margin-bottom: 8px;
+            }
+          }
+          p {
+            line-height: 24px;
+            color: $grey500;
+            &.links {
+              @include card-link-properties;
+            }
+          }
+          @include breakpoint(small){
+            padding: 24px 32px;
+          }
+        }
+        .card__img {
+          height: 144px;
+          width: 100%;
+          position: relative;
+          @include breakpoint(small){
+            height: 328px;
+          }
+
+          &:before{
+            @include bbva-font-icon;
+            content: $ui-play-simple;
+            position: absolute;
+            color: $white;
+            font-size: 46px;
+            width: 46px;
+            height: 46px;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            transform: scale(1);
+            transition: all 200ms ease-out 0s;
+          }
+          &.hide-play {
+            &:before {
+              display: none;
+            }
+          }
+        }
+        &:hover .card__img:before{
+          transform: scale(1.2);
+          transition: all 200ms ease-out 0s;
+        }
+        &:focus .card__img:before{
+          transform: scale(1.2);
+          transition: all 200ms ease-out 0s;
+        }
+      }
+
+  }
+
+}

@@ -1,0 +1,106 @@
+  /////////////////////
+ //    Calendar    //
+/////////////////////
+
+  /////////////////////
+ //    Variable     //
+/////////////////////
+
+// colors
+// - border colors
+$calendar-open-border-color-white: $grey600 !default;
+$calendar-option-border-color-white: $grey300 !default;
+
+$calendar-open-border-color-blue: $white !default;
+$calendar-option-border-color-blue: $white30 !default;
+
+// - text colors
+$calendar-option-color-white: $grey500 !default;
+$calendar-option-color-blue: $grey300 !default;
+
+// - icon colors
+$calendar-icon-color-white: $blue-medium-ov !default;
+$calendar-icon-check-color-white: $blue-core !default;
+
+$calendar-icon-color-blue: $white !default;
+$calendar-icon-check-color-blue: $white !default;
+
+// - states
+// -- hover
+$calendar-option-hover-color-white: $grey600 !default;
+$calendar-option-hover-color-blue: $white !default;
+
+// -- readonly
+$calendar-readonly-icon-color-white: $grey500 !default;
+$calendar-readonly-icon-color-blue: $grey300 !default;
+
+// dimensions
+// - icons
+$calendar-icon-size: 24px !default;
+$calendar-icon-text-size: 2.4 !default;
+
+
+// menu focus animation slide down
+@-webkit-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-moz-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-o-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@-ms-keyframes focusAnimation {
+  0% { height: 0px; }
+}
+@keyframes focusAnimation {
+  0% { height: 0px; }
+}
+
+// margins
+$default-icon-item-margin: 8px;
+
+  //////////////////////////////////////////////
+ //    Calendar extended from input class   //
+/////////////////////////////// //////////////
+
+.calendar {
+  @extend .textfield;
+
+    ///////////////////////////////////////
+   //    Element Calendar Container     //
+  ///////////////////////////////////////
+
+  &__container {
+    width: 100%;
+  }
+
+    ///////////////////////////////////////
+   //    Element Calendar Arrow Icon    //
+  ///////////////////////////////////////
+
+  &__icon {
+    position: absolute;
+    top: $default-icon-item-margin * 2;
+    right: $default-icon-item-margin * 2;
+    width: $calendar-icon-size;
+    height: $calendar-icon-size;
+
+    // arrow animation rotate
+    transform: rotateZ(0deg);
+    -webkit-transition: transform 0.3s linear;
+    -moz-transition: transform 0.3s linear;
+    -o-transition: transform 0.3s linear;
+    -ms-transition: transform 0.3s linear;
+    transition: transform 0.3s linear;
+
+    &:before {
+      @include bbva-font-icon;
+      content: $ui-calendar;
+      @include font-size($calendar-icon-text-size);
+
+      // background color white CSS
+      color: $calendar-icon-color-white;
+    }
+  }
+}

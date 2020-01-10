@@ -1,0 +1,95 @@
+  ///////////////////
+ //    Radios     //
+///////////////////
+
+  /////////////////////
+ //    Variable     //
+/////////////////////
+
+// dimensions
+$radio-border-radius-val: 50%;
+$radio-padding: 2px;
+$radio-selector-size: 12px !default;
+$radio-selector-mobile-size: 16px !default;
+$radio-selector-position-mobile-val: 3px;
+$radio-selector-position-val: 5px;
+
+.radio {
+  @extend .input-control;
+
+  & ~ .input-control__label .input-control__box {
+    border-radius: $radio-border-radius-val;
+    padding: $radio-padding;
+    position: relative;
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: $radio-selector-mobile-size;
+      height: $radio-selector-mobile-size;
+      border-radius: $radio-border-radius-val;
+      top: $radio-selector-position-mobile-val;
+      left: $radio-selector-position-mobile-val;
+
+      // background color white CSS
+      background: $input-control-default-fill;
+
+      // - radio animation
+      @include input-control-animation(0.1, $principal-curve);
+
+      @include breakpoint(small) {
+        width: $radio-selector-size;
+        height: $radio-selector-size;
+        top: $radio-selector-position-val;
+        left: $radio-selector-position-val;
+      }
+    }
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+  //////////////////////////////////////////
+ //    Checked Attribute and Modifier    //
+//////////////////////////////////////////
+
+  &:checked + .input-control__label .input-control__box:after,
+  &--checked + .input-control__label .input-control__box:after {
+    animation: scaleIn 0.3s forwards $principal-curve;
+  }
+
+  ///////////////////////////////////////////
+ //    Readonly Attribute and Modifier    //
+///////////////////////////////////////////
+  &.input--readonly + .input-control__label .input-control__box:after {
+
+    // background color white CSS
+    background: $input-control-readonly-fill-white;
+  }
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  ///////////////////////////
+ //    Background Blue    //
+///////////////////////////
+
+  &.input--bg-blue-core + .input-control__label .input-control__box:after,
+  &.input--bg-blue-medium + .input-control__label .input-control__box:after,
+  &.input--bg-blue-dark + .input-control__label .input-control__box:after {
+    background: $input-control-alternative-fill;
+  }
+
+  ////////////////////////////////
+ //    Modifier Error State    //
+////////////////////////////////
+
+  &.input--error + .input-control__label .input-control__box:after {
+    background: $input-control-error-fill;
+  } 
+
+} 

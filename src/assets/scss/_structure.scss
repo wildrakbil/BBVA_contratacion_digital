@@ -1,0 +1,139 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Defining a base font-size of 62.5% to have the convenience of sizing rems in a way that is similar to using px. //
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+html {
+    font-size: 62.5%;
+    font-family: $sans-serif;
+}
+
+body, 
+blockquote,
+ul,
+ol  {
+    @include font-size(1.6);
+    @include font-smoothing;
+    color: $grey600;
+    background-color: transparent;
+}
+
+////////////////////
+//    RESET      //
+//////////////////
+
+@at-root {
+  @-ms-viewport {
+    width: device-width;
+  }
+}
+
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+.body-wrapper-x { 
+    // IPHONE X padding
+    overflow-x: hidden;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+// Lists 
+ul,
+ol {
+    font-family: $sans-serif;
+    margin: 0 0 16px 0;
+    padding-left: 0;
+    li {
+        line-height: 1.4;
+        padding-bottom: 8px;
+        padding-left: 16px;
+    }
+    ul,
+    ol {
+        margin-top: 16px;
+        margin-bottom: 0;
+        li:last-child {
+            padding-bottom: 8px;
+        }
+    }
+}
+
+// Unordered Lists
+ul {
+    list-style: none;
+    li {
+        position: relative;
+    }
+}
+
+//////////////////////
+//    HELPERS      //
+////////////////////
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+// .container--horizontal {
+
+// }
+
+// .container--vertical {
+
+// }
+
+// .container--justify {
+
+// }
+
+.hide {
+    display: none;
+} 
+
+.hide-mb-only {
+    @include breakpoint-only(mb){
+        display: none;
+    }
+}
+
+.hide-tb-only {
+    @include breakpoint-only(tb) {
+      display: none;
+    }
+}
+
+.hide-sm-only {
+    @include breakpoint-only(sm) {
+      display: none;
+    }
+}
+
+.hide-lg-only {
+    @include breakpoint-only(lg) {
+      display: none;
+    }
+}
+
+.hide-xl-only {
+    @include breakpoint-only(xl) {
+        display: none;
+    }
+}

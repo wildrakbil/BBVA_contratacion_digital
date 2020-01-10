@@ -1,0 +1,321 @@
+  ////////////////////
+ //    Variables   //
+////////////////////
+
+// colors
+// - backgrounds colors
+
+// - text colors
+$form-title-color-white: $grey600;
+$form-text-color-white: $grey500;
+
+$form-title-color-blue: $white;
+$form-text-color-blue: $white;
+
+// states
+// - hover
+$form-hover-color-blue: $grey300;
+
+// dimensions
+$default-form-item-margin: 8px;
+
+  ///////////////////
+ //    Imports    //
+///////////////////
+@import "_input.scss";
+@import "_input-controls.scss";
+@import "../components/_checkboxes.scss";
+@import "../components/_radio.scss";
+@import "../components/_switches.scss";
+@import "../components/_textfields.scss";
+@import "../components/_dropdowns.scss";
+
+  //////////////////////////////
+ //    Form Element Class    //
+//////////////////////////////
+
+.form {
+  // base form styles
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: stretch;
+
+   //////////////////////////
+  //    Element Titles    //
+ //////////////////////////
+
+  &__title {
+    flex: 1 100%;
+
+    // background color white CSS
+    color: $form-title-color-white;
+  }
+
+  &__sub-title {
+    @extend .body-copy;
+    flex: 1 100%;
+
+    // background color white CSS
+    color: $form-text-color-white;
+  }
+
+  &__help-msg {
+    @extend .disclaimer-copy;
+    flex: 1 100%;
+    
+    // background color white CSS
+    color: $form-text-color-white;
+  }
+
+   //////////////////////////
+  //    Element Section   //
+ //////////////////////////
+
+  &__section {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: $default-form-item-margin * 4;
+    margin-left: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: stretch;
+    flex: 1 100%;
+
+    .notifications {
+      flex: 1 100%;
+      margin-right: $default-form-item-margin * 2;
+      margin-left: $default-form-item-margin * 2;
+      
+      &__info {
+        top: 0px;
+      }
+    }
+
+    &:last-child {
+      margin-top: $default-form-item-margin * 2;
+      @include breakpoint(small) {
+        margin-top: $default-form-item-margin;
+      }
+    }
+  }
+
+   ///////////////////////
+  //    Element Item   //
+ ///////////////////////
+
+  &__item {
+    margin-top: 0px;
+    margin-right: $default-form-item-margin * 2;
+    margin-bottom: $default-form-item-margin * 3;
+    margin-left: $default-form-item-margin * 2;
+    flex: 1 100%;
+
+    @include breakpoint(small) {
+      margin-bottom: 0px;
+    }
+
+    &.form__sub-title {
+      margin-bottom: $default-form-item-margin * 2;
+    }
+
+    &.form__help-msg {
+      margin-top: $default-form-item-margin * -2;
+
+      @include breakpoint(small) {
+        margin-top: $default-form-item-margin;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    &--half {
+      flex: 1 100%;
+      @include breakpoint(small) {
+        flex: 1 38%;
+      }
+    }
+
+    &--fourth {
+      flex: 1 38%;
+      @include breakpoint(small) {
+        flex: 1 13%;
+      }
+    }
+
+    &--error {
+      background: $input-error-bg-color;
+      padding: $default-form-item-margin;
+      margin-left: $default-form-item-margin;
+      border: $input-border-val;
+      border-color: $input-error-border-color;
+    }
+  }  
+
+   //////////////////////////////////////
+  //    Element Fieldset and Legend   //
+ //////////////////////////////////////
+
+  fieldset {
+  	border: none;
+    margin-top: 0px;
+    margin-right: $default-form-item-margin * 2;
+    margin-bottom: $default-form-item-margin * 3;
+    margin-left: $default-form-item-margin * 2;
+    padding: 0px;
+    flex: 1 13%;
+
+    &:last-child {
+      margin-bottom: 0px;
+    }
+
+    .form__item {
+      margin-top: 0px;
+      margin-right: 0px;
+      margin-bottom: $default-form-item-margin * 2;
+      margin-left: 0px;
+    }
+  }
+
+  legend {
+    @extend .body-copy-bold;
+    margin-bottom: $default-form-item-margin * 2;
+
+    // background color white CSS
+    color: $form-title-color-white;
+  }
+
+  //////////////////////////
+ //    Element Buttons   //
+//////////////////////////
+
+  &__btn {
+    order: 1;
+    text-align: center;
+    align-self: center;
+
+    &:last-child {
+      @include breakpoint(small) {
+        text-align: right;
+      }
+    }
+
+    & > * {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    &--cancel {
+      margin-top: $default-form-item-margin * 3;
+      order: 2;
+      @include breakpoint(small) {
+        margin-top: 0px;
+        order: 1;
+      }
+    }
+
+    @include breakpoint(small) {
+      text-align: justify;
+      flex: 1 13%;
+    }
+  }
+
+  ////////////////////////////////
+ //    States and Modifiers    //
+////////////////////////////////
+
+     ////////////////////////////
+    //                        //
+   //    Modifiers Colors    //
+  //                        //
+ ////////////////////////////
+
+  &--bg-blue-core {
+    & .form__title {
+      color: $form-title-color-blue;
+    }
+
+    & .form__sub-title,
+    & .form__help-msg {
+      color: $form-text-color-blue
+    }
+
+    fieldset {
+      legend {
+        color: $form-title-color-blue;
+      }
+    }
+
+    .form__btn--cancel a {
+      color: $form-text-color-blue;
+
+      &:hover {
+        color: $form-hover-color-blue;
+      }
+    }
+  }
+
+  &--bg-blue-medium {
+    & .form__title {
+      color: $form-title-color-blue;
+    }
+
+    & .form__sub-title,
+    & .form__help-msg {
+      color: $form-text-color-blue
+    }
+
+    fieldset {
+      legend {
+        color: $form-title-color-blue;
+      }
+    }
+
+    .form__btn--cancel a {
+      color: $form-text-color-blue;
+
+      &:hover {
+        color: $form-hover-color-blue;
+      }
+    }
+  }
+
+  &--bg-blue-dark {
+    & .form__title {
+      color: $form-title-color-blue;
+    }
+
+    & .form__sub-title,
+    & .form__help-msg {
+      color: $form-text-color-blue
+    }
+
+    fieldset {
+      legend {
+        color: $form-title-color-blue;
+      }
+    }
+
+    .form__btn--cancel a {
+      color: $form-text-color-blue;
+
+      &:hover {
+        color: $form-hover-color-blue;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,145 @@
+///////////////////
+// links Defaults
+////////////////
+
+
+// Native Properties
+$links-font-size: 15px !default;
+$link-default-margin: 8px !default;
+$link-decoration: none !default;
+$link-color: $blue-medium-wcag !default;
+$link-color-alternate: $white !default;
+$link-default-hover-color: $blue-core !default;
+$link-icon-font-size: 20px !default;
+//:focus & :hover
+$link-default-pseudo-color: $blue-medium-wcag !default;
+$link-alternate-pseudo-color: $blue-light !default;
+
+
+///////////////////
+// links Defaults
+////////////////
+
+a, .links {
+  position: relative;
+  color: $link-color;
+  display: inline-block;
+  text-decoration: $link-decoration;
+  background-color: transparent; // Remove the gray background on active links in IE 10.
+  -webkit-text-decoration-skip: objects; // Remove gaps in links underline in iOS 8+ and Safari 8+.
+  @extend .body-copy-bold;
+
+  &__icon {
+      &:before {
+        position: relative;
+        padding-right: 8px;
+        top: 0px;
+        font-size: $link-icon-font-size;
+        vertical-align: sub;
+      }
+    &--disabled {
+      opacity: 0.3;
+      cursor: default;
+      &:hover {
+        color:$link-color;
+      }
+      &:focus {
+        outline: none !important;
+      }
+    }
+    &.hovering {
+      color:$link-default-hover-color;
+    }
+  }
+
+  ///////////////////
+  // links Alternate
+  /////////////////
+
+  &--alternate {
+    color: $link-color-alternate;
+    &--disabled {
+      color: $white;
+      cursor: default;
+      opacity: 0.3;
+      &:focus {
+        &:after {
+         content: " ";
+         border: none;
+       }
+      }
+      &:hover {
+        color: inherit !important;
+      }
+    }
+    &.links--icon--disabled {
+      color:$white !important;
+      opacity: 0.3;
+      cursor: default;
+      &:hover {
+        color:none;
+      }
+      &:focus {
+        outline: none;
+        border: none !important;
+      }
+    }
+  }
+
+  &:focus:not(.button) { // dont add this focus lines on buttons
+    outline: none !important;
+
+    &.links--alternate,
+    &.links--alternate{
+      color: $white !important;
+      &:after {
+        border: 1px solid $white;
+      }
+
+     &--disabled {
+       &:focus {
+         &:after {
+          content: " ";
+          border: none;
+        }
+       }
+     }
+    }
+
+    &:after {
+      content: " ";
+      position: absolute;
+      display: block;
+      top: -1px; // -1 because of border 1px top
+      left: -8px;
+      width: calc(100% + 16px);
+      height: calc(100% + 2px);
+      border: 1px solid $link-default-pseudo-color;
+    }
+  }
+
+  &:hover,
+  &.hovering {
+    color: $link-default-hover-color;
+    &.links--alternate {
+      color: $link-alternate-pseudo-color;
+    }
+
+
+  }
+  &--disabled{
+    opacity: 0.3;
+    cursor: default;
+    &:hover {
+      color:$link-color;
+    }
+    &:focus {
+      outline: none;
+      border: none !important;
+      &:after {
+       content: " ";
+       border: none;
+     }
+    }
+  }
+}

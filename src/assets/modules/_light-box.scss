@@ -1,0 +1,174 @@
+// Light Box Colors
+$light-box-content-background-color-default: $white !default;
+$light-box-background-color-default: rgba(0, 0, 0, 0.6) !default;
+$light-box-font-color-default: $grey500 !default;
+// Light Box font family and font size
+$closing-tag-font-size-default: 32px !default;
+$closing-tag-mb-font-size-default: 24px !default;
+
+.light-box {
+  // Stay in place
+  position: fixed;
+  // Sit on top
+  z-index: -1;
+  left: 0;
+  top: 100%;
+  // Full width
+  width: 100%;
+   // Full height
+  height: 100%;
+  // Enable scroll if needed
+  overflow: auto;
+  // Black w/ opacity
+  background-color: $light-box-background-color-default;
+   // class to display the light-box overlay background
+  &.light-box-show {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    animation-name: lightBoxIn;
+    @include animation();
+     // Class to animate the light-box__content-wrapper box
+    .slide-in {
+      position: relative;
+      top: 14%;
+      animation-name: lbSlideIn;
+      @include animation();
+    }
+  }
+  &.light-box-hide {
+    animation-name: lightBoxOut;
+    @include animation();
+    .slide-out {
+      position: relative;
+      top: 100%;
+      animation-name: lbSlideOut;
+      @include animation();
+    }
+  } // Modal Content
+  &__content-wrapper {
+    background-color: $light-box-content-background-color-default;
+    margin: auto;
+    padding: 24px 0 88px 0;
+    border-radius: 1px;
+    color: $light-box-font-color-default;
+    min-height: 200px;
+    .close-wrapper {
+      // The Close Button
+      a {
+        font-size: $closing-tag-font-size-default;
+      }
+      float: right;
+      margin-right: 15px;
+
+    }
+
+    // media for wrapper width on mobile
+    @include breakpoint-down(tablet) {
+      width: 100%;
+      padding-top: 16px;
+      padding-left: 16px;
+      padding-right: 16px;
+      padding-bottom: 24px;
+      .close-wrapper {
+        a {
+          font-size: $closing-tag-mb-font-size-default;
+        }
+      }
+    }
+  }
+  h5 {
+    margin-top: 10px;
+  }
+  &__content {
+    @extend .body-copy;
+    padding-top: 32px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+
+     // media for content width on mobile
+     @include breakpoint-down(tablet) {
+      width: 100%;
+      padding-top: 24px;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    }
+  }
+  &__cancel-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    div {
+      a {
+        margin: 0;
+      }
+    }
+    @include breakpoint-down(tablet) {
+     flex-direction: column;
+     margin-bottom: 0;
+    }
+  }
+
+}
+
+// Overlay display animation keyframes
+@keyframes lightBoxIn {
+  0% {
+    opacity: 0;
+    top: 100%;
+  }
+  2% {
+    top: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes lightBoxOut {
+  0% {
+    opacity: 1;
+    top: 0;
+  }
+  2% {
+    opacity: 1;
+    top: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+    top: 0;
+  }
+  100% {
+    opacity: 0;
+    top: 100%;
+  }
+}
+
+// Content Box animation keyframes
+@keyframes lbSlideIn {
+  0% {
+    top: 100%;
+    opacity: 0;
+  }
+  100% {
+    top: 14%;
+    opacity: 1;
+  }
+}
+
+@keyframes lbSlideOut {
+  0% {
+    top: 14%;
+    opacity: 1;
+  }
+  100% {
+    top: 100%;
+    opacity: 0;
+  }
+}
