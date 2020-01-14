@@ -217,6 +217,17 @@ $focus-ouline: $white solid 1px !important; // ie fix
     }
   }
 
+  &--white {
+      background-color: $white;
+      color: $blue-medium-ov;
+      border: 1px solid #A9A7A7;
+       &:hover,
+       &:active{
+         color: $blue-medium-ov;
+         border-bottom: 1px solid #A9A7A7 !important;
+       }
+  }
+
   /////////////////////////////
   //    BUTTON  SIZES      //
   //////////////////////////

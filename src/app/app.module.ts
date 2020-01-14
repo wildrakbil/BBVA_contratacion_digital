@@ -11,6 +11,15 @@ import { PagesComponent } from './pages/pages.component';
 import { BuscarCandidatoComponent } from './pages/buscar-candidato/buscar-candidato.component';
 import { BusquedaComponent } from './components/busqueda/busqueda.component';
 import { SearchDesktopComponent } from './components/search-desktop/search-desktop.component';
+import { AsignacionPerfilesComponent } from './pages/asignacion-perfiles/asignacion-perfiles.component';
+import { MegamenuComponent } from './components/megamenu/megamenu.component';
+import { AutorizacionesComponent } from './pages/autorizaciones/autorizaciones.component';
+import { EdicionDocumentosParametriaComponent } from './pages/edicion-documentos-parametria/edicion-documentos-parametria.component';
+import { EdicionDocumentosElectronicosComponent } from './pages/edicion-documentos-electronicos/edicion-documentos-electronicos.component';
+import { EditarOfertaComponent } from './pages/editar-oferta/editar-oferta.component';
+import { EditarPreOfertaComponent } from './pages/editar-pre-oferta/editar-pre-oferta.component';
+import { CandidatosComponent } from './pages/candidatos/candidatos.component';
+import { PreguntasDeControlComponent } from './pages/preguntas-de-control/preguntas-de-control.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +29,16 @@ import { SearchDesktopComponent } from './components/search-desktop/search-deskt
     PagesComponent,
     BuscarCandidatoComponent,
     BusquedaComponent,
-    SearchDesktopComponent
+    SearchDesktopComponent,
+    AsignacionPerfilesComponent,
+    MegamenuComponent,
+    AutorizacionesComponent,
+    EdicionDocumentosParametriaComponent,
+    EdicionDocumentosElectronicosComponent,
+    EditarOfertaComponent,
+    EditarPreOfertaComponent,
+    CandidatosComponent,
+    PreguntasDeControlComponent
   ],
   imports: [
     BrowserModule,

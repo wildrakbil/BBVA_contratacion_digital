@@ -1,11 +1,24 @@
-.container h1 {
-    font-weight: bold;
-    font-size: 3.8rem;
+h2 {
+    Font-family: "BBVA Coronita Book", "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-size: 33px;
+    color: #121212;
+}
+p {
+    line-height: 24px;
+    font-family: "BentonSansBBVA-Book", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    letter-spacing: 0;
+    color: #626262;
+}
+.container.bodyContainer {
+    text-align: center;
+}
+.tables {
+    padding-top: 28px;
 }
 .tables .comparison-table__simple th {
-   color: #121212;
-   padding-top: 24px;
-
+    color: #121212;
+    padding-top: 24px;
 }
 .tables .comparison-table__simple td {
     color: #626262;
@@ -17,7 +30,6 @@
     font-size: 15px;
     text-align: center;
 }
-
 .tables .comparison-table__simple td {
     border-bottom: 1px solid #f4f4f4 !important;
     line-height: 24px;
@@ -35,4 +47,18 @@
 }
 .tables .comparison-table__simple thead {
     background-color: #f4f4f4;
+}
+[class^="ui-"] {
+    font-size: 26px;
+    cursor: pointer;
+}
+.row.btn-defaults {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.bs-botton{
+    margin-top: 30px;
+    margin-bottom: 120px;
 }

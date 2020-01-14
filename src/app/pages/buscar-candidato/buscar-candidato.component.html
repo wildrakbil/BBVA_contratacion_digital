@@ -1,47 +1,42 @@
-<div class="coronita " style="padding-top: 70px; ">
-    <div class="container " style="    max-width: 998px;">
+<div class="coronita bodyCoronita">
+    <div class="container bodyContainer">
         <h1 class="titulo-1">
             Resultado Búsqueda
         </h1>
-        <div class="bs-example ">
-            <div class="tables">
-                <section class="comparison-table comparison-table__simple container">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Header 1</th>
-                                <th>Header 2</th>
-                                <th>Header 3</th>
-                                <th>Header 4</th>
-                                <th>Header 5</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td data-label="Header 1">Content Item 1a</td>
-                                <td data-label="Header 2">Content Item 2a</td>
-                                <td data-label="Header 3">Content Item 3a</td>
-                                <td data-label="Header 3">Content Item 4a</td>
-                                <td data-label="Header 3">Content Item 5a</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Header 1">Content Item 1b</td>
-                                <td data-label="Header 2">Content Item 2b</td>
-                                <td data-label="Header 3">Content Item 3b</td>
-                                <td data-label="Header 3">Content Item 4a</td>
-                                <td data-label="Header 3">Content Item 5a</td>
-                            </tr>
-                            <tr>
-                                <td data-label="Header 1">Content Item 1c</td>
-                                <td data-label="Header 2">Content Item 2c</td>
-                                <td data-label="Header 3">Content Item 3c</td>
-                                <td data-label="Header 3">Content Item 4a</td>
-                                <td data-label="Header 3">Content Item 5a</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </section>
+        <div *ngIf="items?.length == 0 ">
+            0 resultador
+        </div>
+        <div *ngIf="items?.length > 0 ">
+            <div class="bs-example ">
+                <div class="tables">
+                    <section class="comparison-table comparison-table__simple container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Identificación</th>
+                                    <th>Nombre</th>
+                                    <th>Apellido</th>
+                                    <th>Correo electrónico</th>
+                                    <th>Estado Aspirante</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let item of items">
+                                    <td>{{item.idectificacion}}</td>
+                                    <td>{{item.nombre}}</td>
+                                    <td>{{item.apellido}}</td>
+                                    <td>{{item.email}}</td>
+                                    <td>{{item.estado}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </section>
+                </div>
             </div>
         </div>
+        <!--section>
+        <ngb-pagination [collectionSize]="70" [(page)]="page" [disabled]='isDisabled'></ngb-pagination>
+        </section-->
     </div>
 </div>
+

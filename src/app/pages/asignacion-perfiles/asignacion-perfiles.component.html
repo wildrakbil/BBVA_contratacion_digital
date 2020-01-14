@@ -1,0 +1,92 @@
+<div class="coronita bodyCoronita">
+    <div class="container bodyContainer">
+        <h2>
+            Asignación de perfiles de usuarios
+        </h2>
+        <p>
+            heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
+        </p>
+        <div class="bs-example ">
+            <div class="tables">
+                <section class="comparison-table comparison-table__simple container">
+                	<table>
+                		<thead>
+                			<tr>
+                				<th>Código</th>
+                				<th>Nombre</th>
+                				<th>Apellido</th>
+                				<th>Correo electrónico</th>
+                				<th>Area</th>
+                				<th>Perfil asignado</th>
+                				<th></th>
+                			</tr>
+                		</thead>
+                		<tbody>
+                			<tr *ngFor="let item of items">
+                				<td>{{item.codigo}}</td>
+                				<td>{{item.nombre}}</td>
+                				<td>{{item.apellido}}</td>
+                				<td>{{item.email}}</td>
+                				<td>{{item.area}}</td>
+                				<td style="padding-left: 0px;padding-right: 0px;">
+                					<div class="form__item form__item--fourth input__wrapper" (click)="dropdownComponent()" id="combo">
+                						<div class="dropdown input--bg-white-grey">
+                							<input id="white_background_dropdown_form_2A" class="dropdown__value" value="" type="hidden" name="State">
+                							<div class="dropdown__text"></div>
+                							<i class="dropdown__icon"></i>
+                							<div class="dropdown__menu">
+                								<div class="item">TX</div>
+                								<div class="item">FL</div>
+                								<div class="item">OR</div>
+                								<div class="item">MI</div>
+                							</div>
+                						</div>
+                						<div class="ui-wrong input__error-msg">Select a reason for your appointment</div>
+                					</div>
+                				</td>
+                				<td>
+                					<span class="ui-edit blue" ></span>
+                					<span class="ui-show blue" ></span>
+                					<span class="ui-hide blue" ></span>
+                				</td>
+                			</tr>
+                		</tbody>
+                	</table>
+                </section>
+            </div>
+        </div>
+
+        <div class="bs-botton">
+        	<div class="row btn-defaults">
+        		<div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+        			<p>
+        				<a class="button button--white button--short"  href="#" role="button" title="active">
+        					Atráz
+        				</a>
+        			</p>
+
+        		</div>
+        		<div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+
+        			<p>
+        				<a class="button button--primary button--short" href="#" role="button" title="active">
+        					Guardar
+        				</a>
+        			</p>
+        		</div>
+
+        		<div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+
+        			<p>
+        				<a class="button button--aqua button--short" href="#" role="button" title="active">
+        					Siguiente
+        				</a>
+        			</p>
+        		</div>
+        	</div>
+        </div>
+
+
+
+    </div>
+</div>
