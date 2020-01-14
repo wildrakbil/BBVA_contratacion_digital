@@ -27,7 +27,7 @@ export class SearchDesktopComponent implements OnInit {
   }
 
   public closeSearch(siguiente: string){
-      classie.toggle(document.getElementById(siguiente), 'search--open');
+     classie.toggle(document.getElementById(siguiente), 'search--open');
      document.getElementById(siguiente).style.visibility = "visible";
 
   }

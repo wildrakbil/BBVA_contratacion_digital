@@ -3,21 +3,22 @@
         <div class="container" id="serach_principal">
             <div class="container search__bar">
                 <form action="" class="search__form" style="display: flex;margin-left: 250px;">
-                    <div class="opcion_search" style="display: flex; margin-right: 90px;">
+                     <div class="opcion_search" style="display: flex; margin-right: 90px;">
                        <a  routerLink="/buscar-candidato" class="ui-my-profile white bucador"   (click)="searchPrincipalOpcion('id_card')"  style="font-size: 22px;"></a>
-                        <input aria-activedescendant="" aria-autocomplete="list" aria-controls="listboxsearchQuery_ece9655e-a322-4130-9856-031d9aaddd07" aria-label="Hacer busqueda, Pulsa enter" autocomplete="off" class="search__input search__input--empty" id="searchQuery_ece9655e-a322-4130-9856-031d9aaddd07" itemprop="query-input" name="search" placeholder="Busqueda por Nombre" tabindex="1" type="text"/>
+                       <a  routerLink="/buscar-candidato" class="text_option"   (click)="searchPrincipalOpcion('id_card')">Busqueda por Nombre</a>
                     </div>
-                    <div class="opcion_search" style="display: flex;">
-                        <a  routerLink="/buscar-candidato" class="ui-id-card white bucador"  (click)="searchPrincipalOpcion('my_profile')"  style="font-size: 22px;"></a>
-                        <input aria-activedescendant="" aria-autocomplete="list" aria-controls="listboxsearchQuery_ece9655e-a322-4130-9856-031d9aaddd07" aria-label="Hacer busqueda, Pulsa enter" autocomplete="off" class="search__input search__input--empty" id="searchQuery_ece9655e-a322-4130-9856-031d9aaddd07" itemprop="query-input" name="search" placeholder="Busqueda por Identificación" tabindex="1" type="text"/>
+                     <div class="opcion_search" style="display: flex;">
+                       <a  routerLink="/buscar-candidato" class="ui-my-profile white bucador"   (click)="searchPrincipalOpcion('my_profile')"  style="font-size: 22px;"></a>
+                       <a  routerLink="/buscar-candidato" class="text_option"   (click)="searchPrincipalOpcion('my_profile')">Busqueda por Identificación</a>
                     </div>
-                      <a class="ui-close white bucador" (click)="closeSearch('search__aside')" routerLink="/home"></a>
+                    <a  routerLink="/home" class="ui-close white bucador"   (click)="closeSearch('search__aside')"  ></a>
                 </form>
             </div>
         </div>
         <div class="container" id="serach_secundario">
             <div class="container search__bar">
-              <app-busqueda></app-busqueda>
+                <app-busqueda>
+                </app-busqueda>
             </div>
         </div>
     </div>

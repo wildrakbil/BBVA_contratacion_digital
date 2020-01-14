@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as classie from 'classie';
 
 @Component({
   selector: 'app-busqueda',
@@ -22,5 +22,12 @@ export class BusquedaComponent implements OnInit {
   	document.getElementById('my_profile').style.display = "none";
   	document.getElementById('id_card').style.display = "flex";
   } 
+
+  public closeSearch(siguiente: string){
+     classie.toggle(document.getElementById(siguiente), 'search--open');
+     document.getElementById(siguiente).style.visibility = "visible";
+
+  }
+    
 
 }

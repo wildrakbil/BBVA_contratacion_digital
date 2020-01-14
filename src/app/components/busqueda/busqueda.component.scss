@@ -80,11 +80,17 @@ span.ui-close.white.bucador {
 }
 .navigation__options {
     display: flex;
-    margin-left: 192px;
-    padding-top: 30px;
-    max-width: 680px;
+    margin-left: 282px;
+    padding-top: 26px;
+    max-width: 781px;
     max-height: 72px;
 }
 a:focus:not(.button):after, .links:focus:not(.button):after {
     border: none;
+}
+a {
+    cursor: pointer;
+}
+a.ui-close {
+    padding-left: 150px;
 }
