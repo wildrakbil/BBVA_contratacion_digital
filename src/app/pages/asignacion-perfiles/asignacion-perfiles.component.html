@@ -22,14 +22,14 @@
                 			</tr>
                 		</thead>
                 		<tbody>
-                			<tr *ngFor="let item of items">
+                			<tr *ngFor="let item of items; let i = index">
                 				<td>{{item.codigo}}</td>
                 				<td>{{item.nombre}}</td>
                 				<td>{{item.apellido}}</td>
                 				<td>{{item.email}}</td>
                 				<td>{{item.area}}</td>
                 				<td style="padding-left: 0px;padding-right: 0px;">
-                					<div class="form__item form__item--fourth input__wrapper" (click)="dropdownComponent()" id="combo">
+                					<div class="form__item form__item--fourth input__wrapper" (click)="dropdownComponent(i)" id="{{ 'combo_' + i }}">
                 						<div class="dropdown input--bg-white-grey">
                 							<input id="white_background_dropdown_form_2A" class="dropdown__value" value="" type="hidden" name="State">
                 							<div class="dropdown__text"></div>

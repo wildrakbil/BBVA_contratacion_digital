@@ -29,4 +29,8 @@ export class HeaderComponent implements OnInit {
 	  document.getElementById('search__aside').style.visibility = "visible";
    }
 
+   public hola(){
+     
+   }
+
 }

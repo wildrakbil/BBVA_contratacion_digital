@@ -18,8 +18,9 @@ export class AsignacionPerfilesComponent implements OnInit {
 
 
   }
-  public dropdownComponent() {
-    classie.toggle(document.getElementById('combo'), 'dropdown--open');
+  public dropdownComponent(index: number) {
+    console.log(index);
+    classie.toggle(document.getElementById('combo_'+index), 'dropdown--open');
 
   }
 
