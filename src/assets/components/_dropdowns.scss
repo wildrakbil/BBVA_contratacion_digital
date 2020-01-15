@@ -106,6 +106,7 @@ $dropdown-icon-text-size: 2.4 !default;
     padding-top: $default-form-item-margin * 3;
     padding-left: $default-form-item-margin * 2;
     padding-right: $default-form-item-margin * 6;
+    text-align: left;
   }
 
   /////////////////////////////////
@@ -150,6 +151,8 @@ $dropdown-icon-text-size: 2.4 !default;
       // background color white CSS
       color: $dropdown-option-color-white;
       border-bottom-color: $dropdown-option-border-color-white;
+
+      text-align: left;
 
       &:last-child  {
         border-bottom: 0px;
@@ -247,7 +250,7 @@ $dropdown-icon-text-size: 2.4 !default;
     box-shadow: 0 0 0 0 $input-focus-border;
 
     .dropdown__menu {
-      height: $input-height * 2;
+      height: $input-height * 4;
 
       // menu animation slide down
       -webkit-transition: all 0.3s linear;

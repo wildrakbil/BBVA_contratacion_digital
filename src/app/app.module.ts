@@ -21,6 +21,8 @@ import { EditarPreOfertaComponent } from './pages/editar-pre-oferta/editar-pre-o
 import { CandidatosComponent } from './pages/candidatos/candidatos.component';
 import { PreguntasDeControlComponent } from './pages/preguntas-de-control/preguntas-de-control.component';
 
+import {NgxPaginationModule} from 'ngx-pagination';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,7 +45,8 @@ import { PreguntasDeControlComponent } from './pages/preguntas-de-control/pregun
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PAGES_ROUTES
+    PAGES_ROUTES,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent]

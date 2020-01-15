@@ -32,7 +32,9 @@
               "src/assets/scss/sk.bbva.scss",
               "src/assets/css/bbva.megamenu.lc-20191108-085341-lc.min.css",
               "src/assets/css/bbva.megamenucard.lc-20191108-085341-lc.min.css",
-              "src/assets/css/bbva.searchbar.lc-20191108-085341-lc.min.css"
+              "src/assets/css/bbva.searchbar.lc-20191108-085341-lc.min.css",
+              "src/assets/css/bbva.select.lc-20191108-085341-lc.min.css",
+              "src/assets/css/bbva.iconfonts.lc-20191108-085341-lc.min.css"
             ],
             "scripts": []
           },
