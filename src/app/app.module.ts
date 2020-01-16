@@ -22,6 +22,7 @@ import { CandidatosComponent } from './pages/candidatos/candidatos.component';
 import { PreguntasDeControlComponent } from './pages/preguntas-de-control/preguntas-de-control.component';
 
 import {NgxPaginationModule} from 'ngx-pagination';
+import { BotonesComponent } from './components/botones/botones.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
     EditarOfertaComponent,
     EditarPreOfertaComponent,
     CandidatosComponent,
-    PreguntasDeControlComponent
+    PreguntasDeControlComponent,
+    BotonesComponent
   ],
   imports: [
     BrowserModule,

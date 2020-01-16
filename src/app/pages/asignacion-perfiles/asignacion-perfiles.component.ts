@@ -36,7 +36,6 @@ export class AsignacionPerfilesComponent implements OnInit {
   ngOnInit() {
   }
   public dropdownComponent(index: number) {
-    console.log(index);
     classie.toggle(document.getElementById('combo_'+index), 'dropdown--open');
   }
 
