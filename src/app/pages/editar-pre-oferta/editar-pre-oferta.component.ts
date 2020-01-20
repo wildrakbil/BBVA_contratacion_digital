@@ -6,6 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./editar-pre-oferta.component.scss']
 })
 export class EditarPreOfertaComponent implements OnInit {
+  
+  public routerLinkPrevious ="/edicion-documentos-electronicos";
+  public routerLinkNext = "/editar-oferta";
 
   constructor() { }
 

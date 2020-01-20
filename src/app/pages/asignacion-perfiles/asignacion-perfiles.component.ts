@@ -9,6 +9,11 @@ import {PaginationInstance} from 'ngx-pagination';
   styleUrls: ['./asignacion-perfiles.component.scss']
 })
 export class AsignacionPerfilesComponent implements OnInit {
+
+  public routerLinkPrevious ="/autorizaciones";
+  public routerLinkNext = "/edicion-documentos-electronicos";
+  
+
 	public items = [
 	{"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
 	{"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},

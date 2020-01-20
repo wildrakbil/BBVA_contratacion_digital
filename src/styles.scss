@@ -5,6 +5,22 @@
     max-width: 1110px;
     text-align: center;
 }
+a.titulo-1 {
+    z-index: 3;
+    width: 823px;
+    height: 48px;
+    color: #121212;
+    font-family: "BBVABentonSansLight-Regular";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: center;
+    cursor: default;
+    margin-bottom: 15px;
+    &:hover {
+        color: #121212;
+    }
+}
 h2 {
     Font-family: "BBVA Coronita Book", "Helvetica Neue", Arial, Helvetica, sans-serif;
     font-size: 33px;
@@ -16,8 +32,8 @@ p {
     font-size: 15px;
     letter-spacing: 0;
     color: #626262;
+    cursor: default;
 }
-
 .tables {
     padding-top: 28px;
     section {
@@ -60,11 +76,9 @@ p {
         }
     }
 }
-
-.display_none{
+.display_none {
     display: none;
 }
-
 // paginador
 .custom-pagination {
     display: flex;
@@ -106,5 +120,72 @@ div.new-client {
     text-align: right;
     padding-right: 8px;
     margin-top: 8px;
+}
+// editor de text
+.header-editor {
+    height: 56px;
+    background-color: #f4f4f4;
+    margin-top: 15px;
+}
+quill-editor {
+    div {
+        &.ql-toolbar.ql-snow {
+            border-color: #f4f4f4;
+        }
+        &.ql-container.ql-snow {
+            border-color: #f4f4f4;
+        }
+    }
+}
+span.ui-edit.blue.textEditor {
+    float: right;
+    font-size: 25px;
+    margin-top: 14px;
+    padding-right: 28px;
+}
+span.ui-alphabetical-order.blue.textEditor {
+    padding-left: 45px;
+    float: left;
+    font-size: 25px;
+    margin-top: 14px;
+}
+.ql-editor {
+    height: 300px !important;
+}
+// botones
+.row.btn-defaults {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.bs-botton {
+    margin-top: 30px;
+    margin-bottom: 120px;
+}
 
+// pogress
+.paralelogramo {
+    width: 121px;
+    height: 8px;
+    background: #f4f4f4;
+    transform: skew(-20deg);
+    display: inline-block;
+    &-amarillo {
+        width: 65px;
+        height: 8px;
+        background: #ffb701;
+        transform: skew(-20deg);
+    }
+    &-rojo {
+        width: 19px;
+        height: 8px;
+        background: #f10000;
+        transform: skew(-20deg);
+    }
+    &-verde {
+        width: 121px;
+        height: 8px;
+        background: #49ae64;
+        transform: skew(-20deg);
+    }
 }

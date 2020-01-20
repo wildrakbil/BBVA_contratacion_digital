@@ -1,8 +1,8 @@
 <div class="coronita bodyCoronita">
     <div class="container bodyContainer">
-        <h2>
+        <a class="titulo-1">
             Asignación de perfiles de usuarios
-        </h2>
+        </a>
         <p>
             heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
         </p>
@@ -129,6 +129,31 @@
                 </section>
             </div>
         </div>
-        <app-botones></app-botones>
+        <div class="bs-botton" >
+    <div class="row btn-defaults">
+        <div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+            <p>
+                <a class="button button--white button--short" [routerLink]="routerLinkPrevious" role="button" title="active">
+                    Atrás
+                </a>
+            </p>
+        </div>
+        <div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+
+            <p>
+                <a class="button button--primary button--short" role="button" title="active">
+                    Guardar
+                </a>
+            </p>
+        </div>
+        <div class="col-mb-4 col-tb-4 col-sm-4 col-lg-4 col-xl-4" style="margin:auto;">
+            <p>
+                <a class="button button--aqua button--short" [routerLink]="routerLinkNext" role="button" title="active">
+                    Siguiente
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
     </div>
 </div>

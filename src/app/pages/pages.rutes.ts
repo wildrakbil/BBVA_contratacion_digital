@@ -13,22 +13,22 @@ import {EditarPreOfertaComponent} from "./editar-pre-oferta/editar-pre-oferta.co
 import {PreguntasDeControlComponent} from "./preguntas-de-control/preguntas-de-control.component";
 
 const pagesRoutes: Routes = [
-    {
-      path: '', component: PagesComponent,
-      children: [
-        {path: 'home', component: HomeComponent},
-        {path: '', redirectTo: 'home', pathMatch: 'full'},
-        {path: 'buscar-candidato', component: BuscarCandidatoComponent},
-        {path: 'asignacion-perfiles',component:AsignacionPerfilesComponent},
-        {path: 'autorizaciones', component: AutorizacionesComponent},
-        {path: 'candidatos', component: CandidatosComponent},
-        {path: 'edicion-documentos-electronicos', component: EdicionDocumentosElectronicosComponent},
-        {path: 'edicion-documentos-parametria', component: EdicionDocumentosParametriaComponent},
-        {path: 'editar-oferta', component: EditarOfertaComponent},
-        {path: 'editar-pre-oferta', component: EditarPreOfertaComponent},
-        {path: 'preguntas-de-control', component: PreguntasDeControlComponent}
+{
+  path: '', component: PagesComponent,
+  children: [
+  {path: 'home', component: HomeComponent},
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: 'edicion-documentos-parametria', component: EdicionDocumentosParametriaComponent},
+  {path: 'autorizaciones', component: AutorizacionesComponent},
+  {path: 'asignacion-perfiles',component:AsignacionPerfilesComponent},
+  {path: 'edicion-documentos-electronicos', component: EdicionDocumentosElectronicosComponent},
+  {path: 'editar-pre-oferta', component: EditarPreOfertaComponent},
+  {path: 'editar-oferta', component: EditarOfertaComponent},
+  {path: 'preguntas-de-control', component: PreguntasDeControlComponent},
+  {path: 'candidatos', component: CandidatosComponent},
 
-      ]
-    }
-  ];
+  {path: 'buscar-candidato', component: BuscarCandidatoComponent}
+  ]
+}
+];
 export const PAGES_ROUTES = RouterModule.forChild(pagesRoutes);

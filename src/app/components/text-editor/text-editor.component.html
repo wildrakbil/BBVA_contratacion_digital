@@ -1,0 +1,13 @@
+
+	<div class="container bodyContainer">
+		<form (ngSubmit)="onbSubmit()" [formGroup]="editorForm">
+			<div class="from-group">
+				<div class="header-editor">
+					<span class="ui-alphabetical-order blue textEditor"></span>
+					<span class="ui-edit blue textEditor"></span>
+				</div>
+				<quill-editor FormControlName="editor"></quill-editor>
+			</div>
+		</form>
+	</div>
+

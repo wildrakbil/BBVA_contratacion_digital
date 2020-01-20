@@ -34,7 +34,10 @@
               "src/assets/css/bbva.megamenucard.lc-20191108-085341-lc.min.css",
               "src/assets/css/bbva.searchbar.lc-20191108-085341-lc.min.css",
               "src/assets/css/bbva.select.lc-20191108-085341-lc.min.css",
-              "src/assets/css/bbva.iconfonts.lc-20191108-085341-lc.min.css"
+              "src/assets/css/bbva.iconfonts.lc-20191108-085341-lc.min.css",
+              "src/assets/css/progress-linear.css",
+              "./node_modules/quill/dist/quill.core.css",
+              "./node_modules/quill/dist/quill.snow.css"
             ],
             "scripts": []
           },

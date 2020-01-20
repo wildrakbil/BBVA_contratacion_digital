@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {NgbPaginationConfig} from '@ng-bootstrap/ng-bootstrap';
+import {PaginationInstance} from 'ngx-pagination';
 import * as classie from 'classie';
 
 @Component({
@@ -10,9 +11,17 @@ import * as classie from 'classie';
 })
 
 export class BuscarCandidatoComponent{
-	 page = 4;
 	public items = [
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50}	
@@ -30,5 +39,10 @@ export class BuscarCandidatoComponent{
   ngOnInit() {
   }
 
+  public config: PaginationInstance = {
+    id: 'custom',
+    itemsPerPage: 4,
+    currentPage: 1
+  };
 
 }

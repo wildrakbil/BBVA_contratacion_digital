@@ -1,0 +1,25 @@
+.paralelogramo {
+    width: 121px;
+    height: 8px;
+    background: #f4f4f4;
+    transform: skew(-20deg);
+    display: inline-block;
+    &-amarillo {
+        width: 65px;
+        height: 8px;
+        background: #ffb701;
+        transform: skew(-20deg);
+    }
+    &-rojo {
+        width: 19px;
+        height: 8px;
+        background: #f10000;
+        transform: skew(-20deg);
+    }
+    &-verde {
+        width: 121px;
+        height: 8px;
+        background: #49ae64;
+        transform: skew(-20deg);
+    }
+}

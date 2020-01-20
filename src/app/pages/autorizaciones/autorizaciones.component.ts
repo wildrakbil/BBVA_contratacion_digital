@@ -9,6 +9,10 @@ import * as classie from 'classie';
 })
 export class AutorizacionesComponent implements OnInit {
 
+	public routerLinkPrevious ="/edicion-documentos-parametria";
+	public routerLinkNext = "/asignacion-perfiles";
+	
+
 	public items = [
 	{"valor":"heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes","visible":true},
 	{"valor":"heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes","visible":true}

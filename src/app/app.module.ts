@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import {PAGES_ROUTES} from "./pages/pages.rutes";
 
 import { AppRoutingModule } from './app-routing.module';
@@ -23,6 +25,12 @@ import { PreguntasDeControlComponent } from './pages/preguntas-de-control/pregun
 
 import {NgxPaginationModule} from 'ngx-pagination';
 import { BotonesComponent } from './components/botones/botones.component';
+import {TextEditorComponent} from './components/text-editor/text-editor.component';
+import {QuillModule} from 'ngx-quill';
+import { ProgressLinearComponent } from './components/progress-linear/progress-linear.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -42,13 +50,18 @@ import { BotonesComponent } from './components/botones/botones.component';
     EditarPreOfertaComponent,
     CandidatosComponent,
     PreguntasDeControlComponent,
-    BotonesComponent
+    TextEditorComponent,
+    BotonesComponent,
+    ProgressLinearComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     PAGES_ROUTES,
-    NgxPaginationModule
+    NgxPaginationModule,
+    FormsModule,
+    ReactiveFormsModule,
+    QuillModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

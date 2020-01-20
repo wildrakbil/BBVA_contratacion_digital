@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 import {PaginationInstance} from 'ngx-pagination';
+import {BotonesComponent} from '../../components/botones/botones.component';
+
+import { Observable,of } from 'rxjs';
+
 
 @Component({
 	selector: 'app-edicion-documentos-parametria',
@@ -8,6 +12,10 @@ import {PaginationInstance} from 'ngx-pagination';
 	styleUrls: ['./edicion-documentos-parametria.component.scss']
 })
 export class EdicionDocumentosParametriaComponent implements OnInit {
+
+
+	public routerLinkNext = "/autorizaciones";
+	public routerLinkPrevious ="/home";
 
 	public items = [
 	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
@@ -20,9 +28,11 @@ export class EdicionDocumentosParametriaComponent implements OnInit {
 	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true}
 	];
 
-	constructor() { }
+	constructor() { 
+	}
 
 	ngOnInit() {
+		
 	}
 
 	public dropdownComponent(index: number) {
@@ -49,8 +59,8 @@ export class EdicionDocumentosParametriaComponent implements OnInit {
 
 	}
 
-  public new_user_open(){
-    classie.toggle( document.getElementById('new_user'),'display_none');
-  }
+	public new_user_open(){
+		classie.toggle( document.getElementById('new_user'),'display_none');
+	}
 
 }
