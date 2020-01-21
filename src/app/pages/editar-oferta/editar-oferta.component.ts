@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editar-oferta',
@@ -9,13 +11,15 @@ export class EditarOfertaComponent implements OnInit {
 
   public routerLinkPrevious ="/editar-pre-oferta";
   public routerLinkNext = "/preguntas-de-control";
-  exit() {
-     	window.location.reload();
-    }
+  
+  constructor(public _router:Router,public _location:Location) { }
 
-
-
-  constructor() { }
+  refresh():void{
+    this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+      console.log(decodeURI(this._location.path()));
+      this._router.navigate([decodeURI(this._location.path())]);
+    });
+  }
 
   ngOnInit() {
   }

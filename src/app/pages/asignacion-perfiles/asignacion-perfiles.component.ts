@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 import {PaginationInstance} from 'ngx-pagination';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 
 @Component({
@@ -34,7 +36,7 @@ export class AsignacionPerfilesComponent implements OnInit {
   {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""}
   ];
 
-  constructor() { 
+  constructor(public _router:Router,public _location:Location) { 
 
   }
 
@@ -67,8 +69,11 @@ export class AsignacionPerfilesComponent implements OnInit {
     currentPage: 1
   };
 
-  exit() {
-    window.location.reload();
+   refresh():void{
+    this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+      console.log(decodeURI(this._location.path()));
+      this._router.navigate([decodeURI(this._location.path())]);
+    });
   }
 
 

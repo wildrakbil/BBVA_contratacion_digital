@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 import {PaginationInstance} from 'ngx-pagination';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-preguntas-de-control',
@@ -11,10 +13,6 @@ export class PreguntasDeControlComponent implements OnInit {
 
 	public routerLinkPrevious ="/editar-oferta";
 	public routerLinkNext = "/candidatos";
-	exit() {
-     	window.location.reload();
-    }
-
 
 	public items = [
 	{"documento":"Pregunta de control 1", "visible":true},
@@ -28,7 +26,15 @@ export class PreguntasDeControlComponent implements OnInit {
 	];
 
 
-	constructor() { }
+	
+	constructor(public _router:Router,public _location:Location) { }
+
+	refresh():void{
+		this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+			console.log(decodeURI(this._location.path()));
+			this._router.navigate([decodeURI(this._location.path())]);
+		});
+	}
 
 	ngOnInit() {
 	}

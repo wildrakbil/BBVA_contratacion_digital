@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {PaginationInstance} from 'ngx-pagination';
 import * as classie from 'classie';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-autorizaciones',
@@ -12,11 +14,6 @@ export class AutorizacionesComponent implements OnInit {
 	public routerLinkPrevious ="/edicion-documentos-parametria";
 	public routerLinkNext = "/asignacion-perfiles";
 	 
-	exit() {
-     	window.location.reload();
-    }
-
-	
 
 	public items = [
 	{"valor":"heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes","visible":true},
@@ -26,7 +23,15 @@ export class AutorizacionesComponent implements OnInit {
 
 
 	pageActual: number =1 ;
-	constructor() { }
+
+	constructor(public _router:Router,public _location:Location) { }
+
+  refresh():void{
+    this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+      console.log(decodeURI(this._location.path()));
+      this._router.navigate([decodeURI(this._location.path())]);
+    });
+  }
 
 	ngOnInit() {
 	}

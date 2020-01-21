@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 import {PaginationInstance} from 'ngx-pagination';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-edicion-documentos-electronicos',
@@ -12,10 +14,6 @@ export class EdicionDocumentosElectronicosComponent implements OnInit {
 
 	public routerLinkPrevious ="/asignacion-perfiles";
 	public routerLinkNext = "/editar-pre-oferta";
-	exit() {
-     	window.location.reload();
-    }
-
 
 
 	public items = [
@@ -30,7 +28,14 @@ export class EdicionDocumentosElectronicosComponent implements OnInit {
 	];
 
 
-	constructor() { }
+	constructor(public _router:Router,public _location:Location) { }
+
+	refresh():void{
+		this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+			console.log(decodeURI(this._location.path()));
+			this._router.navigate([decodeURI(this._location.path())]);
+		});
+	}
 
 	ngOnInit() {
 	}

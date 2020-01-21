@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {PaginationInstance} from 'ngx-pagination';
+import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
 	selector: 'app-candidatos',
@@ -10,11 +12,6 @@ export class CandidatosComponent implements OnInit {
 
 	public routerLinkPrevious ="/preguntas-de-control";
 	public routerLinkNext = "";
-
-	exit() {
-     	window.location.reload();
-    }
-
 
 	public items = [
 	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50},
@@ -30,15 +27,22 @@ export class CandidatosComponent implements OnInit {
 	]
 
 
-	constructor() { }
+	constructor(public _router:Router,public _location:Location) { }
+
+	refresh():void{
+		this._router.navigateByUrl("/",{ skipLocationChange: true }).then(()=>{
+			console.log(decodeURI(this._location.path()));
+			this._router.navigate([decodeURI(this._location.path())]);
+		});
+	}
 
 	ngOnInit() {
 	}
 
-	 public config: PaginationInstance = {
-    id: 'custom',
-    itemsPerPage: 4,
-    currentPage: 1
-  };
+	public config: PaginationInstance = {
+		id: 'custom',
+		itemsPerPage: 4,
+		currentPage: 1
+	};
 
 }
