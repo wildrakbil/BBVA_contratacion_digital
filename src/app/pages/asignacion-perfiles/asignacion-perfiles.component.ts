@@ -12,31 +12,31 @@ export class AsignacionPerfilesComponent implements OnInit {
 
   public routerLinkPrevious ="/autorizaciones";
   public routerLinkNext = "/edicion-documentos-electronicos";
+
   
 
 	public items = [
 	{"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-	{"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+	{"codigo":"123456","nombre":"carlo", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"juan", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"pedro", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"caren", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"sofia", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"diana", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"amanda", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"jose", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"maria", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"julia", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"yulua", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
   {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
-  {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"cesar", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
+  {"codigo":"123456","nombre":"diego", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""},
   {"codigo":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "area":'Calidad', "perfil":""}
   ];
 
   constructor() { 
 
   }
-  pageActual: number =1 ;
 
   ngOnInit() {
   }
@@ -66,6 +66,10 @@ export class AsignacionPerfilesComponent implements OnInit {
     itemsPerPage: 2,
     currentPage: 1
   };
+
+  exit() {
+    window.location.reload();
+  }
 
 
 }

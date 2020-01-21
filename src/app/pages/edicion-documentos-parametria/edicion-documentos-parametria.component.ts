@@ -16,16 +16,20 @@ export class EdicionDocumentosParametriaComponent implements OnInit {
 
 	public routerLinkNext = "/autorizaciones";
 	public routerLinkPrevious ="/home";
+	exit() {
+     	window.location.reload();
+    }
+
 
 	public items = [
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true},
-	{"documento":"123456","tap":true, "sevicing":true,"contratacion":true, "visible":true}
+	{"documento":"Carta modificaciones salariales","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Carta translados y movimientos","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Cesantias","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Certificación","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Documento procesos diciplinarios","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Documento mapa laboral","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Carta incentivación","tap":true, "sevicing":true,"contratacion":true, "visible":true},
+	{"documento":"Aprobación","tap":true, "sevicing":true,"contratacion":true, "visible":true}
 	];
 
 	constructor() { 

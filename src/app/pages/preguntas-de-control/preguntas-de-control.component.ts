@@ -11,16 +11,20 @@ export class PreguntasDeControlComponent implements OnInit {
 
 	public routerLinkPrevious ="/editar-oferta";
 	public routerLinkNext = "/candidatos";
+	exit() {
+     	window.location.reload();
+    }
+
 
 	public items = [
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true},
-	{"documento":"123456", "visible":true}
+	{"documento":"Pregunta de control 1", "visible":true},
+	{"documento":"Pregunta de control 2", "visible":true},
+	{"documento":"Pregunta de control 3", "visible":true},
+	{"documento":"Pregunta de control 4", "visible":true},
+	{"documento":"Pregunta de control 5", "visible":true},
+	{"documento":"Pregunta de control 6", "visible":true},
+	{"documento":"Pregunta de control 7", "visible":true},
+	{"documento":"Pregunta de control 8", "visible":true}
 	];
 
 

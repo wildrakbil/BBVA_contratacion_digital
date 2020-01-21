@@ -9,6 +9,10 @@ export class EditarOfertaComponent implements OnInit {
 
   public routerLinkPrevious ="/editar-pre-oferta";
   public routerLinkNext = "/preguntas-de-control";
+  exit() {
+     	window.location.reload();
+    }
+
 
 
   constructor() { }

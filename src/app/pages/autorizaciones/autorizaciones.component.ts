@@ -11,11 +11,16 @@ export class AutorizacionesComponent implements OnInit {
 
 	public routerLinkPrevious ="/edicion-documentos-parametria";
 	public routerLinkNext = "/asignacion-perfiles";
+	 
+	exit() {
+     	window.location.reload();
+    }
+
 	
 
 	public items = [
 	{"valor":"heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes","visible":true},
-	{"valor":"heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes","visible":true}
+	{"valor":"Besides fairly commonplace examples like these, however, English has adopted a number of much less familiar Latin phrases and expressions that go criminally underused—20 examples of which are listed here. So next time you spot a misbehaving child, or you want to seize the night rather than the day, you’ll have the perfect phrase at hand","visible":true}
 	];
 
 

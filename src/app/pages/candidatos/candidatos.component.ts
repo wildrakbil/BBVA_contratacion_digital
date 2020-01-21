@@ -11,17 +11,22 @@ export class CandidatosComponent implements OnInit {
 	public routerLinkPrevious ="/preguntas-de-control";
 	public routerLinkNext = "";
 
+	exit() {
+     	window.location.reload();
+    }
+
+
 	public items = [
 	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
+	{"idectificacion":"123456","nombre":"juan", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
+	{"idectificacion":"123456","nombre":"carlos", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":0},
+	{"idectificacion":"123456","nombre":"diego", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
+	{"idectificacion":"123456","nombre":"maria", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50},
+	{"idectificacion":"123456","nombre":"jose", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
+	{"idectificacion":"123456","nombre":"baltasar", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":0},
 	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":0},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":0},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":0},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
-	{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50}
+	{"idectificacion":"123456","nombre":"melchor", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":100},
+	{"idectificacion":"123456","nombre":"gasparin", "apellido":"asdfvcx","email":"asdasd@asdfdf.com","tipoContrato":"indefinido","empresa":"BBVA","area":"Contabilidad", "estado":50}
 	]
 
 

@@ -250,7 +250,8 @@ $dropdown-icon-text-size: 2.4 !default;
     box-shadow: 0 0 0 0 $input-focus-border;
 
     .dropdown__menu {
-      height: $input-height * 4;
+      height: auto;
+      max-height: $input-height * 4;
 
       // menu animation slide down
       -webkit-transition: all 0.3s linear;

@@ -13,17 +13,17 @@ import * as classie from 'classie';
 export class BuscarCandidatoComponent{
 	public items = [
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"juan", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"carlos", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"sofia", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
+{"idectificacion":"123456","nombre":"Mirian", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
+{"idectificacion":"123456","nombre":"camilo", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
+{"idectificacion":"123456","nombre":"diego", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
+{"idectificacion":"123456","nombre":"jose", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":0},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":100},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
-{"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
+{"idectificacion":"123456","nombre":"maria", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50},
 {"idectificacion":"123456","nombre":"alomso", "apellido":"asdfvcx","email":"asdasd@asdfdf.com", "estado":50}	
 ];
  
