@@ -162,7 +162,6 @@ span.ui-alphabetical-order.blue.textEditor {
     margin-top: 30px;
     margin-bottom: 120px;
 }
-
 // pogress
 .paralelogramo {
     width: 121px;
@@ -188,4 +187,10 @@ span.ui-alphabetical-order.blue.textEditor {
         background: #49ae64;
         transform: skew(-20deg);
     }
+}
+.negrilla {
+    color: #121212;
+}
+.custom-pagination div {
+    cursor: pointer;
 }
