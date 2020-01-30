@@ -1,0 +1,59 @@
+.headerContainer {
+    max-width: 959px;
+    margin-left: auto;
+    margin-right: auto;
+}
+a {
+    &.body {
+        &-copy {
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: block;
+            font-size: 12px;
+            font-size: 1.2rem;
+            font-family: "BentonSansBBVA Medium", "Helvetica Neue", Arial, Helvetica, sans-serif;
+            width: 100%;
+            padding: 0 0 20px 0;
+            margin: 0;
+            color: #bdbdbd;
+            height: 67px;
+            &:hover {
+                color: #000;
+                border-bottom: 1px solid #000;
+                height: 67px;
+            }
+        }
+        &-selected {
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: block;
+            font-size: 12px;
+            font-size: 1.2rem;
+            font-family: "BentonSansBBVA Medium", "Helvetica Neue", Arial, Helvetica, sans-serif;
+            width: 100%;
+            padding: 0 0 20px 0;
+            margin: 0;
+            color: #000;
+            border-bottom: 1px solid #000;
+            height: 67px;
+        }
+    }
+    &:focus:not(.button):after, .links:focus:not(.button):after {
+        border:none;
+
+    }
+}
+.icono {
+    font-size: 26px;
+    margin-top: 22px;
+    cursor: pointer;
+}
+.slider-line {
+    position: absolute;
+    width: 159px;
+    left: 283px;
+    border-color: #000;
+}
+.contenedorOption-select {
+    border-bottom: 1px solid #000;
+}

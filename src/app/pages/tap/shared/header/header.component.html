@@ -1,0 +1,141 @@
+<nav class="header__main navigation">
+  <div class="container">
+    <div class="col-4 col-tb-8 col-sm-12 col-lg-12 col-xl-12">
+      <div class="navigation__sections">
+        <div class="navigation__logo" style="flex: none;">
+          
+          <section class="logos">
+              <a routerLink="/home"class="icon-logo-bbva" aria-label="BBVA logo"></a>
+          </section>
+        </div>
+
+        <div class="navigation__list" style="justify-content: flex-start;">
+          <ul>
+            <li style="padding-left: 16px"> 
+              <a class="active user-name" style="cursor: default;">{{userName}} / Tap BANCO</a>
+            </li>
+          </ul>
+        </div>
+       
+
+        <div class="navigation__login" style="display: contents;">
+          <ul>
+            <li>
+              <span (click)="searchPrincipal('search__aside')" class="ui-search white" style="cursor: pointer;font-size: 20px;margin-right: 26px;"></span>
+            </li>
+          </ul>
+          <div id="open">
+            <ul style="height: 100%;cursor: pointer;">
+              <li>
+                <span style="font-weight: 700;" (click)="menuPrincipal('megamenu__aside')" class="links--alternate">Menú</span>
+              </li>
+              <li >
+                <a (click)="menuPrincipal('megamenu__aside')" data-toggle-menu="2">
+                  <span class="ui-menu white" style="font-size: 24px;    margin-left: 8px;"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div id="close" class="display_none">
+            <ul style="height: 100%;cursor: pointer;">
+              <li>
+                <span style="font-weight: 700;" (click)="menuPrincipal('megamenu__aside')" class="links--alternate">Cerrar</span>
+              </li>
+              <li >
+                <a (click)="menuPrincipal('megamenu__aside')" data-toggle-menu="2">
+                  <span class="ui-close white" style="font-size: 24px;    margin-left: 8px;"></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+     
+
+      </div>
+
+      <div class="mobile-header">
+        <div class="menu-icon">
+          <a href="#" data-toggle-menu="2"><span class="ui-menu"></span></a>
+        </div>
+        <section class="logos">
+            <a href="https://www.bbva.com" class="icon-logo-bbva" aria-label="BBVA logo"></a>
+        </section>
+        <div class="navigation__login">
+          <span class="ui-profile"></span>
+          <ul>
+            <li> <a href="#" class="links links--alternate login">Log in</a> </li>
+            <li> <a href="#" class="links links--alternate">Sign Up</a> </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <nav class="mobile-menu" data-mobile-menu="2">
+        <ul class="accordion" data-accordion-id="9287">
+          <li class="accordion__item">
+            <button class="accordion__header">
+              TITLE
+              <i class="ui-unfold"></i>
+            </button>
+            <div class="accordion__content">
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+            </div>
+          </li>
+          <li class="accordion__item">
+            <button class="accordion__header">
+              TITLE
+              <i class="ui-unfold"></i>
+            </button>
+            <div class="accordion__content">
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+            </div>
+          </li>
+          <li class="accordion__item">
+            <button class="accordion__header">
+              TITLE
+              <i class="ui-unfold"></i>
+            </button>
+            <div class="accordion__content">
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+            </div>
+          </li>
+          <li class="accordion__item">
+            <button class="accordion__header">
+              TITLE
+              <i class="ui-unfold"></i>
+            </button>
+            <div class="accordion__content">
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+              <a class="links links--alternate" href="#">Title</a>
+            </div>
+          </li>
+        </ul>
+        <ul class="utility-mobile">
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+          <li> <a href="#" class="links links--alternate">Title</a> </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</nav>
+
+
+
+<app-search-desktop></app-search-desktop>
+
+<app-megamenu [navigation_items]="navigation_items"></app-megamenu>

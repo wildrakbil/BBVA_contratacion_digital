@@ -1,0 +1,14 @@
+<div class="form__item form__item--fourth input__wrapper" (click)="dropdownComponent()" id="{{'form_' + id}}">
+	<div class="dropdown input--bg-white-grey" id="{{'dropdown_' + id}}">
+		<input id="white_background_dropdown_form_2A" class="dropdown__value" value="" type="hidden" name="State">
+		<label for="white_background_dropdown_form_2A" class="input__label" id="{{'label_' + id}}">Filtrar por</label>
+		<div class="dropdown__text"  id="{{'dropdown_text_' + id}}"></div>
+		<i class="dropdown__icon"></i>
+		<div class="dropdown__menu">
+			<li *ngFor="let option of options; let i = index" style="list-style: none;">
+				<div class="item" (click)="setAsValue(option.valor)">{{option.valor}}</div>
+			</li>
+		</div>
+	</div>
+	<div class="ui-wrong input__error-msg">{{error}}</div>
+</div>

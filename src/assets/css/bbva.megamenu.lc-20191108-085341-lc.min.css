@@ -144,7 +144,7 @@
 .megamenu--open .megamenu__fixed{margin-top:48px;top:0;overflow:hidden}
 @media(min-width:0) and (max-width:991px){.megamenu--open .megamenu__fixed{overflow:auto;max-height:calc(100vh - 48px);min-height:calc(100vh - 48px)}
 }
-@media(min-width:992px){.megamenu--open .megamenu__fixed{margin-top:72px}
+@media(min-width:992px){.megamenu--open .megamenu__fixed{margin-top:88px}
 .sticky .megamenu--open .megamenu__fixed{margin-top:48px;max-height:calc(100vh - 48px);min-height:calc(100vh - 48px)}
 }
 @media(min-width:0) and (max-width:991px){.megamenu--open.header__container{width:100%;position:fixed}

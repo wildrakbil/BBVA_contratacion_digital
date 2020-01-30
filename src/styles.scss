@@ -77,7 +77,7 @@ p {
     }
 }
 .display_none {
-    display: none;
+    display: none !important;
 }
 // paginador
 .custom-pagination {
@@ -193,4 +193,36 @@ span.ui-alphabetical-order.blue.textEditor {
 }
 .custom-pagination div {
     cursor: pointer;
+}
+
+.body-tap {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 959px;
+    display: table;
+}
+
+.titulo1 {
+    height: 48px;
+    color: #121212;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: center;
+    margin-top:32px;
+}
+.titulo2 {
+    height: 40px;
+    -webkit-text-stroke: solid 1px #979797;
+    color: #666666;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    text-align: center;
+    margin-top:15px;
+}
+
+.center{
+    margin-left: auto;
+    margin-right: auto;
 }

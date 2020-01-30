@@ -6,86 +6,16 @@
                     <div class="megamenu__flyout--nonmobile">
                         <nav class="megamenu__flyout ">
                             <ul class="megamenu__flyout__list" itemscope="" itemtype="http://schema.org/ListItem" role="list">
-                                 <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/edicion-documentos-parametria"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
+
+                               <li *ngFor="let item of navigation_items; let i = index"  class="megamenu__navigation__list__item">
+                                    <a routerLink="{{item.routerLink}}"  (click)="cleanMegaMenu()"class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
                                         <span class="megamenu__navigation__text" itemprop="name">
-                                            Edición de documentos parametría
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/autorizaciones"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Edición de autorizaciones
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/asignacion-perfiles" class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" >
-                                        <span class="megamenu__navigation__text">
-                                            Asignación perfiles usuario
+                                        {{item.navigation__text}}
                                         </span>
                                         <i aria-hidden="true" class="ui-next white"></i>
                                     </a>
                                 </li>
-                                 <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/edicion-documentos-electronicos"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Edición documentos electrómnicos
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/editar-pre-oferta"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Editar formato información pre-oferta
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/editar-oferta"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Editar formato información oferta
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                               <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/preguntas-de-control"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Edición de preguntas de control
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/candidatos"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Dar de baja candidatos > a 60 dias
-                                        </span>
-                                        <i aria-hidden="true" class="ui-next white">
-                                        </i>
-                                    </a>
-                                </li>
-                                 <li class="megamenu__navigation__list__item">
-                                    <a (click)="cleanMegaMenu()" routerLink="/home"  class="megamenu__navigation__link megamenu__navigation__primary accordion__list__item__heading" tabindex="-1">
-                                        <span class="megamenu__navigation__text" itemprop="name">
-                                            Cerrar sesión
-                                        </span>
-                                        <i aria-hidden="true" class="ui-close white">
-                                        </i>
-                                    </a>
-                                </li>
+
                             </ul>
                         </nav>
                     </div>

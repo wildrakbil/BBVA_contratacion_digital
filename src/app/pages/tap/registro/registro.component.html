@@ -1,0 +1,43 @@
+
+<div class="container bodyContainer">
+	<app-registro-header [origen]=0></app-registro-header>
+</div>
+<div class="dividers__container">
+	<hr class="dividers__line--whiteBg">
+</div>
+
+<div class="container">
+	<div class="body-tap">
+
+		<p class="BBVABentonSansLight-Regular titulo1">
+			Registro inicial de Aspirantes a Contratar
+		</p>
+
+		<p class="BBVABentonSans-BooK titulo2">
+			heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
+		</p>
+
+		<div class="row">
+			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
+
+				<div>
+					<app-dropdown [id]=0 [options]="dropdown_0"  [error]="error_0"></app-dropdown>
+
+				</div>
+
+			</div>
+			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
+				<div></div>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-4 center">
+				<p>
+					<a class="button button--green button--short" title="Green button" (click)="validar()" role="button">Guardar</a>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
