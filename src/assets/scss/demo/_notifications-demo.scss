@@ -1,0 +1,8 @@
+.notifications-demo {
+        display: flex;
+        flex-direction: column;
+        @include breakpoint(large){
+            flex-direction: row;
+        }
+   
+}

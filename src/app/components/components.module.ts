@@ -11,6 +11,12 @@ import {ProgressLinearComponent} from './progress-linear/progress-linear.compone
 import {SearchDesktopComponent} from './search-desktop/search-desktop.component';
 import {TextEditorComponent} from './text-editor/text-editor.component';
 import { DropdownComponent } from './dropdown/dropdown.component';
+import { TextfieldsComponent } from './textfields/textfields.component';
+import { TextfieldsRequiredComponent } from './textfields-required/textfields-required.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { TextfieldsRedonlyComponent } from './textfields-redonly/textfields-redonly.component';
+import { CheckboxesComponent } from './checkboxes/checkboxes.component';
+import { TextareasComponent } from './textareas/textareas.component';
 
 
 
@@ -22,7 +28,13 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 	ProgressLinearComponent,
 	SearchDesktopComponent,
 	TextEditorComponent,
-	DropdownComponent
+	DropdownComponent,
+	TextfieldsComponent,
+	TextfieldsRequiredComponent,
+	CalendarComponent,
+	TextfieldsRedonlyComponent,
+	CheckboxesComponent,
+	TextareasComponent
 	],
 	imports: [
 	CommonModule,
@@ -63,7 +75,13 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 	ProgressLinearComponent,
 	SearchDesktopComponent,
 	TextEditorComponent,
-	DropdownComponent
+	DropdownComponent,
+	TextfieldsComponent,
+	TextfieldsRequiredComponent,
+	CalendarComponent,
+	TextfieldsRedonlyComponent,
+	CheckboxesComponent,
+	TextareasComponent
 	]
 })
 export class ComponentsModule { }

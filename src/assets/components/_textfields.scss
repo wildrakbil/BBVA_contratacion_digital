@@ -120,8 +120,8 @@ $input-clear-btn-text-size: 2.0 !default;
 ///////////////////////////////////////
 
   &:focus ~ .input__label,
-  &:not([value=""]) ~ .input__label,
-  &.input--readonly:not([value=""]):focus ~ .input__label,
+  &:not([ng-reflect-model=""]) ~ .input__label,
+  &.input--readonly:not([ng-reflect-model=""]):focus ~ .input__label,
   &.input--active ~ .input__label {
     @extend .disclaimer-copy;
     top: $default-form-item-margin;
@@ -132,7 +132,7 @@ $input-clear-btn-text-size: 2.0 !default;
     opacity: 1;
   }
 
-  &:not([value=""]) ~ .clear-btn {
+  &:not([ng-reflect-model=""]) ~ .clear-btn {
     display: block;
   }
 
@@ -340,8 +340,8 @@ $input-clear-btn-text-size: 2.0 !default;
 ///////////////////////////////////////
 
   &:empty:focus ~ .input__label,
-  &:not(:empty) ~ .input__label,
-  &.input--readonly:not(:empty):focus ~ .input__label,
+  &:not([ng-reflect-model=""]) ~ .input__label,
+  &.input--readonly:not([ng-reflect-model=""]):focus ~ .input__label,
   &.input--active ~ .input__label {
     @extend .disclaimer-copy;
     top: $default-form-item-margin;
@@ -352,7 +352,7 @@ $input-clear-btn-text-size: 2.0 !default;
     opacity: 1;
   }
 
-  &:not(:empty) ~ .clear-btn {
+  &:not([ng-reflect-model=""]) ~ .clear-btn {
     display: block;
   }
 

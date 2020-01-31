@@ -1,0 +1,34 @@
+
+  .switches-demo-container{
+    h5 {
+      margin-bottom: 16px;
+    }
+    p {
+      &.caps-tag-sm {
+        margin-bottom: 16px;
+      }
+      &.switch-desc {
+        color: #666666;
+        font-family: $sans-serif;
+        z-index: 9999;
+        margin: 8px auto;
+        font-size: 12px;
+        text-align: center;
+      }
+    }
+    &--darkBg {
+      background-color: $blue-core;
+      padding: 16px;
+      margin-bottom: 32px;
+      p{
+        &.switch-desc {
+          color: $white;
+          font-family: $sans-serif;
+          z-index: 9999;
+          margin: 8px auto;
+          font-size: 12px;
+          text-align: center;
+        }
+      }
+    }
+  }

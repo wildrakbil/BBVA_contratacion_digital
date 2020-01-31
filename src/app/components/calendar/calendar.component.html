@@ -1,0 +1,11 @@
+<div class="form__item input__wrapper">
+	<div class="calendar__container">
+		<div class="calendar__elements">
+			<input class="calendar calendar__input-date input--bg-white-grey" id="calendar_1" [(ngModel)]="valor" type="text" name="Single date" placeholder="">
+			<label class="input__label" for="calendar_1">{{calendarLabel}}</label>
+			<i class="calendar__icon"></i>
+			<div id="calendar_1-container"></div>
+		</div>
+		<div class="ui-wrong input__error-msg">{{error}}</div>
+	</div>
+</div>

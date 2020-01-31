@@ -1,0 +1,38 @@
+/////////////////////////////
+//    EXTERNAL IMPORTS    //
+///////////////////////////
+@import "susy";
+
+////////////////////
+//    GLOBALS    //
+//////////////////
+@import "../_mixins.scss";
+@import '../_normalize.scss';
+@import "../_variables.scss";
+
+$bbva-font-path: 'https://jswzjk9f.openweb.bbva/ui/fonts-new/0.2/';
+
+@import "../_animations.scss";
+
+////////////////////
+//    DEFAULTS   //
+//////////////////
+@import "../../basics/_susygrid-config.scss";
+@import "../../basics/_colors.scss";
+@import "../../basics/_typography.scss";
+
+////////////////////////
+//    DEMO STYLES    //
+//////////////////////
+@import "_icons-demo.scss";
+@import "_background-svg-demo.scss";
+@import "_dividers-demo.scss";
+@import '_layout.scss';
+@import "_links-demo.scss";
+@import "_lists-demo.scss";
+@import '_colors-demo.scss';
+@import "_switches-demo.scss";
+@import "_buttons-demo.scss";
+@import "_bars-demo.scss";
+@import "_notifications-demo.scss";
+@import "_typography-demo.scss";

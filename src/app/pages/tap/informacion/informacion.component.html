@@ -8,10 +8,84 @@
 <div class="container">
 	<div class="body-tap">
 		<p class="BBVABentonSansLight-Regular titulo1">
-           Información
-        </p>
-        <p class="BBVABentonSans-BooK titulo2">
-            heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
-        </p>
+			Información
+		</p>
+		<p class="BBVABentonSans-BooK titulo2">
+			heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
+		</p>
+		<div class="row">
+			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
+				<div class="containerOptions">
+					<div style="display: flex;"><app-textfields-redonly
+						[id]=0 
+						[inputLabel]='inputLabel_0'
+						[textfielConfig]="textfielConfig_2" 
+						[error]="error_0"></app-textfields-redonly>
+						<div class="special">
+							<p>
+								<a class="button button--blue button--short" title="Green button" (click)="validar()" role="button">Validar</a>
+							</p>
+						</div>
+					</div>
+					<div style="display: flex;"><app-textfields-redonly
+						[id]=0 
+						[inputLabel]='inputLabel_1'
+						[textfielConfig]="textfielConfig_2" 
+						[error]="error_0"></app-textfields-redonly>
+						<div class="special">
+							<p>
+								<a class="button button--blue button--short" title="Green button" (click)="validar()" role="button">Validar</a>
+							</p>
+						</div>
+					</div>
+					<div style="display: flex;height: 56px;align-items: center;"><app-checkboxes
+						[id]=0
+						[controltext]="controltext_0"
+						[error]="error_0"></app-checkboxes>
+						<app-checkboxes
+						[id]=1
+						[controltext]="controltext_1"
+						[error]="error_0"></app-checkboxes>
+					</div>
+					<div><app-textfields-required 
+						[id]=2 
+						[inputLabel]='inputLabel_2'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields-required>
+					</div>
+					<div><app-textfields-required
+						[id]=3 
+						[inputLabel]='inputLabel_3'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields-required>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
+				<div class="containerOptions">
+					<div style="height: 58px">
+						<div style="display: flex;margin-top: 16px;">
+							<p style="line-height: 20px;margin-right: 56px">Anexar pruebas aplicadas <br>en el proeso de selección</p>
+							<a  class="links">
+								<span class="ui-pdf links__icon"></span>Adjuntar</a>
+							</div>
+						</div>
+						<div><app-textareas
+							[id]=0
+							[textareaLabel]='textareaLabel'
+							[textareaConfig]='textareaConfig'
+							></app-textareas>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4 center">
+					<p>
+						<a class="button button--blue button--short" title="Green button" (click)="validar()" role="button">Guardar</a>
+					</p>
+				</div>
+			</div>
+		</div>
 	</div>
-</div>

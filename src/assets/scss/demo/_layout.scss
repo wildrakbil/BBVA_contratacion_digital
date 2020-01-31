@@ -1,0 +1,270 @@
+body.bg-navy{
+  min-height: 100vh;
+}
+
+.body-bg {
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  // background-image: linear-gradient(to bottom right, $blue-core-ov 50%, $blue-core 50%);
+  background-color: $grey100;
+}
+
+.content__landing {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+
+  canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+  }
+}
+.home-title {
+  font-size: 3em;
+  text-align:center;
+  z-index: 2000;
+  position: relative;
+
+  @include breakpoint(small) {
+    font-size: 7em;
+  }
+
+  @include breakpoint(large) {
+    font-size: 9em;
+  }
+  
+  &::selection {
+    background: rgba(255, 255, 255, 0);
+  }
+  &::-moz-selection {
+    background: rgba(255, 255, 255, 0);
+  }
+
+  .letter {
+    display: inline-block;
+    line-height: 1em;
+    
+    &::selection {
+      background: rgba(255, 255, 255, 0);
+    }
+    &::-moz-selection {
+      background: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+.navigation-demo {
+  width: 360px;
+  border: 1px solid $grey200; // display: none;
+  position: absolute;
+  right: 0;
+  z-index: $zindex-common-overlay;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all 1s;
+  -webkit-box-shadow: -18px 0px 30px 0px rgba(50, 50, 50, 0.15);
+  -moz-box-shadow : -18px 0px 30px 0px rgba(50, 50, 50, 0.15);
+  box-shadow : -18px 0px 30px 0px rgba(50, 50, 50, 0.15);
+  
+  .accordion__content--active li a {
+    font-size: 15px;
+    color: $grey500;
+    font-family: $sans-serif-regular;
+  }
+
+  button.ui-menu {
+    position: absolute;
+    font-family: "bbva-icons" !important;
+    color: $white;
+    left: 0px;
+    width: 40px;
+    height: 40px;
+    background-color: $navy;
+    border: 0;
+    z-index: $zindex-common-overlay;
+    opacity: 1;
+    cursor: pointer;
+
+    @include breakpoint(tablet) {
+      left: -41px;
+      top: -1px;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+  &--closed {
+    transform: translate(100%);
+    button.ui-menu {
+      left: -40px;
+    }
+  }
+  @include breakpoint(mobile) {
+    position: absolute;
+  }
+  @include breakpoint(tablet) {
+    padding-right: 0;
+    position: fixed;
+    top: 0;
+    z-index: $zindex-top-overlay;
+  }
+  &.sticky .accordion {
+    height: 100vh;
+  }
+  .accordion {
+    overflow: auto;
+    height: calc(100vh);
+    margin-bottom: 0;
+    
+    &--demotype {
+      text-transform: uppercase;
+      font-size: 1.2rem;
+    }
+    
+    @include transition(height);
+    &>li:first-child>a {
+      border-top: none;
+    }
+  }
+  .download-button {
+    display: block;
+    padding: 20px;
+    background: $blue-medium-wcag;
+    color: white;
+    border: none;
+    margin: 0;
+    text-align: center;
+    &:hover {
+      background: darken($blue-medium-wcag, 10%)
+    }
+  }
+  ul {
+    margin: 0;
+  }
+}
+
+.content-wrapper {
+  margin-top: 40px;
+  h2.content-title,
+  h3.content-title,
+  h4.content-title {
+    color: $navy;
+  }
+  h2 {
+    margin-bottom: 32px;
+  }
+  @include breakpoint-down(desktop) {
+    padding-bottom: 50px;
+  }
+
+  .container-link {
+    padding: 0;
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+}
+
+.col-demo {
+  background: #84e0df;
+  font-size: 0.5em;
+  text-align: center; 
+  // padding: 20px 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  // border: 1px solid #71c2c2;
+  &:nth-child(odd) {
+    background: #b3ecec;
+  }
+}
+
+.grid-demo {
+  color: black;
+  font-size: 8px;
+  
+
+  & [class^="col-"] div,
+  & [class*="col-"] div {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    @extend .body-copy;
+  }
+}
+
+.show {
+  display: block;
+}
+
+.show-mb {
+  display: block;
+}
+
+.show-tb {
+  display: block;
+}
+
+.show-sm {
+  display: block;
+}
+
+.show-lg {
+  display: block;
+}
+
+.show-xl {
+  display: block;
+}
+
+.dark-bg {
+  background-color: #072146 !important;
+  color: white !important;
+}
+
+/* default class used to display content throughout the project */
+.content-body {
+  // @include column((mobile: all, tablet: 8, desktop: 10, wide: 10, ultra: 10));
+  @include breakpoint-down(mobile) {
+    padding-top: gutter($susy-mobile);
+    padding-bottom: gutter($susy-mobile)/2;
+    padding-left: gutter($susy-mobile)/2;
+    padding-right: gutter($susy-mobile)/2;
+  }
+  @include breakpoint(tablet) {
+    padding: span(1, $susy-tablet) gutter($susy-tablet);
+
+    // Elementor Modifications
+    .elementor-column.elementor-col-50, .elementor-column[data-col="50"] {
+      padding-right: gutter($susy-tablet);
+    }
+
+    .elementor-row {
+      flex-wrap: nowrap;
+    }
+  }
+
+  @include breakpoint(desktop) {
+    padding: span(1, $susy-desktop);
+    //.elementor-row {
+    //  display: block !important;
+    //}
+  }
+
+  @include breakpoint(wide) {
+    padding: span(1, $susy-wide);
+  }
+
+  @include breakpoint(ultra) {
+    padding: span(1, $susy-ultra);
+
+  }
+}

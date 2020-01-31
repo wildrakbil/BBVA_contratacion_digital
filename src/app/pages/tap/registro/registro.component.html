@@ -19,23 +19,77 @@
 
 		<div class="row">
 			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
-
-				<div>
-					<app-dropdown [id]=0 [options]="dropdown_0"  [error]="error_0"></app-dropdown>
-
+				<div class="containerOptions">
+					<div><app-textfields-required 
+						[id]=0 
+						[inputLabel]='inputLabel_0'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields-required></div>
+					<div><app-textfields-required
+						[id]=1 
+						[inputLabel]='inputLabel_1'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields-required></div>
+					<div><app-dropdown 
+						[id]=0 
+						[dropdownLabel]='dropdownLabel_0'
+						[dropdownConfig]="dropdownConfig" 
+						[options]="dropdown_0"  
+						[error]="error_0"></app-dropdown></div>
+					<div><app-textfields 
+						[id]=2 
+						[inputLabel]='inputLabel_2'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields></div>
+					<div><app-dropdown 
+						[id]=1 
+						[dropdownLabel]='dropdownLabel_1'
+						[options]="dropdown_1"  
+						[error]="error_0"></app-dropdown></div>
+					<div><app-dropdown 
+						[id]=2 
+						[dropdownLabel]='dropdownLabel_2'
+						[options]="dropdown_2"  
+						[error]="error_0"></app-dropdown></div>
 				</div>
-
 			</div>
 			<div class="col-6 col-tb-6 col-sm-6 col-lg-6 col-xl-6 ">
-				<div></div>
+				<div class="containerOptions">
+					<div><app-textfields 
+						[id]=3 
+						[inputLabel]='inputLabel_3'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields></div>
 
+					<div><app-textfields 
+						[id]=4 
+						[inputLabel]='inputLabel_4'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields></div>
+
+					<div><app-textfields-required 
+						[id]=5 
+						[inputLabel]='inputLabel_5'
+						[textfielConfig]="textfielConfig" 
+						[error]="error_0"></app-textfields-required></div>
+
+					<div><app-calendar
+						[calendarLabel]='calendarLabel_0'
+					    [error]="error_0"></app-calendar></div>
+
+					<div><app-dropdown 
+						[id]=3
+						[dropdownLabel]='dropdownLabel_3'
+						[options]="dropdown_3"  
+						[error]="error_0"></app-dropdown></div>
+					
+				</div>
 			</div>
 		</div>
-
 		<div class="row">
 			<div class="col-sm-4 center">
 				<p>
-					<a class="button button--green button--short" title="Green button" (click)="validar()" role="button">Guardar</a>
+					<a class="button button--blue button--short" title="Green button" (click)="validar()" role="button">Guardar</a>
 				</p>
 			</div>
 		</div>

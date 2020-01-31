@@ -1,0 +1,128 @@
+///////////////////////////////////////
+// BACKGROUNDS-SVG PAGE LAYOUT CSS ///
+/////////////////////////////////////
+
+
+.bs-example {
+  position: relative;
+  padding: 32px 32px 32px;
+  margin: 30px -15px 15px;
+  background-color: #fff;
+
+  h5.content-title {
+  //   padding-left: 16px;
+    margin-bottom: 24px;
+  //   margin-bottom: 8px;
+  //   width: 100%;
+  }
+
+  .form__item {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  @include breakpoint(tablet) {
+    margin-right: 0;
+    margin-left: 0;
+  }
+  
+  .demo-div {
+    padding: 20px;
+  }
+  .btns-defaults {
+    .column {
+      text-align: center;
+    }
+  }
+  .btns-withbg {
+    .column {
+      text-align: center;
+    }
+  }
+}
+  
+  .container__flexdemo {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .column_flexdemo {
+      flex-grow: 1;
+      flex-direction: column;
+    }
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+  
+  
+  .grid-demo {
+    .column {
+      height: 100px;
+      margin-bottom: 2em;
+      b {
+        background-color: #f4f4f4;
+        width: 100%;
+        height: 100px;
+        display: block;
+      }
+    }
+  }
+  
+  .overgrey {
+    background: #f4f4f4;
+  }
+  
+  .overwhite, .overgrey {
+    padding: 24px;
+  
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+  }
+  
+  //Link Demos
+  @mixin linksBg {
+    flex-basis: 42%;
+    margin: 16px;
+    padding: 32px 16px 32px 16px;
+    p{
+      margin: 0;
+      font-weight: 300;
+    }
+  }
+  
+  .linkDemo-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    .linkDemo {
+      @include element('linksBg') {
+        background:$grey100;
+        @include linksBg;
+        @include modifier('alternateBg') {
+          background: $blue-core;
+          @include linksBg;
+          p {
+            color: $white;
+          }
+        }
+      }
+    }
+    @media (max-width: 650px) {
+      flex-direction: column;
+    }
+  }
+  
+  .row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  
+  
+  
+  
+  
