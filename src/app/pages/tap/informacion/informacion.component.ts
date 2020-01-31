@@ -37,4 +37,15 @@ export class InformacionComponent implements OnInit {
 		
 	}
 
+	validar(){
+		// validar textfield obligatgorios
+		let textfieldList :any = [2,3];
+		textfieldList.forEach(function (value){
+			if(document.getElementById("white_background_textfield_"+value).getAttribute("ng-reflect-model") == ''){
+				classie.remove(document.getElementById("white_background_textfield_"+value), 'ng-pristine', 'ng-valid', 'ng-touched');
+				classie.add(document.getElementById("white_background_textfield_"+value), 'input--error');
+			}
+		});
+	}
+
 }

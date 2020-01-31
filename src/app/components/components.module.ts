@@ -17,6 +17,7 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { TextfieldsRedonlyComponent } from './textfields-redonly/textfields-redonly.component';
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { TextareasComponent } from './textareas/textareas.component';
+import { TextareasRedonlyComponent } from './textareas-redonly/textareas-redonly.component';
 
 
 
@@ -34,7 +35,8 @@ import { TextareasComponent } from './textareas/textareas.component';
 	CalendarComponent,
 	TextfieldsRedonlyComponent,
 	CheckboxesComponent,
-	TextareasComponent
+	TextareasComponent,
+	TextareasRedonlyComponent
 	],
 	imports: [
 	CommonModule,
@@ -81,7 +83,8 @@ import { TextareasComponent } from './textareas/textareas.component';
 	CalendarComponent,
 	TextfieldsRedonlyComponent,
 	CheckboxesComponent,
-	TextareasComponent
+	TextareasComponent,
+	TextareasRedonlyComponent
 	]
 })
 export class ComponentsModule { }

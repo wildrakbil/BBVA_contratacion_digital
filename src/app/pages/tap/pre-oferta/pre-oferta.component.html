@@ -13,5 +13,25 @@
 		<p class="BBVABentonSans-BooK titulo2">
 			heckli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes.Checkli makes it easy to get things done, and get things done right. Make personal checklists, workflows and team processes
 		</p>
+		
+		<div style="height: 463px; margin-bottom: 30px;">
+			<app-textareas-redonly 
+			[textareaConfig]='textareaConfig'
+			[valor]='valor'
+			></app-textareas-redonly>
+		</div>
+
+		<div class="row" style="justify-content:center">
+			<div style="padding-right: 22px; width: 210px;" >
+				<p>
+					<a class="button button--blue button--short" title="Green button" (click)="validar()" role="button">Guardar</a>
+				</p>
+			</div>
+			<div>
+				<p>
+					<a class="button  bg-blue-white-medium button--short" title="Green button" (click)="validar()" role="button">Enviar correo a candidato</a>
+				</p>
+			</div>
+		</div>
 	</div>
 </div>

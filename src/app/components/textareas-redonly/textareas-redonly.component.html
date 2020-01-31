@@ -1,0 +1,6 @@
+<div class="form__item input__wrapper">
+ 	<textarea id="{{'white_background_textarea_'+id}}" class="{{'textarea '+ textareaConfig}}" name="Comment" placeholder="hint text" [(ngModel)]="valor" readonly></textarea>
+ 	<label for="{{'white_background_textarea_'+id}}" class="input__label">{{textareaLabel}}</label>
+ 	<button class="ui-close clear-btn" type="button" (click)="clearValue()">CLEAR INPUT TEXT</button>
+ 	<div class="ui-wrong input__error-msg">{{error}}</div>
+ </div>
