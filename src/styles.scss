@@ -34,43 +34,24 @@ p {
     color: #626262;
     cursor: default;
 }
-.tables {
+//tabla
+.tables.special {
     padding-top: 28px;
     section {
         &.comparison-table__simple {
-            th {
-                border-bottom: none !important;
-                line-height: 24px;
-                font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
-                font-size: 15px;
+            th,td {
+                padding-right: 0px;
+                padding-left: 0px;
                 text-align: center;
-                padding: 24px 8px 24px 8px;
             }
-            td {
-                border-bottom: 1px solid #D8D8D8 !important;
-                line-height: 24px;
-                font-family: "BentonSansBBVA-Medium", Helvetica, Arial, sans-serif;
-                font-size: 15px;
-                text-align: center;
-                padding: 8px;
-                max-width: 157px;
-                input {
-                    width: -webkit-fill-available;
-                    line-height: 56px;
-                    background-color: #f4f4f4;
-                }
-            }
-            table {
-                border-bottom: none;
-                border-collapse: collapse;
-                border-bottom: none !important;
-                width: 100%;
+            th{
+                padding-top: 23px;
             }
             thead {
                 background-color: #f4f4f4;
             }
             [class^="ui-"] {
-                font-size: 26px;
+                /*font-size: 26px;*/
                 cursor: pointer;
             }
         }
@@ -194,14 +175,12 @@ span.ui-alphabetical-order.blue.textEditor {
 .custom-pagination div {
     cursor: pointer;
 }
-
 .body-tap {
     margin-left: auto;
     margin-right: auto;
     max-width: 959px;
     display: table;
 }
-
 .titulo1 {
     height: 48px;
     color: #121212;
@@ -209,25 +188,25 @@ span.ui-alphabetical-order.blue.textEditor {
     font-weight: 400;
     line-height: 48px;
     text-align: center;
-    margin-top:32px;
+    margin-top: 32px;
 }
 .titulo2 {
-    height: 40px;
+    //height: 40px;
     -webkit-text-stroke: solid 1px #979797;
     color: #666666;
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
     text-align: center;
-    margin-top:15px;
+    margin-top: 15px;
     margin-bottom: 30px;
 }
-
-.center{
+.center {
     margin-left: auto;
     margin-right: auto;
 }
-
-div.containerOptions > div{
+div.containerOptions>div {
     margin-bottom: 15px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

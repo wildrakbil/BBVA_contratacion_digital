@@ -11,7 +11,7 @@ import { Location } from '@angular/common';
 })
 export class RegistroComponent implements OnInit {
 
-  error_0 : string = "ERROR MENSSAGE";
+  error_0 : string = "Error!";
 
   //Configuracion calendar
   calendarLabel_0 : string = "Fecha de Activación:";

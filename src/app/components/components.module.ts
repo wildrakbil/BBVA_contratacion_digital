@@ -18,6 +18,7 @@ import { TextfieldsRedonlyComponent } from './textfields-redonly/textfields-redo
 import { CheckboxesComponent } from './checkboxes/checkboxes.component';
 import { TextareasComponent } from './textareas/textareas.component';
 import { TextareasRedonlyComponent } from './textareas-redonly/textareas-redonly.component';
+import { PoupCourseComponent } from './poup-course/poup-course.component';
 
 
 
@@ -36,7 +37,8 @@ import { TextareasRedonlyComponent } from './textareas-redonly/textareas-redonly
 	TextfieldsRedonlyComponent,
 	CheckboxesComponent,
 	TextareasComponent,
-	TextareasRedonlyComponent
+	TextareasRedonlyComponent,
+	PoupCourseComponent
 	],
 	imports: [
 	CommonModule,
@@ -84,7 +86,8 @@ import { TextareasRedonlyComponent } from './textareas-redonly/textareas-redonly
 	TextfieldsRedonlyComponent,
 	CheckboxesComponent,
 	TextareasComponent,
-	TextareasRedonlyComponent
+	TextareasRedonlyComponent,
+	PoupCourseComponent
 	]
 })
 export class ComponentsModule { }

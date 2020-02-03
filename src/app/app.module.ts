@@ -7,6 +7,7 @@ import { ComponentsModule } from './components/components.module';
 
 
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -18,7 +19,8 @@ import { AppComponent } from './app.component';
 	BrowserModule,
 	AppRoutingModule,
 	ComponentsModule,
-	PagesModule
+	PagesModule,
+	BrowserAnimationsModule
 	],
 	providers: [],
 	bootstrap: [AppComponent]

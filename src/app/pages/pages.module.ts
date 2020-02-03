@@ -15,7 +15,6 @@ import { TAP_ROUTES } from "./tap/tap.rutes";
     TapModule,
     ComponentsModule,
     TAP_ROUTES
-    
   ]
 })
 export class PagesModule { }

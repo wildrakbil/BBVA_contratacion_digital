@@ -2,5 +2,5 @@
  	<input id="{{'white_background_textfield_' + id}}" class="{{'textfield '+ textfielConfig}}" [(ngModel)]="valor" type="text" name="Username" placeholder="hint text" (click)="clearError()">
  	<label for="{{'white_background_textfield_' + id}}" class="input__label">{{inputLabel}}</label>
  	<button class="ui-close clear-btn" type="button" (click)="clearValue()">CLEAR INPUT TEXT</button>
- 	<div class="ui-wrong input__error-msg">{{error}}</div>
+ 	<div class="ui-warning input__error-msg">{{error}}</div>
  </div>
