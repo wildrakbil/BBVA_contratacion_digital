@@ -37,14 +37,14 @@
 							<td>{{item.area}}</td>
 							<td>
 								<div calse="iconos" *ngIf="!item.finalizado">
-									<a  title="Editar" routerLink="/registro" target="_blank">
+									<a  title="Editar" routerLink="/registro">
 										<i class="ui-edit"></i>
 										<span class="sr-only">Editar</span>
 									</a>
 
-									<a title="Eliminar"  target="_blank" style="margin-left: 15px;">
+									<a title="Eliminar" style="margin-left: 15px;">
 										<i class="ui-trash"></i>
-										<span class="sr-only">Editar</span>
+										<span class="sr-only">Eliminar</span>
 									</a>
 								</div>
 								<div *ngIf="item.finalizado">

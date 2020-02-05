@@ -9,13 +9,13 @@ import * as classie from 'classie';
 })
 export class InformacionComponent implements OnInit {
 
-	error_0 : string = "ERROR MENSSAGE";
+	error_0 : string = "Campos requeridos";
 
 	//Configuracion Input
 	textfielConfig : string = "input--bg-white-grey";
 
 	textfielConfig_2 : string = "input--bg-white-grey input--readonly";
-	inputLabel_0 : string = "Incluya la posicion en People Soft a ocupar";
+	inputLabel_0 : string = "Incluya la posición en People Soft a ocupar";
 	inputLabel_1 : string = "Incluya el cargo a ocupar por el candidato";
 	inputLabel_2 : string = "AEV";
 	inputLabel_3 : string = "Bono";
@@ -27,7 +27,7 @@ export class InformacionComponent implements OnInit {
 
 	//config textarea
 	textareaConfig = "input--bg-white-grey";
-	textareaLabel = "Consepto final del candidato";
+	textareaLabel = "Concepto final del candidato";
 
 
 

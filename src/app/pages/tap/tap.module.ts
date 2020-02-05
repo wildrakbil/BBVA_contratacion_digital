@@ -14,6 +14,7 @@ import { InformacionComponent } from './informacion/informacion.component';
 import { PreOfertaComponent } from './pre-oferta/pre-oferta.component';
 import { ContratoComponent } from './contrato/contrato.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { PoupCourseComponent } from '../../components/poup-course/poup-course.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
   ],
   exports:[
   HeaderComponent
-  ]
+  ],
+  entryComponents: [PoupCourseComponent]
 })
 export class TapModule { }

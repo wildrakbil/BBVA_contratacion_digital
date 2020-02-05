@@ -9,7 +9,7 @@ $default-navigation-background-color: $navy !default;
   top: 0;
   width: 100%;
   max-height: 72px;
-  z-index: $zindex-navigation;
+  z-index: 999;
 
   &__sections {
     display: none;
