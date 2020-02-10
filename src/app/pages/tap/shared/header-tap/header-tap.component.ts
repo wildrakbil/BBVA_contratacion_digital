@@ -2,15 +2,16 @@ import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+  selector: 'app-header-tap',
+  templateUrl: './header-tap.component.html',
+  styleUrls: ['./header-tap.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderTapComponent implements OnInit {
 
+ 
   navigation_items:any =[
-  {"navigation__text":"Registro Candidato","routerLink":"/registro" },
-  {"navigation__text":"Candidatos","routerLink":"/candidatos" },
+  {"navigation__text":"Registro Candidato","routerLink":"/tap/registro" },
+  {"navigation__text":"Candidatos","routerLink":"/tap/candidatos" },
   {"navigation__text":"Cerra sesión","routerLink":"" }
   ];
 
@@ -39,8 +40,5 @@ export class HeaderComponent implements OnInit {
     classie.toggle(document.getElementById('open'), 'display_none');
   }
 
-  public hola(){
-
-  }
 
 }

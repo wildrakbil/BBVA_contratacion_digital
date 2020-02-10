@@ -1,0 +1,57 @@
+<nav class="header__main navigation">
+    <div class="container">
+        <div class="col-4 col-tb-8 col-sm-12 col-lg-12 col-xl-12">
+            <div class="navigation__sections">
+                <div class="navigation__logo" style="flex: none;">
+                    <section class="logos">
+                        <a aria-label="BBVA logo" class="icon-logo-bbva">
+                        </a>
+                    </section>
+                </div>
+                <div class="navigation__list" style="justify-content: flex-start;">
+                    <ul>
+                        <li style="padding-left: 16px">
+                            <a class="active user-name" style="cursor: default;">
+                                Contratacion digital
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="navigation__login" style="display: contents;">
+                    <div id="open">
+                        <ul style="height: 100%;cursor: pointer;">
+                            <li>
+                                <span (click)="menuPrincipal('megamenu__aside')" class="links--alternate" style="font-weight: 700;">
+                                    Menú
+                                </span>
+                            </li>
+                            <li>
+                                <a (click)="menuPrincipal('megamenu__aside')" data-toggle-menu="2">
+                                    <span class="ui-menu white" style="font-size: 24px;    margin-left: 8px;">
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="display_none" id="close">
+                        <ul style="height: 100%;cursor: pointer;">
+                            <li>
+                                <span (click)="menuPrincipal('megamenu__aside')" class="links--alternate" style="font-weight: 700;">
+                                    Cerrar
+                                </span>
+                            </li>
+                            <li>
+                                <a (click)="menuPrincipal('megamenu__aside')" data-toggle-menu="2">
+                                    <span class="ui-close white" style="font-size: 24px;    margin-left: 8px;">
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+<app-megamenu [navigation_items]="navigation_items">
+</app-megamenu>
