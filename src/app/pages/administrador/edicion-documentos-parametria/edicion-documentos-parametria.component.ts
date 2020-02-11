@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as classie from 'classie';
 import {PaginationInstance} from 'ngx-pagination';
-import {BotonesComponent} from '../../components/botones/botones.component';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 
